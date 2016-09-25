@@ -1,28 +1,28 @@
-# Installing angr
+# angrのインストール
 
-angr is a python library, so it must be installed into your python environment before it can be used.
-It is built for Python 2: Py3k support is feasible somewhere out in the future, but we are a little hesitant to make that commitment right now (pull requests welcome!).
+angrはPythonのライブラリです．そのため，angrを使うためには，Python環境上にangrをインストールする必要があります．
+angrはPython 2用にビルドされています：Py3kサポートはいずれ実現可能ですが，私たちはいますぐその仕事に取り掛かることに躊躇しています（プルリクエストを歓迎します！）．
 
-We highly recommend using a [python virtual environment](https://virtualenvwrapper.readthedocs.org/en/latest/) to install and use angr.
-Several of angr's dependencies (z3, pyvex) require libraries of native code that are forked from their originals, and if you already have libz3 or libVEX installed, you definitely don't want to overwrite the official shared objects with ours.
-In general, don't expect support for problems arising from installing angr outside of a virtualenv.
+私たちはangrのインストールと利用に[python virtual environment](https://virtualenvwrapper.readthedocs.org/en/latest/)を使うことを強く勧めます．
+いくつかのangr依存関係 (z3, pyvex) は，そのオリジナルからフォークされたネイティブコードのライブラリを必要とします．既にlibz3またはlibVEXをインストール済みなら，公式の共有ライブラリを上書きしたくないですよね．通例，virtualenv以外の環境へのangrのインストールから生じる問題のサポートを期待しないでください．
 
-## Dependencies
+## 依存関係
 
-All of the python dependencies should be handled by pip and/or the setup.py scripts.
-You will, however, need to build some C to get from here to the end, so you'll need a good build environment as well as the python development headers.
-At some point in the dependency install process, you'll install the python library cffi, but (on linux, at least) it won't run unless you install your operating system's libffi package.
+Pythonの依存関係はすべてpipまたはsetup.pyスクリプトで解決する必要があります．
+しかしながら，この作業では，Cソースコードをビルドする必要があるので，よいPython環境だけでなく，Python開発用ヘッダファイルが必要となるでしょう．
 
-On Ubuntu, you will want: `sudo apt-get install python-dev libffi-dev build-essential virtualenvwrapper`
+依存関係のインストールプロセスの最中，Pythonライブラリcffiがインストールされますが，オペレーティングシステム公式のlibffiパッケージをインストールしない限り，（少なくともLinuxでは）それが実行されることはありません．
 
-## Most Operating systems, all \*nix systems
+Ubuntuでは，次のコマンドがお望みに沿うでしょう：`sudo apt-get install python-dev libffi-dev build-essential virtualenvwrapper`
 
-`mkvirtualenv angr && pip install angr` should usually be sufficient to install angr in most cases, since angr is published on the Python Package Index.
+## ほとんどのオペレーティングシステム，すべての\*nixシステム
 
-Fish (shell) users can either use [virtualfish](https://github.com/adambrenecki/virtualfish) or the [virtualenv](https://pypi.python.org/pypi/virtualenv) package.<br>
+angrはPython Package Indexで公開されているので，ほとんどの場合，`mkvirtualenv angr && pip install angr`によってangrをインストールできるはずです．
+
+Fish (shell) ユーザーはまた，[virtualfish](https://github.com/adambrenecki/virtualfish)あるいは[virtualenv](https://pypi.python.org/pypi/virtualenv)のパッケージを利用できます．<br>
 `vf new angr && vf activate angr && pip install angr`
 
-Failing that, you can install angr by installing the following repositories (and the dependencies listed in their requirements.txt files), in order, from https://github.com/angr:
+失敗する場合，https://github.com/angr から順番に下記のリポジトリ（およびそのrequirements.txtに記載された依存関係）をインストールすることで，angrをインストールできます．
 
 - [claripy](https://github.com/angr/claripy)
 - [archinfo](https://github.com/angr/archinfo)
@@ -33,27 +33,26 @@ Failing that, you can install angr by installing the following repositories (and
 
 ## Mac OS X
 
-Before you say `pip install angr`, you need to rebuild our fork of z3 with `pip install -I --no-use-wheel angr-only-z3-custom`.
+`pip install angr`を唱える前に，私たちのフォーク版z3を`pip install -I --no-use-wheel angr-only-z3-custom`のようにリビルドする必要があります．
 
 ## Windows
 
-You cannot install angr from pip on windows.
-You must install all of its components individually.
+angrをpipからwindows環境にインストールすることはできません．個別にコンポーネントをインストールする必要があります．
 
-Capstone is difficult to install on windows.
-You might need to manually specify a wheel to install, but sometimes it installs under a name different from "capstone", so if that happens you want to just remove capstone from the requirements.txt files in angr and archinfo.
+CapstoneをWindowsにインストールするのは困難です．
+wheelを指定してインストールすることになりますが，しばしば"capstone"以外の名前でインストールされることがあります．その場合はcapstoneの記載をangrとarchinfoのrequirements.txtから除去してください．
 
-Z3 might compile on windows if you have a l33t enough build environment.
-If this isn't the case for you, you should download a wheel from somewhere on the Internet.
-One location for pre-built Windows wheel files is <https://github.com/Owlz/angr-Windows>.
+もしあなたがビルド環境に習熟しているなら，windowsでも問題なくZ3をコンパイルすることができます．
+そうでなければ，インターネットのどこかからwheelをダウンロードしてくるべきです．
+私たちのビルド済みwheelファイルは<https://github.com/Owlz/angr-Windows>からダウンロード可能です．
 
-If you build z3 from source, make sure you're using the unstable branch of z3, which includes floating point support.
-In addition, make sure to have `Z3PATH=path/to/libz3.dll` in your environment.
+それでもz3をソースからビルドする場合は，浮動小数点のサポートを含むz3のunstableブランチを利用してください．
+さらに，環境設定に`Z3PATH=path/to/libz3.dll`を加えてください．
 
-## Development install
+## 開発版インストール
 
-We created a repo with scripts to make life easier for angr developers.
-You can set up angr in development mode by doing:
+私たちはangr開発者たちの生活にゆとりを持たせるため，リポジトリとスクリプトを用意しました．
+angr開発版は次のようにセットアップできます：
 
 ```bash
 git clone https://github.com/angr/angr-dev
@@ -62,61 +61,60 @@ mkvirtualenv angr
 ./setup.sh
 ```
 
-This clones all of the repositories and installs them in editable mode.
-`setup.sh` can even create a PyPy virtualenv for you, resulting in significantly faster performance and lower memory usage.
+この手順は，全リポジトリをクローンしたのち編集可能なモードでインストールします．
+`setup.sh`は，さらに，PyPy virtualenvを作成し，パフォーマンスの向上とメモリ使用量の削減を実現します．
 
-You can branch/edit/recompile the various modules in-place, and it will automatically reflect in your virtual environment.
+さまざまなモジュールについて，所定の位置でブランチ作成・編集・再コンパイルすることができますが，その結果は自動的に仮想環境に反映されます．
 
-## Docker install
+## Dockerインストール
 
-For convenience, we ship a Docker image that is 99% guaranteed to work.
-You can install via docker by doing:
+私たちは利便性のため，十中八九動作するDockerのイメージを提供しています．
+Dockerは次のようにインストールできます：
 
 ```bash
-# install docker
+# dockerのインストール
 curl -sSL https://get.docker.com/ | sudo sh
 
-# pull the docker image
+# Dockerイメージのpull
 sudo docker pull angr/angr
 
-# run it
+# 実行
 sudo docker run -it angr
 ```
 
-Synchronization of files in and out of docker is left as an exercise to the user (hint: check out `docker -v`).
+Docker内外とのファイル同期はユーザーへの課題として残されています（ヒント：`docker -v`を確認してください）．
 
-# Troubleshooting
+# トラブルシューティング
 
 ## libgomp.so.1: version GOMP_4.0 not found
-This error represents an incompatibility between the pre-compiled version of `angr-only-z3-custom` and the installed version of `libgomp`. A Z3 recompile is required. You can do this by executing:
+このエラーはコンパイル済み`angr-only-z3-custom`のバージョンとインストールされた`libgomp`のバージョンの不適合を意味します．次のようにZ3のコンパイルが必要となります：
 
 ```bash
 pip install -I --no-use-wheel angr-only-z3-custom
 ```
 
 ## Can't import mulpyplexer
-There are sometimes issues with installing mulpyplexer. Doing `pip install --upgrade 'git+https://github.com/zardus/mulpyplexer'` should fix this.
+mulpyplexerのインストールに問題が発生することがあります．
+`pip install --upgrade 'git+https://github.com/zardus/mulpyplexer'`が修正してくれるはずです．
 
 ## Can't import angr because of capstone
-Sometimes capstone isn't installed correctly for use by angr. There's a good chance just reinstalling capstone will solve this issue:
+angrで利用可能な状態でcapstoneがインストールされないことがあります．capstoneを再インストールしてこの問題を解決する，よい機会です：
 
 ```bash
 pip install -I --no-use-wheel capstone
 ```
 
 ## ImportError due to failure in loading capstone while importing angr
-There's a known [issue](https://github.com/aquynh/capstone/issues/445) in installing capstone_3.0.4 using pip in virtualenv/virtualenvwrapper environment. Several users have further reported to be affected by the same bug in native Python installation, too. (See the discussion in Github bug report).
+virtualenvまたはvirtualenvwrapper環境で，pipを用いてcapstone 3.0.4をインストールする際の既知の[問題](https://github.com/aquynh/capstone/issues/445)です．何人かのユーザーから，ネイティブなPython環境でも同様のバグが報告されています（Github上のバグレポートの議論を参照してください）．
 
-In virtual environment, if capstone Python files are installed in `/home/<username>/.virtualenvs/<virtualenv>/lib/python2.7/site-packages/capstone/*.py(c)`, capstone library file will be found in `/home/<username>/.virtualenvs/<virtualenv>/lib/python2.7/site-packages/home/<username>/.virtualenvs/<virtualenv>/lib/python2.7/site-packages/capstone/libcapstone.so`
+仮想環境で，capsyoneのPythonファイルが `/home/<username>/.virtualenvs/<virtualenv>/lib/python2.7/site-packages/capstone/*.py(c)`にインストールされている場合，capstoneのライブラリファイルは`/home/<username>/.virtualenvs/<virtualenv>/lib/python2.7/site-packages/home/<username>/.virtualenvs/<virtualenv>/lib/python2.7/site-packages/capstone/libcapstone.so`にあるはずです．
 
-In native environment, if capstone Python files are installed in `/usr/local/lib/python2.7/dist-packages/capstone/*.py(c)`, capstone library file will be found in `/usr/local/lib/python2.7/dist-packages/usr/lib/python2.7/dist-packages/capstone/libcapstone.so`
+ネイティブ環境で，capstoneのPythonファイルが`/usr/local/lib/python2.7/dist-packages/capstone/*.py(c)`にインストールされている場合，capstoneのライブラリファイルは`/usr/local/lib/python2.7/dist-packages/usr/lib/python2.7/dist-packages/capstone/libcapstone.so`にあるはずです．
 
-Moving `libcapstone.so` to the same directory as that of Python files will fix the problem.
+`libcapstone.so`をPythonファイルと同じディレクトリに移動することで，問題を解決できるでしょう．
 
-## Claripy and z3
-Z3 is a bit weird to compile. Sometimes it just completely fails to build for
-no reason, saying that it can't create some object file because some file or
-directory doesn't exist. Just retry the build:
+## Claripyとz3
+Z3のコンパイルは少しばかり奇妙です．理由なくビルドに失敗することもあります．いくつかのファイルやディレクトリに欠けていて，ファイルを作成できないのです．ビルドに再挑戦してください：
 
 ```bash
 pip install -I --no-use-wheel angr-only-z3-custom
@@ -124,6 +122,6 @@ pip install -I --no-use-wheel angr-only-z3-custom
 
 ## No such file or directory: 'pyvex_c'
 
-Are you running 12.04? If so, please upgrade!
+Ubuntu 12.04を使っていますか？　もしそうなら，アップグレードしてください！
 
-You can also try upgrading pip (`pip install -U pip`), which might solve the issue.
+pipのアップグレード (`pip install -U pip`) でも，問題を解決できるかもしれません．
