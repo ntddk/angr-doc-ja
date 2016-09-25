@@ -1,23 +1,26 @@
-# How to be angry
+これは[Angr Documentation](https://docs.angr.io/)の非公式翻訳です．
 
-This is a collection of documentation for angr.
-By reading this, you'll become an angr pro and will be able to fold binaries to your whim.
+# 怒る (angry) ために
 
-We've tried to make using angr as pain-free as possible - our goal is to create a user-friendly binary analysis suite, allowing a user to simply start up iPython and easily perform intensive binary analyses with a couple of commands.
-That being said, binary analysis is complex, which makes angr complex.
-This documentation is an attempt to help out with that, providing narritive explanation and exploration of angr and its design.
+本稿は，angrにまつわるドキュメントの集積です．
+これを読めば，あなたはangrのプロとして，バイナリを思うがままに叩きのめせるようになりますよ．
 
-## Get Started
+私たちはangrを可能な限り苦痛なく利用できるように取り組んできました――私たちの目的は，ただiPythonを起動して，少ないコマンドを入力するだけで高度なバイナリ解析技術を試せるような，ユーザーフレンドリーなバイナリ解析スイートをつくることにあるのです．
+とはいえ，バイナリ解析は複雑で，したがってangrも複雑にならざるを得ません．
+そういうわけで，本稿は，系統立った解説を通じて，angrとその設計思想を理解する一助となるべく執筆されました．
 
-Installation instructions can be found [here](./INSTALL.md).
+## さあ始めよう
 
-To dive right into angr's capabilities, start with the [top level methods](./docs/toplevel.md), or read over the [overview](./docs/overview.md).
+インストール手順は[こちら](./INSTALL.md)で読むことができます．
 
-A searchable HTML version of this documentation is hosted at [docs.angr.io](http://docs.angr.io/), and an HTML API reference can be found at [angr.io/api-doc](http://angr.io/api-doc/).
+angrの機能を概括的に把握するには，[トップレベルメソッド](./docs/toplevel.md)から始めるか，[概要](./docs/overview.md)を通読するとよいでしょう．
 
-## Citing angr
+検索可能な本書のHTML版は[docs.angr.io](http://ntddk.github.io/angr-doc-ja)に掲載されています．さらに，HTML
+版APIリファレンスは[angr.io/api-doc](http://angr.io/api-doc/)にあります（英語）．
 
-If you use angr in an academic work, please cite the papers for which it was developed:
+## angrを引用する
+
+学術的な著作でangrを用いる場合は，元になった論文を引用してください：
 
 ```bibtex
 @article{shoshitaishvili2016state,
@@ -42,18 +45,16 @@ If you use angr in an academic work, please cite the papers for which it was dev
 }
 ```
 
-## Support
+## サポート
 
-To get help with angr, you can ask via:
+angrのヘルプを得たければ，下記の場所で質問するとよいでしょう：
 
-- the mailing list: angr@lists.cs.ucsb.edu
-- the IRC channel: **#angr** on [freenode](https://freenode.net/)
-- opening an issue on the appropriate github repository
+- メーリングリスト： angr@lists.cs.ucsb.edu
+- IRCチャンネル： [freenode](https://freenode.net/)の**#angr**
+- 適切なgithubリポジトリのissue
 
-## Going further:
+## もっと先へ：
 
-You can read this [paper][paper], explaining some of the internals, algorithms,
-and used techniques to get a better understanding on what's going on under the
-hood.
+angrの内部構造，アルゴリズム，要素技術の一部を解説した[論文][paper]を読めば，内部で起きていることをより理解できます．
 
 [paper]: https://www.cs.ucsb.edu/~vigna/publications/2016_SP_angrSoK.pdf
