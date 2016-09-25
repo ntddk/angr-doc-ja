@@ -1,65 +1,61 @@
-# What is angr?
+# angrとは
 
-angr is a multi-architecture binary analysis platform, with the capability to perform dynamic symbolic execution (like Mayhem, KLEE, etc.) and various static analyses on binaries.
- Several challenges must be overcome to do this. 
- They are, roughly:
+angrはマルチアーキテクチャ対応のバイナリ解析プラットフォームです．動的シンボリック実行（MeyhemやKLEEのような）や多種多様な静的解析の機能を備えています．これを実現するためには，いくつかの技術的課題を克服しなければなりません．大まかに言えば：
 
-- Loading a binary into the analysis program.
-- Translating a binary into an intermediate representation (IR).
-- Translating that IR into a semantic representation (i.e., what it *does*, not just what it *is*).
-- Performing the actual analysis. This could be:
- - A partial or full-program static analysis (i.e., dependency analysis, program slicing).
- - A symbolic exploration of the program's state space (i.e., "Can we execute it until we find an overflow?").
- - Some combination of the above (i.e., "Let's execute only program slices that lead to a memory write, to find an overflow.")
+- 解析プログラムにバイナリをロードする．
+- バイナリを中間表現 (IR) に変換する．
+- IRを意味表現に変換する（言い換えれば，それが何で*ある*かだけでなく，何を*行う*か）．
+- バイナリを実際に解析する．これはたとえば：
+ - プログラムの部分または全体の静的解析（言い換えれば，依存解析，プログラムスライシング）．
+ - プログラムの状態空間に対するシンボリック探索（言い換えれば，「オーバーフローを見つけるまでプログラムを実行できるか？」）
+ - 上記の組合せ（言い換えれば，「オーバーフローを見つけるために，メモリ書き込みに関するプログラムスライスだけを実行してみよう」）．
 
-angr has components that meet all of these challenges. 
-This book will explain how each one works, and how they can all be used to accomplish your evil goals.
+angrはこれらの技術的課題に対応するコンポーネント群を擁しています．
+本書は，それぞれのコンポーネントがどのように動作し，どのようにあなたの悪だくみに貢献するか解説します．
 
-## Loading a Binary
+## バイナリのロード
 
-After angr is installed, you can load a binary for analysis.
-This process, and the angr component that powers it (called CLE) is described [here](./loading.md).
+angrのインストールが済めば，解析対象のバイナリをロードできるようになります．
+このプロセス，そしてそれを提供するangrのコンポーネント（CLEと呼ばれます）は[こちら](./loading.md)で解説されています．
 
-## Intermediate Representation
+## 中間表現
 
-angr uses an intermediate representation (specifically, VEX) to enable it to run analyses on binaries of different architectures.
-This IR is described [here](./ir.md).
+angrは中間表現（具体的にはVEX）を用いて異なるアーキテクチャのバイナリを解析できるようにします．
+このIRは[こちら](./ir.md)で解説されています．
 
-## Solver Engine
+## ソルバエンジン
 
-Constraint solving and other computational needs are provided by an angr sub-module called Claripy.
-Most users of angr will not need to know anything about Claripy, but documentation is provided in case it is needed.
-Claripy is detailed [here](./claripy.md).
+制約充足問題の解決やその他の演算処理は，Claripyと呼ばれるangrのサブモジュールによって提供されています．
+ほとんどのangrユーザーは，Claripyについて知る必要はありませんが，必要に備えてドキュメントが提供されています．
+Claripyの詳しい説明は[こちら](./claripy.md)．
 
-## Program States
+## プログラムの状態
 
-angr provides an interface to the emulated machine states.
-Understanding this is critical to successfully using angr.
-It is detailed [here](./states.md).
+angrはエミュレートされたマシンの状態へのインターフェイスを提供しています．
+angrを正しく扱うためには，これを理解することが重要です．詳しい説明は[こちら](./states.md)．
 
-## Program Paths
+## プログラムのパス
 
-Programs can be analyzed in terms of the possible *path* that execution takes through them.
-angr exposes information about what the paths execute and *do*.
-[This section](./paths.md) gives an overview of how to use this capability of angr.
+プログラムは，実行に沿う*パス*単位で解析することができます．
+angrは各パスが何を実行し，*行う*か暴きます．
+[本章](./paths.md)では，angrのパス解析機能の利用法を紹介します．
 
-## Semantic Representation
+## 意味表現
 
-A powerful feature of angr is the ability to represent basic blocks in terms of their effects on a program state.
-In other words, angr can reason about what basic blocks *do*, not just what they *are*.
-This is accomplished by a module named SimuVEX, further described [here](./simuvex.md).
+angrの強力な機能は，プログラムの状態に与える影響という観点で基本ブロックを表現する能力です．
+言い換えれば，angrは基本ブロックが何で*ある*かばかりでなく，何を*行う*か推論することができます．
+[こちら](./simuvex.md).で解説されている，SimuVEXというモジュールがこれを成し遂げます．
 
-## Symbolic Execution
+## シンボリック実行
 
-angr provides a capable symbolic execution engine.
-The interface to this engine, and how to use it, is described [here](./surveyors.md).
+angrは優れたシンボリック実行エンジンを提供します．
+このエンジンへのインターフェイス，そしてその使い方は[こちら](./surveyors.md)で解説されています．
 
-## Full-program Analysis
+## プログラム全体の解析
 
-All of the above components come together to enable complex, full-program analyses to be easily run with angr.
-The mechanism for running and writing these analyses is detailed [here](./analyses.md).
+上記すべてのコンポーネントを団結させることで，angrは複雑な，プログラム全体にまたがった解析を簡単に進めることができます．
+解析のメカニズムと，そのためのスクリプトの書き方は[こちら](./analyses.md)で解説されています．
 
-# Examples
+# 実例
 
-We've written some examples for using angr!
-You can read more [here](./examples.md).
+私たちはいくつかのangrの利用例を書きました！　[こちら](./examples.md)から読むことができます．
