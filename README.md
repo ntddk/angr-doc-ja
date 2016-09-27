@@ -2,7 +2,7 @@
 
 # 怒る (angry) ために
 
-本稿は，angrにまつわるドキュメントの集積です．
+本書は，angrにまつわるドキュメントの集積です．
 これを読めば，あなたはangrのプロとして，バイナリを思うがままに叩きのめせるようになりますよ．
 
 私たちはangrを可能な限り苦痛なく利用できるように取り組んできました――私たちの目的は，ただiPythonを起動して，少ないコマンドを入力するだけで高度なバイナリ解析技術を試せるような，ユーザーフレンドリーなバイナリ解析スイートをつくることにあるのです．
@@ -15,7 +15,7 @@
 
 angrの機能を概括的に把握するには，[トップレベルメソッド](./docs/toplevel.md)から始めるか，[概要](./docs/overview.md)を通読するとよいでしょう．
 
-検索可能な本書のHTML版は[docs.angr.io](http://ntddk.github.io/angr-doc-ja)に掲載されています．さらに，HTML
+検索可能な本書のHTML版は[ntddk.github.io/angr-doc-ja](http://ntddk.github.io/angr-doc-ja)に掲載されています．さらに，HTML
 版APIリファレンスは[angr.io/api-doc](http://angr.io/api-doc/)にあります（英語）．
 
 ## angrを引用する
