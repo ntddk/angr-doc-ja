@@ -1,13 +1,13 @@
-# Reporting Bugs
+# バグ報告
 
-If you've found something that angr isn't able to solve and appears to be a bug, please let us know!
+もしangrに解決できない問題があり，バグのような挙動を示したら，ぜひ私たちに知らせてください！
 
-1. Create a fork off of angr/binaries and angr/angr
-2. Give us a pull request with angr/binaries, with the binaries in question
-3. Give us a pull request for angr/angr, with testcases that trigger the binaries in `angr/tests/broken_x.py`, `angr/tests/broken_y.py`, etc
+1. angr/binariesとangr/angrをフォークし，
+2. 問題のバイナリを添えてangr/binariesにプルリクエストを送ってください．
+3. 問題のバイナリを読み込む`angr/tests/broken_x.py`, `angr/tests/broken_y.py`, などを添えてangr/angrにプルリクエストを送ってください．
 
-Please try to follow the testcase format that we have (so the code is in a test_blah function), that way we can very easily merge that and make the scripts run.
-An example is:
+そのときは，楽にスクリプトをマージして実行できるよう，（コードをtest_なんとか関数として切り分けできるので）下記のテストケースの形式に従っていただきたいと思います．
+例：
 
 ```python
 def test_some_broken_feature():
@@ -19,44 +19,44 @@ if __name__ == '__main__':
     test_some_broken_feature()
 ```
 
-This will *greatly* help us recreate your bug and fix it faster.
-The ideal situation is that, when the bug is fixed, your testcases passes (i.e., the assert at the end does not raise an AssertionError).
-Then, we can just fix the bug and rename `broken_x.py` to `test_x.py` and the testcase will run in our internal CI at every push, ensuring that we do not break this feature again.
+こうしていただければ，バグの再現とその修正の*著しい*迅速化が見込めます．
+理想的な状況は，バグが修正されたとき，あなたのテストケースがパスする（すなわち，末尾のassertがAssertionErrorを引き起こさない）ことです．
+そうなれば，`broken_x.py`は`test_x.py`にリネームされ，リポジトリにコードがプッシュされる度に私たちの内部CIが検証してくれるテストケースに追加されます．バグが修正されていることを保証するためです．
 
-# Developing angr
+# angrの開発
 
-These are some guidelines so that we can keep the codebase in good shape!
+コードベースをよい状態にしておくための，いくつかのガイドラインがあります！
 
-## Coding style
+## コーディングスタイル
 
-We try to get as close as the [PEP8 code convention](http://legacy.python.org/dev/peps/pep-0008/) as is reasonable without being dumb. If you use Vim, the [python-mode](https://github.com/klen/python-mode) plugin does all you need. You can also [manually configure](https://wiki.python.org/moin/Vim) vim to adopt this behavior.
+クソッタレた状況を避け，合理的なコードを保つために，私たちは[PEP8コーディング規約](http://legacy.python.org/dev/peps/pep-0008/)に準拠しようとしています．もしあなたがVimを使っているなら，[python-mode](https://github.com/klen/python-mode)プラグインがあなたの必要とするすべてを担います．もちろん[手動で設定](https://wiki.python.org/moin/Vim)しても構いません．
 
-Most importantly, please consider the following when writing code as part of angr:
+angrの一部としてコードを書くとき最も重要なのは，以下の点を考慮することです：
 
-- Try to use attribute access (see the `@property` decorator) instead of getters and setters wherever you can. This isn't Java, and attributes enable tab completion in iPython. That being said, be reasonable: attributes should be fast. A rule of thumb is that if something could require a constraint solve, it should not be an attribute.
+- どこであろうと，getterやsetterではなく属性アクセス（`@property`デコレータを参照）を利用してください．Javaじゃあるまいし．iPythonなら属性のタブ補完も効きます．とはいえ，合理的たれ：属性アクセスは高速であるべきです．経験則的に，何らかの制約解決が必要なものを属性として扱うべきではありません．
 
-- Use our `.pylintrc`. It's fairly permissive, but our CI server will fail your builds if pylint complains under those settings.
+- 私たちの用意した`.pylintrc`を利用してください．かなり寛容ではありますが，あなたのコードがpylintの要求する品質にそぐわなければ，CIサーバによるビルドは通りません．
 
-- DO NOT, under ANY circumstances, `raise Exception` or `assert False`. **Use the right exception type**. If there isn't a correct exception type, subclass the core exception of the module that you're working in (i.e., `AngrError` in angr, `SimError` in SimuVEX, etc) and raise that. We catch, and properly handle, the right types of errors in the right places, but `AssertionError` and `Exception` are not handled anywhere and force-terminate analyses.
+- どのような状況下でも絶対に`raise Exception`または`assert False`を利用しないでください．**例外の型を適切に扱ってください**．適切な例外の型がなければ，作業中のモジュール（すなわち，angrであれば`AngrError`, SimuVEXであれば`SimError`, etc）のコア例外をサブクラス化して送出します．適切な場所，適切な型の例外は適切にキャッチされ，適切にハンドルされますが，`AssertionError`と`Exception`は決してハンドルされず，解析を強制終了に追いやることになります．
 
-- Avoid tabs; use space indentation instead. Even though it's wrong, the de facto standard is 4 spaces. It is a good idea to adopt this from the beginning, as merging code that mixes both tab and space indentation is awful.
+- タブを避けてください；インデントには代わりにスペースを用いてください．たとえそれが過ちだとしても，スペース4つがデファクトスタンダードです．タブとスペースが混在したおぞましいコードをマージするよりは，最初からスペースを使った方が身のためです．
 
-- Avoid super long lines. It's okay to have longer lines, but keep in mind that long lines are harder to read and should be avoided. Let's try to stick to **120 characters**.
+- 長すぎる行の記述を避けてください．いや，別に構わないのですが，長い行にわたる記述を読むのは大変だし，一般的にやめておくべきだということを肝に銘じておいてください．**文字数は120まで**という制限にこだわってみましょう．
 
-- Avoid extremely long functions, it is often better to break them up into smaller functions.
+- クソ長い関数を避けてください．より小さな機能に分割した方がよい場合が多いのですから．
 
-- Prefer `_` to `__` for private members (so that we can access them when debugging). *You* might not think that anyone has a need to call a given function, but trust us, you're wrong.
+- （デバッグ時にアクセスできるよう）プライベートなメンバの定義には`__`よりも`_`を選んでください．*あなた*は与えられた関数を誰もが参照できなければならないとは思わないかもしれませんが，どうか私たちを信頼してください．間違っているのはあなたの方なんです．
 
-## Documentation 
+## ドキュメンテーション
 
-Document your code. Every *class definition* and *public function definition* should have some description of:
- - What it does.
- - What are the type and the meaning of the parameters.
- - What it returns.
+コードを文書化してください．すべての*クラス定義*と*パブリックな関数定義*にはいくつかの説明が必要です：
+ - 何をするか．
+ - パラメータの型と意味．
+ - 戻り値．
 
-We use [Sphinx](http://www.sphinx-doc.org/en/stable/) to generate the API documentation. Sphinx supports special [keywords](http://www.sphinx-doc.org/en/stable/domains.html#info-field-lists) to document function parameters, return values, return types etc. 
+私たちは[Sphinx](http://www.sphinx-doc.org/en/stable/)を用いてAPIドキュメンテーションを生成しています．Sphinxは関数のパラメータや戻り値，戻り値の型などを自動で文書化するための特別な[見出し語](http://www.sphinx-doc.org/en/stable/domains.html#info-field-lists)をサポートしています．
 
-Here is an example of function documentation. Ideally the parameter descriptions should be aligned vertically to make the docstrings as readable as possible. 
+関数のドキュメンテーション例を示します．そのままdocstringを読み込めるよう，パラメータの説明文は垂直に整列されている状態が理想です．
 
 ```python
 def prune(self, filter_func=None, from_stash=None, to_stash=None):
@@ -72,9 +72,8 @@ def prune(self, filter_func=None, from_stash=None, to_stash=None):
     """
  ```
 
-This format has the advantage that the function parameters are clearly identified in the generated documentation. 
-However, it can make the documentation repetitive, in some cases a textual description can be more readable. 
-Pick the format you feel is more appropriate for the functions or classes you are documenting. 
+この記法の利点は，関数のパラメータが生成されたドキュメント内で明確に区別されることです．しかしながら，この記法はドキュメントを冗長にしかねません．文章的な記述の方が読みやすい場合もあります．
+文書化しようとしている関数やクラスにより適切な形式を選んでください．
 
  ```python
  def read_bytes(self, addr, n):
@@ -83,17 +82,17 @@ Pick the format you feel is more appropriate for the functions or classes you ar
     """
  ```
  
-## Unit tests
+## ユニットテスト
 
-If you're pushing a new feature and it is not accompanied by a test case it **will be broken** in very short order. 
-Please write test cases for your stuff.
+もしプッシュしようとしている新機能にテストケースが同梱されていない場合，その機能は遠からず**壊れるでしょう**．
+自分のためにテストケースを書いてください．
 
-We have an internal CI server to run tests to check functionality and regression on each commit. 
-In order to have our server run your tests, write your tests in a format acceptable to [nosetests](https://nose.readthedocs.org/en/latest/) in a file matching `test_*.py` in the `tests` folder of the appropriate repository. 
-A test file can contain any number of functions of the form `def test_*():`. 
-Each of them will be run as a test, and if they raise any exceptions or assertions, the test fails. 
-Use the `nose.tools.assert_*` functions for better error messages.
+私たちは各コミットに対して機能テストとリグレッションテストを実施する内部CIサーバを備えています．
+サーバがあなたのテストを実施できるよう，[nosetests](https://nose.readthedocs.org/en/latest/)に準拠したテストコードを書き，適切なリポジトリの`tests`フォルダ内に`test_*.py`として保存してください．
+テストファイルは`def test_*():`形式の関数を何個でも含むことができます．
+関数はそれぞれテストとして実行され，例外またはアサーションが送出されればテストは失敗します．
+よりよいエラーメッセージのために，`nose.tools.assert_*`関数を利用してください．
 
-Look at the existing tests for examples. 
-Many of them use an alternate format where the `test_*` function is actually a generator that yields tuples of functions to call and their arguments, for easy parametrization of tests. 
-Do not add docstrings to your test functions.
+テストを書くときは既存のテストコードを参考にしてください．
+既存のコードの多くは，テストを簡単にパラメータ化するべく，yieldによって`test_*`関数から呼び出し先の関数とその引数のタプルを生成する方法を採っています．
+なおテスト関数にはdocstringを追加しないようにしてください．
