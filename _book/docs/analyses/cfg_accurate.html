@@ -1,0 +1,738 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <title>CFGAccurate · GitBook</title>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.0.0">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="backward_slice.html" />
+    
+    
+    <link rel="prev" href="../analyses.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../../">
+            
+                <a href="../../">
+            
+                    
+                    イントロダクション
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.1.1" data-path="../overview.html">
+            
+                <a href="../overview.html">
+            
+                    
+                    概要
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.2" data-path="../../INSTALL.html">
+            
+                <a href="../../INSTALL.html">
+            
+                    
+                    インストール
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.3" data-path="../../HACKING.html">
+            
+                <a href="../../HACKING.html">
+            
+                    
+                    コントリビュートするには
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.4" data-path="../../HELPWANTED.html">
+            
+                <a href="../../HELPWANTED.html">
+            
+                    
+                    コントリビュートの対象
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../toplevel.html">
+            
+                <a href="../toplevel.html">
+            
+                    
+                    トップレベルインターフェイス
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../loading.html">
+            
+                <a href="../loading.html">
+            
+                    
+                    バイナリのロード
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../ir.html">
+            
+                <a href="../ir.html">
+            
+                    
+                    中間表現
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../claripy.html">
+            
+                <a href="../claripy.html">
+            
+                    
+                    ソルバエンジン
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="../states.html">
+            
+                <a href="../states.html">
+            
+                    
+                    プログラムの状態管理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="../symbolic.html">
+            
+                <a href="../symbolic.html">
+            
+                    
+                    シンボリック実行
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.7.1" data-path="../simuvex.html">
+            
+                <a href="../simuvex.html">
+            
+                    
+                    実行エンジン
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.2" data-path="../paths.html">
+            
+                <a href="../paths.html">
+            
+                    
+                    実行の制御
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.3" data-path="../pathgroups.html">
+            
+                <a href="../pathgroups.html">
+            
+                    
+                    バルク実行 - パスグループ
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.4" data-path="../surveyors.html">
+            
+                <a href="../surveyors.html">
+            
+                    
+                    バルク実行 - サーベイヤー
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="../structured_data.html">
+            
+                <a href="../structured_data.html">
+            
+                    
+                    データ型と呼び出し規約を扱う
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="../analyses.html">
+            
+                <a href="../analyses.html">
+            
+                    
+                    解析
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter active" data-level="1.9.1" data-path="cfg_accurate.html">
+            
+                <a href="cfg_accurate.html">
+            
+                    
+                    CFGAccurate
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.2" data-path="backward_slice.html">
+            
+                <a href="backward_slice.html">
+            
+                    
+                    バックワードスライス
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10" data-path="../speed.html">
+            
+                <a href="../speed.html">
+            
+                    
+                    高速化のてびき
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11" data-path="../examples.html">
+            
+                <a href="../examples.html">
+            
+                    
+                    実例
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12" data-path="../faq.html">
+            
+                <a href="../faq.html">
+            
+                    
+                    FAQ
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13" data-path="../gotchas.html">
+            
+                <a href="../gotchas.html">
+            
+                    
+                    問題点
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.14" data-path="../../CHANGELOG.html">
+            
+                <a href="../../CHANGELOG.html">
+            
+                    
+                    更新履歴
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../.." >CFGAccurate</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="cfgaccurate">CFGAccurate</h1>
+<p>Here we describe angr&#x2019;s CFGAccurate analysis in details, as well as some important concepts like context sensitivity and Function Manager of angr.</p>
+<h2 id="general-ideas">General ideas</h2>
+<p>A basic analysis that one might carry out on a binary is a Control Flow Graph.
+A CFG is a graph with (conceptually) basic blocks as nodes and jumps/calls/rets/etc as edges.</p>
+<p>In angr, there are two types of CFG that can be generated: a fast CFG (CFGFast) and an accurate CFG (CFGAccurate).
+As their names suggested, generating a fast CFG is usually much faster than generating the accurate one.
+In general, CFGFast is what you need.
+This page discusses CFGAccurate.</p>
+<p>An accurate CFG can be constructed by doing:</p>
+<pre><code class="lang-python"><span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-keyword">import</span> angr
+<span class="hljs-comment"># load your project</span>
+<span class="hljs-meta">&gt;&gt;&gt; </span>b = angr.Project(<span class="hljs-string">&apos;/bin/true&apos;</span>, load_options={<span class="hljs-string">&apos;auto_load_libs&apos;</span>: <span class="hljs-keyword">False</span>})
+
+<span class="hljs-comment"># generate an accurate CFG</span>
+<span class="hljs-meta">&gt;&gt;&gt; </span>cfg = b.analyses.CFGAccurate(keep_state=<span class="hljs-keyword">True</span>)
+</code></pre>
+<p>Of course, there are several options for customized CFGs.</p>
+<table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>context_sensitivity_level</td>
+<td>This sets the context sensitivity level of the analysis. See the context sensitivity level section below for more information. This is 1 by default.</td>
+</tr>
+<tr>
+<td>starts</td>
+<td>A list of addresses, to use as entry points into the analysis.</td>
+</tr>
+<tr>
+<td>avoid_runs</td>
+<td>A list of addresses to ignore in the analysis.</td>
+</tr>
+<tr>
+<td>call_depth</td>
+<td>Limit the depth of the analysis to some number calls. This is useful for checking which functions a specific function can directly jump to (by setting <code>call_depth</code> to 1).</td>
+</tr>
+<tr>
+<td>initial_state</td>
+<td>An initial state can be provided to the CFG, which it will use throughout its analysis.</td>
+</tr>
+<tr>
+<td>keep_state</td>
+<td>To save memory, the state at each basic block is discarded by default. If <code>keep_state</code> is True, the state is saved in the CFGNode.</td>
+</tr>
+<tr>
+<td>enable_symbolic_back_traversal</td>
+<td>Whether to enable an intensive technique for resolving indirect jumps</td>
+</tr>
+<tr>
+<td>enable_advanced_backward_slicing</td>
+<td>Whether to enable another intensive technique for resolving direct jumps</td>
+</tr>
+<tr>
+<td>more!</td>
+<td>Examine the docstring on b.analyses.CFGAccurate for more up-to-date options</td>
+</tr>
+</tbody>
+</table>
+<h2 id="context-sensitivity-level">Context Sensitivity Level</h2>
+<p>angr constructs a CFG by executing every basic block and seeing where it goes.
+This introduces some challenges: a basic block can act differently in different <em>contexts</em>.
+For example, if a block ends in a function return, the target of that return will be different, depending on different callers of the function containing that basic block.</p>
+<p>The context sensitivity level is, conceptually, the number of such callers to keep on the callstack.
+To explain this concept, let&apos;s look at the following code:</p>
+<pre><code class="lang-c"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">error</span><span class="hljs-params">(<span class="hljs-keyword">char</span> *error)</span>
+</span>{
+    <span class="hljs-built_in">puts</span>(error);
+}
+
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">alpha</span><span class="hljs-params">()</span>
+</span>{
+    <span class="hljs-built_in">puts</span>(<span class="hljs-string">&quot;alpha&quot;</span>);
+    error(<span class="hljs-string">&quot;alpha!&quot;</span>);
+}
+
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">beta</span><span class="hljs-params">()</span>
+</span>{
+    <span class="hljs-built_in">puts</span>(<span class="hljs-string">&quot;beta&quot;</span>);
+    error(<span class="hljs-string">&quot;beta!&quot;</span>);
+}
+
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">()</span>
+</span>{
+    alpha();
+    beta();
+}
+</code></pre>
+<p>The above sample has four call chains: <code>main&gt;alpha&gt;puts</code>, <code>main&gt;alpha&gt;error&gt;puts</code> and <code>main&gt;beta&gt;puts</code>, and <code>main&gt;beta&gt;error&gt;puts</code>.
+While, in this case, angr can probably execute both call chains, this becomes unfeasible for larger binaries.
+Thus, angr executes the blocks with states limited by the context sensitivity level.
+That is, each function is re-analyzed for each unique context that it is called in.</p>
+<p>For example, the <code>puts()</code> function above will be analyzed with the following contexts, given different context sensitivity levels:</p>
+<table>
+<thead>
+<tr>
+<th>Level</th>
+<th>Meaning</th>
+<th>Contexts</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td>Callee-only</td>
+<td><code>puts</code></td>
+</tr>
+<tr>
+<td>1</td>
+<td>One caller, plus callee</td>
+<td><code>alpha&gt;puts</code> <code>beta&gt;puts</code> <code>error&gt;puts</code></td>
+</tr>
+<tr>
+<td>2</td>
+<td>Two callers, plus callee</td>
+<td><code>alpha&gt;error&gt;puts</code> <code>main&gt;alpha&gt;puts</code> <code>beta&gt;error&gt;puts</code> <code>main&gt;beta&gt;puts</code></td>
+</tr>
+<tr>
+<td>3</td>
+<td>Three callers, plus callee</td>
+<td><code>main&gt;alpha&gt;error&gt;puts</code> <code>main&gt;alpha&gt;puts</code> <code>main&gt;beta&gt;error&gt;puts</code> <code>main&gt;beta&gt;puts</code></td>
+</tr>
+</tbody>
+</table>
+<p>The upside of increasing the context sensitivity level is that more information can be gleamed from the CFG.
+For example, with context sensitivity of 1, the CFG will show that, when called from <code>alpha</code>, <code>puts</code> returns to <code>alpha</code>, when called from <code>error</code>, <code>puts</code> returns to <code>error</code>, and so forth.
+With context sensitivity of 0, the CFG simply shows that <code>puts</code> returns to <code>alpha</code>, <code>beta</code>, and <code>error</code>.
+This, specifically, is the context sensitivity level used in IDA.
+The downside of increasing the context sensitivity level is that it exponentially increases the analysis time.</p>
+<h2 id="using-the-cfg">Using the CFG</h2>
+<p>The CFG, at its core, is a <a href="https://networkx.github.io/" _target="blank">NetworkX</a> di-graph.
+This means that all of the normal NetworkX APIs are available:</p>
+<pre><code class="lang-python"><span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-keyword">print</span> <span class="hljs-string">&quot;This is the graph:&quot;</span>, cfg.graph
+<span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-keyword">print</span> <span class="hljs-string">&quot;It has %d nodes and %d edges&quot;</span> % (len(cfg.graph.nodes()), len(cfg.graph.edges()))
+</code></pre>
+<p>The nodes of the CFG graph are instances of class <code>CFGNode</code>.
+Due to context sensitivity, a given basic block can have multiple nodes in the graph (for multiple contexts).</p>
+<pre><code class="lang-python"><span class="hljs-comment"># this grabs *any* node at a given location:</span>
+<span class="hljs-meta">&gt;&gt;&gt; </span>entry_node = cfg.get_any_node(b.entry)
+
+<span class="hljs-comment"># on the other hand, this grabs all of the nodes</span>
+<span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-keyword">print</span> <span class="hljs-string">&quot;There were %d contexts for the entry block&quot;</span> % len(cfg.get_all_nodes(b.entry))
+
+<span class="hljs-comment"># if keep_state was given as True, we can also retrieve the actual SimIRSBs</span>
+<span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-keyword">print</span> <span class="hljs-string">&quot;A single SimIRSB at the entry point:&quot;</span>, cfg.get_any_irsb(b.entry)
+<span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-keyword">print</span> <span class="hljs-string">&quot;All SimIRSBs at the entry point:&quot;</span>, cfg.get_all_irsbs(b.entry)
+
+<span class="hljs-comment"># we can also look up predecessors and successors</span>
+<span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-keyword">print</span> <span class="hljs-string">&quot;Predecessors of the entry point:&quot;</span>, entry_node.predecessors
+<span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-keyword">print</span> <span class="hljs-string">&quot;Successors of the entry point:&quot;</span>, entry_node.successors
+<span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-keyword">print</span> <span class="hljs-string">&quot;Successors (and type of jump) of the entry point:&quot;</span>, [ jumpkind + <span class="hljs-string">&quot; to &quot;</span> + str(node.addr) <span class="hljs-keyword">for</span> node,jumpkind <span class="hljs-keyword">in</span> cfg.get_successors_and_jumpkind(entry_node) ]
+</code></pre>
+<h3 id="viewing-the-cfg">Viewing the CFG</h3>
+<p>Control-flow graph rendering is a hard problem.
+angr does not provide any built-in mechanism for rendering the output of a CFG analysis, and attempting to use a traditional graph rendering library, like matplotlib, will result in an unusable image.</p>
+<p>One solution for viewing angr CFGs is found in <a href="https://github.com/axt/angr-utils" _target="blank">axt&apos;s angr-utils repository</a>.</p>
+<h2 id="shared-libraries">Shared Libraries</h2>
+<p>The CFG analysis does not distinguish between code from different binary objects.
+This means that by default, it will try to analyze control flow through loaded shared libraries.
+This is almost never intended behavior, since this will extend the analysis time to several days, probably.
+To load a binary without shared libraries, add the following keyword argument to the <code>Project</code> constructor:
+<code>load_options={&apos;auto_load_libs&apos;: False}</code></p>
+<h2 id="function-manager">Function Manager</h2>
+<p>The CFG result produces an object called the <em>Function Manager</em>, accessible through <code>cfg.kb.functions</code>.
+The most common use case for this object is to access it like a dictionnary. It maps addresses to <code>Function</code> objects, which can tell you properties about a function.</p>
+<pre><code class="lang-python"><span class="hljs-meta">&gt;&gt;&gt; </span>entry_func = cfg.kb.functions[b.entry]
+</code></pre>
+<p>Functions have several important properties!</p>
+<ul>
+<li><code>entry_func.block_addrs</code> is a set of addresses at which basic blocks belonging to the function begin.</li>
+<li><code>entry_func.blocks</code> is the set of basic blocks belonging to the function, that you can explore and disassemble using capstone.</li>
+<li><code>entry_func.string_references()</code> returns a list of all the constant strings that were referred to at any point in the function.
+They are formatted as <code>(addr, string)</code> tuples, where addr is the address in the binary&apos;s data section the string lives, and string is a python string that contains the value of the string.</li>
+<li><code>entry_func.returning</code> is a boolean value signifying whether or not the function can return.
+<code>False</code> indicates that all paths do not return.</li>
+<li><code>entry_func.callable</code> is an angr Callable object referring to this function.
+You can call it like a python function with python arguments and get back an actual result (may be symbolic) as if you ran the function with those arguments!</li>
+<li><code>entry_func.transition_graph</code> is a NetworkX DiGraph describing control flow within the function itself. It resembles the control-flow graphs IDA displays on a per-function level.</li>
+<li><code>entry_func.name</code> is the name of the function.</li>
+<li><code>entry_func.has_unresolved_calls</code> and <code>entry.has_unresolved_jumps</code> have to do with detecting imprecision within the CFG.
+Sometimes, the analysis cannot detect what the possible target of an indirect call or jump could be.
+If this occurs within a function, that function will have the appropriate <code>has_unresolved_*</code> value set to <code>True</code>.</li>
+<li><code>entry_func.get_call_sites()</code> returns a list of all the addresses of basic blocks which end in calls out to other functions.</li>
+<li><code>entry_func.get_call_target(callsite_addr)</code> will, given <code>callsite_addr</code> from the list of call site addresses, return where that callsite will call out to.</li>
+<li><code>entry_func.get_call_return(callsite_addr)</code> will, given <code>callsite_addr</code> from the list of call site addresses, return where that callsite should return to.</li>
+</ul>
+<p>and many more !</p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="../analyses.html" class="navigation navigation-prev " aria-label="Previous page: 解析">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="backward_slice.html" class="navigation navigation-next " aria-label="Next page: バックワードスライス">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"CFGAccurate","level":"1.9.1","depth":2,"next":{"title":"バックワードスライス","level":"1.9.2","depth":2,"path":"docs/analyses/backward_slice.md","ref":"docs/analyses/backward_slice.md","articles":[]},"previous":{"title":"解析","level":"1.9","depth":1,"path":"docs/analyses.md","ref":"docs/analyses.md","articles":[{"title":"CFGAccurate","level":"1.9.1","depth":2,"path":"docs/analyses/cfg_accurate.md","ref":"docs/analyses/cfg_accurate.md","articles":[]},{"title":"バックワードスライス","level":"1.9.2","depth":2,"path":"docs/analyses/backward_slice.md","ref":"docs/analyses/backward_slice.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"docs/analyses/cfg_accurate.md","mtime":"2016-09-25T13:21:13.638Z","type":"markdown"},"gitbook":{"version":"3.0.0","time":"2016-09-27T21:09:58.263Z"},"basePath":"../..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../../gitbook/gitbook.js"></script>
+    <script src="../../gitbook/theme.js"></script>
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-fontsettings/buttons.js"></script>
+        
+    
+
+    </body>
+</html>
+

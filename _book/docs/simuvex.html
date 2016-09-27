@@ -1,0 +1,973 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <title>実行エンジン · GitBook</title>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.0.0">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="paths.html" />
+    
+    
+    <link rel="prev" href="symbolic.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    イントロダクション
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.1.1" data-path="overview.html">
+            
+                <a href="overview.html">
+            
+                    
+                    概要
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.2" data-path="../INSTALL.html">
+            
+                <a href="../INSTALL.html">
+            
+                    
+                    インストール
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.3" data-path="../HACKING.html">
+            
+                <a href="../HACKING.html">
+            
+                    
+                    コントリビュートするには
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.4" data-path="../HELPWANTED.html">
+            
+                <a href="../HELPWANTED.html">
+            
+                    
+                    コントリビュートの対象
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="toplevel.html">
+            
+                <a href="toplevel.html">
+            
+                    
+                    トップレベルインターフェイス
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="loading.html">
+            
+                <a href="loading.html">
+            
+                    
+                    バイナリのロード
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="ir.html">
+            
+                <a href="ir.html">
+            
+                    
+                    中間表現
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="claripy.html">
+            
+                <a href="claripy.html">
+            
+                    
+                    ソルバエンジン
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="states.html">
+            
+                <a href="states.html">
+            
+                    
+                    プログラムの状態管理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="symbolic.html">
+            
+                <a href="symbolic.html">
+            
+                    
+                    シンボリック実行
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter active" data-level="1.7.1" data-path="simuvex.html">
+            
+                <a href="simuvex.html">
+            
+                    
+                    実行エンジン
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.2" data-path="paths.html">
+            
+                <a href="paths.html">
+            
+                    
+                    実行の制御
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.3" data-path="pathgroups.html">
+            
+                <a href="pathgroups.html">
+            
+                    
+                    バルク実行 - パスグループ
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.4" data-path="surveyors.html">
+            
+                <a href="surveyors.html">
+            
+                    
+                    バルク実行 - サーベイヤー
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="structured_data.html">
+            
+                <a href="structured_data.html">
+            
+                    
+                    データ型と呼び出し規約を扱う
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="analyses.html">
+            
+                <a href="analyses.html">
+            
+                    
+                    解析
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.9.1" data-path="analyses/cfg_accurate.html">
+            
+                <a href="analyses/cfg_accurate.html">
+            
+                    
+                    CFGAccurate
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.2" data-path="analyses/backward_slice.html">
+            
+                <a href="analyses/backward_slice.html">
+            
+                    
+                    バックワードスライス
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10" data-path="speed.html">
+            
+                <a href="speed.html">
+            
+                    
+                    高速化のてびき
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11" data-path="examples.html">
+            
+                <a href="examples.html">
+            
+                    
+                    実例
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12" data-path="faq.html">
+            
+                <a href="faq.html">
+            
+                    
+                    FAQ
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13" data-path="gotchas.html">
+            
+                <a href="gotchas.html">
+            
+                    
+                    問題点
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.14" data-path="../CHANGELOG.html">
+            
+                <a href="../CHANGELOG.html">
+            
+                    
+                    更新履歴
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >実行エンジン</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="simuvex-and-bare-bones-symbolic-execution">SimuVEX and Bare-Bones Symbolic Execution</h1>
+<p>Most analyses require an understanding of what the code is <em>doing</em> (semantic meaning), not just what the code <em>is</em> (syntactic meaning).
+For this, we developed a module called SimuVEX (<a href="https://github.com/angr/simuvex" _target="blank">https://github.com/angr/simuvex</a>). SimuVEX provides a semantic understanding of what a given piece of VEX code does on a given machine state.</p>
+<p>In a nutshell, SimuVEX is a symbolic VEX emulator.
+Given a machine state and a VEX IR block, SimuVEX provides a resulting machine state (or, in the case of condition jumps, <em>several</em> resulting machine states).</p>
+<h1 id="semantic-translation">Semantic Translation</h1>
+<p>SimuVEX&apos;s ultimate goal is to provide a semantic meaning to blocks of binary code.</p>
+<p>While the IR gives us syntactic meaning (i.e., what statements the block contains), SimuVEX can provide us semantic meaning (i.e., what the block <em>does</em> to a given state).
+We&apos;ll now move on to how to do that.</p>
+<h2 id="accessing-simirsbs">Accessing SimIRSBs</h2>
+<p>We get semantic meaning by converting an IRSB into a SimIRSB.
+While the former focuses on providing a cross-architecture, programmatically-accessible representation of what a block is, the latter provides a cross-platform, programmatically-accessible representation of what a block did, given an input state.</p>
+<p><strong>Note that you will almost never need to interact with SimIRSBs directly.</strong> The higher level angr interfaces complete abstract away simuvex&apos;s pedantic execution model, but it&apos;s important to understand the way that execution happens.</p>
+<p>To create a SimIRSB directly, use the <code>sim_block(state)</code> constructor in the project factory. Here&apos;s an example.</p>
+<pre><code class="lang-python"><span class="hljs-comment"># This creates a symbolic state with execution starting at 0x400664,</span>
+<span class="hljs-comment"># and then symbolically executes the IRSB at its instruction pointer.</span>
+<span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-keyword">import</span> angr, simuvex
+<span class="hljs-meta">&gt;&gt;&gt; </span>b = angr.Project(<span class="hljs-string">&apos;examples/fauxware/fauxware&apos;</span>)
+<span class="hljs-meta">&gt;&gt;&gt; </span>state = b.factory.blank_state(addr=<span class="hljs-number">0x400664</span>)
+<span class="hljs-meta">&gt;&gt;&gt; </span>sirsb = b.factory.sim_block(state)
+
+<span class="hljs-comment"># this is the address of the first instruction in the block</span>
+<span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-keyword">assert</span> sirsb.addr == <span class="hljs-number">0x400664</span>
+</code></pre>
+<h3 id="what-happened">What happened?</h3>
+<p>Symbolic execution happened! <code>sirsb</code> is now a record of what happened during the symbolic execution of this basic block. This information is exposed in the form of SimActions. In case you hadn&apos;t noticed, everything that comes out of simuvex has &quot;Sim-&quot; on the front of its name.</p>
+<p>An IRSB has Statements, so a SimIRSB has SimStatements. Each statement has a list of SimActions recording each of its reads and writes to and from memory, registers, and temps.
+A SimAction has an associated <code>type</code> (i.e., &quot;mem&quot; for memory, &quot;reg&quot; for registers, &quot;tmp&quot; for temps), and <code>action</code> (&quot;read&quot;, &quot;write&quot;).</p>
+<pre><code class="lang-python"><span class="hljs-comment"># Print out all the actions for this block:</span>
+<span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-keyword">for</span> sstmt <span class="hljs-keyword">in</span> sirsb.statements:
+<span class="hljs-meta">... </span>    <span class="hljs-keyword">print</span> <span class="hljs-string">&apos;[+] Actions for statement %d&apos;</span> % sstmt.stmt_idx
+<span class="hljs-meta">... </span>    <span class="hljs-keyword">for</span> a <span class="hljs-keyword">in</span> sstmt.actions:
+<span class="hljs-meta">... </span>        <span class="hljs-keyword">if</span> a.type == <span class="hljs-string">&apos;mem&apos;</span>:
+<span class="hljs-meta">... </span>            <span class="hljs-keyword">print</span> <span class="hljs-string">&quot;Memory write to&quot;</span>, a.addr.ast
+<span class="hljs-meta">... </span>            <span class="hljs-keyword">print</span> <span class="hljs-string">&quot;... address depends on registers&quot;</span>, a.addr.reg_deps, <span class="hljs-string">&quot;and temps&quot;</span>, a.addr.tmp_deps
+<span class="hljs-meta">... </span>            <span class="hljs-keyword">print</span> <span class="hljs-string">&quot;... data is:&quot;</span>, a.data.ast
+<span class="hljs-meta">... </span>            <span class="hljs-keyword">print</span> <span class="hljs-string">&quot;... data depends on registers&quot;</span>, a.data.reg_deps, <span class="hljs-string">&quot;and temps&quot;</span>, a.data.tmp_deps
+<span class="hljs-meta">... </span>            <span class="hljs-keyword">if</span> a.condition <span class="hljs-keyword">is</span> <span class="hljs-keyword">not</span> <span class="hljs-keyword">None</span>:
+<span class="hljs-meta">... </span>                <span class="hljs-keyword">print</span> <span class="hljs-string">&quot;... condition is:&quot;</span>, a.condition.ast
+<span class="hljs-meta">... </span>            <span class="hljs-keyword">if</span> a.fallback <span class="hljs-keyword">is</span> <span class="hljs-keyword">not</span> <span class="hljs-keyword">None</span>:
+<span class="hljs-meta">... </span>                <span class="hljs-keyword">print</span> <span class="hljs-string">&quot;... alternate write in case of condition fail:&quot;</span>, a.fallback.ast
+<span class="hljs-meta">... </span>        <span class="hljs-keyword">elif</span> a.type == <span class="hljs-string">&apos;reg&apos;</span>:
+<span class="hljs-meta">... </span>            <span class="hljs-keyword">print</span> <span class="hljs-string">&apos;Register write to registerfile offset&apos;</span>, a.offset
+<span class="hljs-meta">... </span>            <span class="hljs-keyword">print</span> <span class="hljs-string">&quot;... data is:&quot;</span>, a.data.ast
+<span class="hljs-meta">... </span>        <span class="hljs-keyword">elif</span> a.type == <span class="hljs-string">&apos;tmp&apos;</span>:
+<span class="hljs-meta">... </span>            <span class="hljs-keyword">print</span> <span class="hljs-string">&apos;Tmp write to tmp&apos;</span>, a.tmp
+<span class="hljs-meta">... </span>            <span class="hljs-keyword">print</span> <span class="hljs-string">&quot;... data is:&quot;</span>, a.data.ast
+</code></pre>
+<h3 id="where-are-we-going">Where are we going?</h3>
+<p>For each Exit in the IRSB, there will be a new successor SimState! Each successor will be a copy of the original state you started with, plus the modifications described by the SimActions, plus the <em>constraints</em> added to the solver engine by the exit you&apos;ve taken. For boring jump exits, no constraints are added, but for conditional jumps, the successor that took the jump gets the <em>guard condition</em> of the jump exit, while the <em>default successor</em> gets the negation.</p>
+<pre><code class="lang-python"><span class="hljs-comment"># The list of successors:</span>
+<span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-keyword">for</span> succ <span class="hljs-keyword">in</span> sirsb.all_successors:
+<span class="hljs-meta">... </span>    <span class="hljs-keyword">print</span> succ
+
+<span class="hljs-comment"># The default successor, i.e. the one that runs off the end of the block:</span>
+<span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-keyword">print</span> sirsb.default_exit
+
+<span class="hljs-comment"># Any unconstrained successors, that is, successors with symbolic instruction pointers:</span>
+<span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-keyword">for</span> succ <span class="hljs-keyword">in</span> sirsb.unconstrained_successors:
+<span class="hljs-meta">... </span>    <span class="hljs-keyword">print</span> succ
+
+<span class="hljs-comment"># Any successors whose constraints contain a contradition (not necessarily a complete list):</span>
+<span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-keyword">for</span> succ <span class="hljs-keyword">in</span> sirsb.unsat_successors:
+<span class="hljs-meta">... </span>    <span class="hljs-keyword">print</span> succ
+</code></pre>
+<h2 id="simprocedures">SimProcedures</h2>
+<p>Fun fact: SimIRSBs aren&apos;t the only way to step symbolic execution forward! SimIRSBs inherit the SimRun class, which is a generic class for describing execution steps.</p>
+<p>At the moment, the only other important SimRun is the <em>SimProcedure</em>. SimProcedures are, first and foremost, <em>symbolic function summaries</em>: angr handles functions imported into the binary by executing a SimProcedure that symbolically implements the given library function, if one exists. SimProcedures are a generic enough interface to do more than this, though - they can be used to run Python code to mutate a state at any point in execution.</p>
+<p>SimProcedures are injected into angr&apos;s execution pipeline through an interface called <em>hooking</em>. The full interface is described <a href="toplevel.md#hooking">here</a>, but the most important part is the <code>Project.hook(address, procedure)</code> method. After running this, whenever execution in this project reaches <code>address</code>, instead of running the SimIRSB at that address, we run the SimProcedure specified by the <code>procedure</code> argument.</p>
+<p><code>Project.hook</code> can also take a plain python function as an argument, instead of a SimProcedure class. That function will be automatically wrapped by a SimProcedure and executed (with the current SimState) as its argument.</p>
+<p>Nobody actually calls <code>Project.factory.sim_block</code>, like in the example above. Instead, use <code>Project.factory.sim_run</code>, which has the exact same interface but will chose what kind of SimRun to create. Again, <strong>this is still a very low-level interface that you normally shouldn&apos;t have to touch while writing analyses with angr.</strong></p>
+<p>TODO: Programming SimProcedures. Cover all the kinds of control flow, inline calls, etc. If you want to program a SimProcedure now, look at <a href="https://github.com/angr/simuvex/tree/master/simuvex/procedures" _target="blank">the library of already-written ones</a>.</p>
+<h2 id="putting-it-all-together">Putting it all together</h2>
+<p>Now you have all the components necessary to do the most basic symbolic execution with angr! The below code will execute all possible paths through a binary.</p>
+<pre><code class="lang-python"><span class="hljs-comment"># Note: please don&apos;t actually do this. This will eat up all your computer&apos;s RAM and you will die.</span>
+<span class="hljs-comment"># Also there&apos;s no error handling at all!</span>
+
+states = [b.factory.entry_state()]
+<span class="hljs-keyword">while</span> len(states) &gt; <span class="hljs-number">0</span>:
+    successors = []
+    <span class="hljs-keyword">for</span> state <span class="hljs-keyword">in</span> states:
+        successors.extend(b.factory.sim_run(state).all_successors)
+    states = successors
+</code></pre>
+<h1 id="breakpoints">Breakpoints!</h1>
+<p>Like any decent execution engine, SimuVEX supports breakpoints. This is pretty cool! A point is set as follows:</p>
+<pre><code class="lang-python"><span class="hljs-comment"># get our state</span>
+<span class="hljs-meta">&gt;&gt;&gt; </span>s = b.factory.entry_state()
+
+<span class="hljs-comment"># add a breakpoint. This breakpoint will drop into ipdb right before a memory write happens.</span>
+<span class="hljs-meta">&gt;&gt;&gt; </span>s.inspect.b(<span class="hljs-string">&apos;mem_write&apos;</span>)
+
+<span class="hljs-comment"># on the other hand, we can have a breakpoint trigger right *after* a memory write happens. On top of that, we</span>
+<span class="hljs-comment"># can have a specific function get run instead of going straight to ipdb.</span>
+<span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">debug_func</span><span class="hljs-params">(state)</span>:</span>
+<span class="hljs-meta">... </span>    <span class="hljs-keyword">print</span> <span class="hljs-string">&quot;State %s is about to do a memory write!&quot;</span>
+
+<span class="hljs-meta">&gt;&gt;&gt; </span>s.inspect.b(<span class="hljs-string">&apos;mem_write&apos;</span>, when=simuvex.BP_AFTER, action=debug_func)
+
+<span class="hljs-comment"># or, you can have it drop you in an embedded ipython!</span>
+<span class="hljs-meta">&gt;&gt;&gt; </span>s.inspect.b(<span class="hljs-string">&apos;mem_write&apos;</span>, when=simuvex.BP_AFTER, action=<span class="hljs-string">&apos;ipython&apos;</span>)
+</code></pre>
+<p>There are many other places to break than a memory write. Here is the list. You can break at BP_BEFORE or BP_AFTER for each of these events.</p>
+<table>
+<thead>
+<tr>
+<th>Event type</th>
+<th>Event meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>mem_read</td>
+<td>Memory is being read.</td>
+</tr>
+<tr>
+<td>mem_write</td>
+<td>Memory is being written.</td>
+</tr>
+<tr>
+<td>reg_read</td>
+<td>A register is being read.</td>
+</tr>
+<tr>
+<td>reg_write</td>
+<td>A register is being written.</td>
+</tr>
+<tr>
+<td>tmp_read</td>
+<td>A temp is being read.</td>
+</tr>
+<tr>
+<td>tmp_write</td>
+<td>A temp is being written.</td>
+</tr>
+<tr>
+<td>expr</td>
+<td>An expression is being created (i.e., a result of an arithmetic operation or a constant in the IR).</td>
+</tr>
+<tr>
+<td>statement</td>
+<td>An IR statement is being translated.</td>
+</tr>
+<tr>
+<td>instruction</td>
+<td>A new (native) instruction is being translated.</td>
+</tr>
+<tr>
+<td>irsb</td>
+<td>A new basic block is being translated.</td>
+</tr>
+<tr>
+<td>constraints</td>
+<td>New constraints are being added to the state.</td>
+</tr>
+<tr>
+<td>exit</td>
+<td>A SimExit is being created from a SimIRSB.</td>
+</tr>
+<tr>
+<td>symbolic_variable</td>
+<td>A new symbolic variable is being created.</td>
+</tr>
+<tr>
+<td>call</td>
+<td>A call instruction is hit.</td>
+</tr>
+<tr>
+<td>address_concretization</td>
+<td>A symbolic memory access is being resolved.</td>
+</tr>
+</tbody>
+</table>
+<p>These events expose different attributes:</p>
+<table>
+<thead>
+<tr>
+<th>Event type</th>
+<th>Attribute name</th>
+<th>Attribute availability</th>
+<th>Attribute meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>mem_read</td>
+<td>mem_read_address</td>
+<td>BP_BEFORE or BP_AFTER</td>
+<td>The address at which memory is being read.</td>
+</tr>
+<tr>
+<td>mem_read</td>
+<td>mem_read_length</td>
+<td>BP_BEFORE or BP_AFTER</td>
+<td>The length of the memory read.</td>
+</tr>
+<tr>
+<td>mem_read</td>
+<td>mem_read_expr</td>
+<td>BP_AFTER</td>
+<td>The expression at that address.</td>
+</tr>
+<tr>
+<td>mem_write</td>
+<td>mem_write_address</td>
+<td>BP_BEFORE or BP_AFTER</td>
+<td>The address at which memory is being written.</td>
+</tr>
+<tr>
+<td>mem_write</td>
+<td>mem_write_length</td>
+<td>BP_BEFORE or BP_AFTER</td>
+<td>The length of the memory write.</td>
+</tr>
+<tr>
+<td>mem_write</td>
+<td>mem_write_expr</td>
+<td>BP_BEFORE or BP_AFTER</td>
+<td>The expression that is being written.</td>
+</tr>
+<tr>
+<td>reg_read</td>
+<td>reg_read_offset</td>
+<td>BP_BEFORE or BP_AFTER</td>
+<td>The offset of the register being read.</td>
+</tr>
+<tr>
+<td>reg_read</td>
+<td>reg_read_length</td>
+<td>BP_BEFORE or BP_AFTER</td>
+<td>The length of the register read.</td>
+</tr>
+<tr>
+<td>reg_read</td>
+<td>reg_read_expr</td>
+<td>BP_AFTER</td>
+<td>The expression in the register.</td>
+</tr>
+<tr>
+<td>reg_write</td>
+<td>reg_write_offset</td>
+<td>BP_BEFORE or BP_AFTER</td>
+<td>The offset of the register being written.</td>
+</tr>
+<tr>
+<td>reg_write</td>
+<td>reg_write_length</td>
+<td>BP_BEFORE or BP_AFTER</td>
+<td>The length of the register write.</td>
+</tr>
+<tr>
+<td>reg_write</td>
+<td>reg_write_expr</td>
+<td>BP_BEFORE or BP_AFTER</td>
+<td>The expression that is being written.</td>
+</tr>
+<tr>
+<td>tmp_read</td>
+<td>tmp_read_num</td>
+<td>BP_BEFORE or BP_AFTER</td>
+<td>The number of the temp being read.</td>
+</tr>
+<tr>
+<td>tmp_read</td>
+<td>tmp_read_expr</td>
+<td>BP_AFTER</td>
+<td>The expression of the temp.</td>
+</tr>
+<tr>
+<td>tmp_write</td>
+<td>tmp_write_num</td>
+<td>BP_BEFORE or BP_AFTER</td>
+<td>The number of the temp written.</td>
+</tr>
+<tr>
+<td>tmp_write</td>
+<td>tmp_write_expr</td>
+<td>BP_AFTER</td>
+<td>The expression written to the temp.</td>
+</tr>
+<tr>
+<td>expr</td>
+<td>expr</td>
+<td>BP_AFTER</td>
+<td>The value of the expression.</td>
+</tr>
+<tr>
+<td>statement</td>
+<td>statement</td>
+<td>BP_BEFORE or BP_AFTER</td>
+<td>The index of the IR statement (in the IR basic block).</td>
+</tr>
+<tr>
+<td>instruction</td>
+<td>instruction</td>
+<td>BP_BEFORE or BP_AFTER</td>
+<td>The address of the native instruction.</td>
+</tr>
+<tr>
+<td>irsb</td>
+<td>address</td>
+<td>BP_BEFORE or BP_AFTER</td>
+<td>The address of the basic block.</td>
+</tr>
+<tr>
+<td>constraints</td>
+<td>added_constrints</td>
+<td>BP_BEFORE or BP_AFTER</td>
+<td>The list of contraint expressions being added.</td>
+</tr>
+<tr>
+<td>call</td>
+<td>function_name</td>
+<td>BP_BEFORE or BP_AFTER</td>
+<td>The name of the function being called.</td>
+</tr>
+<tr>
+<td>exit</td>
+<td>exit_target</td>
+<td>BP_BEFORE or BP_AFTER</td>
+<td>The expression representing the target of a SimExit.</td>
+</tr>
+<tr>
+<td>exit</td>
+<td>exit_guard</td>
+<td>BP_BEFORE or BP_AFTER</td>
+<td>The expression representing the guard of a SimExit.</td>
+</tr>
+<tr>
+<td>exit</td>
+<td>jumpkind</td>
+<td>BP_BEFORE or BP_AFTER</td>
+<td>The expression representing the kind of SimExit.</td>
+</tr>
+<tr>
+<td>symbolic_variable</td>
+<td>symbolic_name</td>
+<td>BP_BEFORE or BP_AFTER</td>
+<td>The name of the symbolic variable being created. The solver engine might modify this name (by appending a unique ID and length). Check the symbolic_expr for the final symbolic expression.</td>
+</tr>
+<tr>
+<td>symbolic_variable</td>
+<td>symbolic_size</td>
+<td>BP_BEFORE or BP_AFTER</td>
+<td>The size of the symbolic variable being created.</td>
+</tr>
+<tr>
+<td>symbolic_variable</td>
+<td>symbolic_expr</td>
+<td>BP_AFTER</td>
+<td>The expression representing the new symbolic variable.</td>
+</tr>
+<tr>
+<td>address_concretization</td>
+<td>address_concretization_strategy</td>
+<td>BP_BEFORE or BP_AFTER</td>
+<td>The SimConcretizationStrategy being used to resolve the address. This can be modified by the breakpoint handler to change the strategy that will be applied. If your breakpoint handler sets this to None, this strategy will be skipped.</td>
+</tr>
+<tr>
+<td>address_concretization</td>
+<td>address_concretization_action</td>
+<td>BP_BEFORE or BP_AFTER</td>
+<td>The SimAction object being used to record the memory action.</td>
+</tr>
+<tr>
+<td>address_concretization</td>
+<td>address_concretization_memory</td>
+<td>BP_BEFORE or BP_AFTER</td>
+<td>The SimMemory object on which the action was taken.</td>
+</tr>
+<tr>
+<td>address_concretization</td>
+<td>address_concretization_expr</td>
+<td>BP_BEFORE or BP_AFTER</td>
+<td>The AST representing the memory index being resolved. The breakpoint handler can modify this to affect the address being resolved.</td>
+</tr>
+<tr>
+<td>address_concretization</td>
+<td>address_concretization_add_constraints</td>
+<td>BP_BEFORE or BP_AFTER</td>
+<td>Whether or not constraints should/will be added for this read.</td>
+</tr>
+<tr>
+<td>address_concretization</td>
+<td>address_concretization_result</td>
+<td>BP_AFTER</td>
+<td>The list of resolved memory addresses (integers). The breakpoint handler can overwrite these to effect a different resolution result.</td>
+</tr>
+</tbody>
+</table>
+<p>These attributes can be accessed as members of <code>state.inspect</code> during the appropriate breakpoint callback to access the appropriate values.
+You can even modify these value to modify further uses of the values!</p>
+<pre><code class="lang-python"><span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">track_reads</span><span class="hljs-params">(state)</span>:</span>
+<span class="hljs-meta">... </span>    <span class="hljs-keyword">print</span> <span class="hljs-string">&apos;Read&apos;</span>, state.inspect.mem_read_expr, <span class="hljs-string">&apos;from&apos;</span>, state.inspect.mem_read_address
+...
+<span class="hljs-meta">&gt;&gt;&gt; </span>s.inspect.b(<span class="hljs-string">&apos;mem_read&apos;</span>, when=simuvex.BP_AFTER, action=track_reads)
+</code></pre>
+<p>Additionally, each of these properties can be used as a keyword argument to <code>inspect.b</code> to make the breakpoint conditional:</p>
+<pre><code class="lang-python"><span class="hljs-comment"># This will break before a memory write if 0x1000 is a possible value of its target expression</span>
+<span class="hljs-meta">&gt;&gt;&gt; </span>s.inspect.b(<span class="hljs-string">&apos;mem_write&apos;</span>, mem_write_address=<span class="hljs-number">0x1000</span>)
+
+<span class="hljs-comment"># This will break before a memory write if 0x1000 is the *only* value of its target expression</span>
+<span class="hljs-meta">&gt;&gt;&gt; </span>s.inspect.b(<span class="hljs-string">&apos;mem_write&apos;</span>, mem_write_address=<span class="hljs-number">0x1000</span>, mem_write_address_unique=<span class="hljs-keyword">True</span>)
+
+<span class="hljs-comment"># This will break after instruction 0x8000, but only 0x1000 is a possible value of the last expression that was read from memory</span>
+<span class="hljs-meta">&gt;&gt;&gt; </span>s.inspect.b(<span class="hljs-string">&apos;instruction&apos;</span>, when=simuvex.BP_AFTER, instruction=<span class="hljs-number">0x8000</span>, mem_read_expr=<span class="hljs-number">0x1000</span>)
+</code></pre>
+<p>Cool stuff! In fact, we can even specify a function as a condition:</p>
+<pre><code class="lang-python"><span class="hljs-comment"># this is a complex condition that could do anything! In this case, it makes sure that RAX is 0x41414141 and</span>
+<span class="hljs-comment"># that the basic block starting at 0x8004 was executed sometime in this path&apos;s history</span>
+<span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">cond</span><span class="hljs-params">(state)</span>:</span>
+<span class="hljs-meta">... </span>    <span class="hljs-keyword">return</span> state.any_str(state.regs.rax) == <span class="hljs-string">&apos;AAAA&apos;</span> <span class="hljs-keyword">and</span> <span class="hljs-number">0x8004</span> <span class="hljs-keyword">in</span> state.inspect.backtrace
+
+<span class="hljs-meta">&gt;&gt;&gt; </span>s.inspect.b(<span class="hljs-string">&apos;mem_write&apos;</span>, condition=cond)
+</code></pre>
+<p>That is some cool stuff!</p>
+<h1 id="symbolic-memory-indexing">Symbolic memory indexing</h1>
+<p>SimuVEX supports <em>symbolic memory addressing</em>, meaning that offsets into memory may be symbolic.
+Our implementation of this is inspired by &quot;Mayhem&quot;.</p>
+<p>This resolution behavior is governed by <em>concretization strategies</em>, which are subclasses of <code>simuvex.concretization_strategies.SimConcretizationStrategy</code>.
+Concretization strategies for reads are set in <code>state.memory.read_strategies</code> and for writes in <code>state.memory.write_strategies</code>.
+These strategies are called, in order, until one of them is able to resolve addresses for the symbolic index.
+By setting your own concretization managers (or through the use of SimInspect <code>address_concretization</code> breakpoints, described above), you can change the way SimuVEX resolves symbolic addresses.</p>
+<p><em>TODO: elaborate</em></p>
+<h1 id="simuvex-options">SimuVEX Options</h1>
+<p>SimuVEX is extremely customizable through the use of <em>state options</em>, a set of constants stored in <code>state.options</code>.
+These options are documented in the <a href="https://github.com/angr/simuvex/blob/master/simuvex/s_options.py" _target="blank">source code</a>.</p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="symbolic.html" class="navigation navigation-prev " aria-label="Previous page: シンボリック実行">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="paths.html" class="navigation navigation-next " aria-label="Next page: 実行の制御">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"実行エンジン","level":"1.7.1","depth":2,"next":{"title":"実行の制御","level":"1.7.2","depth":2,"path":"docs/paths.md","ref":"docs/paths.md","articles":[]},"previous":{"title":"シンボリック実行","level":"1.7","depth":1,"path":"docs/symbolic.md","ref":"docs/symbolic.md","articles":[{"title":"実行エンジン","level":"1.7.1","depth":2,"path":"docs/simuvex.md","ref":"docs/simuvex.md","articles":[]},{"title":"実行の制御","level":"1.7.2","depth":2,"path":"docs/paths.md","ref":"docs/paths.md","articles":[]},{"title":"バルク実行 - パスグループ","level":"1.7.3","depth":2,"path":"docs/pathgroups.md","ref":"docs/pathgroups.md","articles":[]},{"title":"バルク実行 - サーベイヤー","level":"1.7.4","depth":2,"path":"docs/surveyors.md","ref":"docs/surveyors.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"docs/simuvex.md","mtime":"2016-09-25T13:21:13.656Z","type":"markdown"},"gitbook":{"version":"3.0.0","time":"2016-09-27T21:09:58.263Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/buttons.js"></script>
+        
+    
+
+    </body>
+</html>
+

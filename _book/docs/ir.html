@@ -1,0 +1,711 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <title>中間表現 · GitBook</title>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.0.0">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="claripy.html" />
+    
+    
+    <link rel="prev" href="loading.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    イントロダクション
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.1.1" data-path="overview.html">
+            
+                <a href="overview.html">
+            
+                    
+                    概要
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.2" data-path="../INSTALL.html">
+            
+                <a href="../INSTALL.html">
+            
+                    
+                    インストール
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.3" data-path="../HACKING.html">
+            
+                <a href="../HACKING.html">
+            
+                    
+                    コントリビュートするには
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.4" data-path="../HELPWANTED.html">
+            
+                <a href="../HELPWANTED.html">
+            
+                    
+                    コントリビュートの対象
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="toplevel.html">
+            
+                <a href="toplevel.html">
+            
+                    
+                    トップレベルインターフェイス
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="loading.html">
+            
+                <a href="loading.html">
+            
+                    
+                    バイナリのロード
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.4" data-path="ir.html">
+            
+                <a href="ir.html">
+            
+                    
+                    中間表現
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="claripy.html">
+            
+                <a href="claripy.html">
+            
+                    
+                    ソルバエンジン
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="states.html">
+            
+                <a href="states.html">
+            
+                    
+                    プログラムの状態管理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="symbolic.html">
+            
+                <a href="symbolic.html">
+            
+                    
+                    シンボリック実行
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.7.1" data-path="simuvex.html">
+            
+                <a href="simuvex.html">
+            
+                    
+                    実行エンジン
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.2" data-path="paths.html">
+            
+                <a href="paths.html">
+            
+                    
+                    実行の制御
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.3" data-path="pathgroups.html">
+            
+                <a href="pathgroups.html">
+            
+                    
+                    バルク実行 - パスグループ
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.4" data-path="surveyors.html">
+            
+                <a href="surveyors.html">
+            
+                    
+                    バルク実行 - サーベイヤー
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="structured_data.html">
+            
+                <a href="structured_data.html">
+            
+                    
+                    データ型と呼び出し規約を扱う
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="analyses.html">
+            
+                <a href="analyses.html">
+            
+                    
+                    解析
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.9.1" data-path="analyses/cfg_accurate.html">
+            
+                <a href="analyses/cfg_accurate.html">
+            
+                    
+                    CFGAccurate
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.2" data-path="analyses/backward_slice.html">
+            
+                <a href="analyses/backward_slice.html">
+            
+                    
+                    バックワードスライス
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10" data-path="speed.html">
+            
+                <a href="speed.html">
+            
+                    
+                    高速化のてびき
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11" data-path="examples.html">
+            
+                <a href="examples.html">
+            
+                    
+                    実例
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12" data-path="faq.html">
+            
+                <a href="faq.html">
+            
+                    
+                    FAQ
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13" data-path="gotchas.html">
+            
+                <a href="gotchas.html">
+            
+                    
+                    問題点
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.14" data-path="../CHANGELOG.html">
+            
+                <a href="../CHANGELOG.html">
+            
+                    
+                    更新履歴
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >中間表現</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="intermediate-representation">Intermediate Representation</h1>
+<p>Because angr deals with widely diverse architectures, it must carry out its analysis on an intermediate representation. We use Valgrind&apos;s IR, &quot;VEX&quot;, for this. The VEX IR abstracts away several architecture differences when dealing with different architectures, allowing a single analysis to be run on all of them:</p>
+<ul>
+<li><strong>Register names.</strong> The quantity and names of registers differ between architectures, but modern CPU designs hold to a common theme: each CPU contains several general purpose registers, a register to hold the stack pointer, a set of registers to store condition flags, and so forth. The IR provides a consistent, abstracted interface to registers on different platforms. Specifically, VEX models the registers as a separate memory space, with integer offsets (e.g., AMD64&apos;s <code>rax</code> is stored starting at address 16 in this memory space).</li>
+<li><strong>Memory access.</strong> Different architectures access memory in different ways. For example, ARM can access memory in both little-endian and big-endian modes. The IR must abstracts away these differences.</li>
+<li><strong>Memory segmentation.</strong> Some architectures, such as x86, support memory segmentation through the use of special segment registers. The IR understands such memory access mechanisms.</li>
+<li><strong>Instruction side-effects.</strong> Most instructions have side-effects. For example, most operations in Thumb mode on ARM update the condition flags, and stack push/pop instructions update the stack pointer. Tracking these side-effects in an <em>ad hoc</em> manner in the analysis would be crazy, so the IR makes these effects explicit.</li>
+</ul>
+<p>There are lots of choices for an IR. We use VEX, since the uplifting of binary code into VEX is quite well supported.
+VEX is an architecture-agnostic, side-effects-free representation of a number of target machine languages.
+It abstracts machine code into a representation designed to make program analysis easier.
+This representation has four main classes of objects:</p>
+<ul>
+<li><strong>Expressions.</strong> IR Expressions represent a calculated or constant value. This includes memory loads, register reads, and results of arithmetic operations.</li>
+<li><strong>Operations.</strong> IR Operations describe a <em>modification</em> of IR Expressions. This includes integer arithmetic, floating-point arithmetic, bit operations, and so forth. An IR Operation applied to IR Expressions yields an IR Expression as a result.</li>
+<li><strong>Temporary variables.</strong> VEX uses temporary variables as internal registers: IR Expressions are stored in temporary variables between use. The content of a temporary variable can be retrieved using an IR Expression. These temporaries are numbered, starting at <code>t0</code>. These temporaries are strongly typed (e.g., &quot;64-bit integer&quot; or &quot;32-bit float&quot;).</li>
+<li><strong>Statements.</strong> IR Statements model changes in the state of the target machine, such as the effect of memory stores and register writes. IR Statements use IR Expressions for values they may need. For example, a memory store <em>IR Statement</em> uses an <em>IR Expression</em> for the target address of the write, and another <em>IR Expression</em> for the content.</li>
+<li><strong>Blocks.</strong> An IR Block is a collection of IR Statements, representing an extended basic block (termed &quot;IR Super Block&quot; or &quot;IRSB&quot;) in the target architecture. A block can have several exits. For conditional exits from the middle of a basic block, a special <em>Exit</em> IR Statement is used. An IR Expression is used to represent the target of the unconditional exit at the end of the block.</li>
+</ul>
+<p>VEX IR is actually quite well documented in the <code>libvex_ir.h</code> file (<a href="https://github.com/angr/vex/blob/master/pub/libvex_ir.h" _target="blank">https://github.com/angr/vex/blob/master/pub/libvex_ir.h</a>) in the VEX repository. For the lazy, we&apos;ll detail some parts of VEX that you&apos;ll likely interact with fairly frequently. To begin with, here are some IR Expressions:</p>
+<table>
+<thead>
+<tr>
+<th>IR Expression</th>
+<th>Evaluated Value</th>
+<th>VEX Output Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Constant</td>
+<td>A constant value.</td>
+<td>0x4:I32</td>
+</tr>
+<tr>
+<td>Read Temp</td>
+<td>The value stored in a VEX temporary variable.</td>
+<td>RdTmp(t10)</td>
+</tr>
+<tr>
+<td>Get Register</td>
+<td>The value stored in a register.</td>
+<td>GET:I32(16)</td>
+</tr>
+<tr>
+<td>Load Memory</td>
+<td>The value stored at a memory address, with the address specified by another IR Expression.</td>
+<td>LDle:I32 / LDbe:I64</td>
+</tr>
+<tr>
+<td>Operation</td>
+<td>A result of a specified IR Operation, applied to specified IR Expression arguments.</td>
+<td>Add32</td>
+</tr>
+<tr>
+<td>If-Then-Else</td>
+<td>If a given IR Expression evaluates to 0, return one IR Expression. Otherwise, return another.</td>
+<td>ITE</td>
+</tr>
+<tr>
+<td>Helper Function</td>
+<td>VEX uses C helper functions for certain operations, such as computing the conditional flags registers of certain architectures. These functions return IR Expressions.</td>
+<td>function_name()</td>
+</tr>
+</tbody>
+</table>
+<p>These expressions are then, in turn, used in IR Statements. Here are some common ones:</p>
+<table>
+<thead>
+<tr>
+<th>IR Statement</th>
+<th>Meaning</th>
+<th>VEX Output Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Write Temp</td>
+<td>Set a VEX temporary variable to the value of the given IR Expression.</td>
+<td>WrTmp(t1) = (IR Expression)</td>
+</tr>
+<tr>
+<td>Put Register</td>
+<td>Update a register with the value of the given IR Expression.</td>
+<td>PUT(16) = (IR Expression)</td>
+</tr>
+<tr>
+<td>Store Memory</td>
+<td>Update a location in memory, given as an IR Expression, with a value, also given as an IR Expression.</td>
+<td>STle(0x1000) = (IR Expression)</td>
+</tr>
+<tr>
+<td>Exit</td>
+<td>A conditional exit from a basic block, with the jump target specified by an IR Expression. The condition is specified by an IR Expression.</td>
+<td>if (condition) goto (Boring) 0x4000A00:I32</td>
+</tr>
+</tbody>
+</table>
+<p>An example of an IR translation, on ARM, is produced below. In the example, the subtraction operation is translated into a single IR block comprising 5 IR Statements, each of which contains at least one IR Expression (although, in real life, an IR block would typically consist of more than one instruction). Register names are translated into numerical indices given to the <em>GET</em> Expression and <em>PUT</em> Statement.
+The astute reader will observe that the actual subtraction is modeled by the first 4 IR Statements of the block, and the incrementing of the program counter to point to the next instruction (which, in this case, is located at <code>0x59FC8</code>) is modeled by the last statement.</p>
+<p>The following ARM instruction:</p>
+<pre><code>subs R2, R2, #8
+</code></pre><p>Becomes this VEX IR:</p>
+<pre><code>t0 = GET:I32(16)
+t1 = 0x8:I32
+t3 = Sub32(t0,t1)
+PUT(16) = t3
+PUT(68) = 0x59FC8:I32
+</code></pre><p>Now that you understand VEX, you can actually play with some VEX in angr: We use a library called PyVEX (<a href="https://github.com/angr/pyvex" _target="blank">https://github.com/angr/pyvex</a>) that exposes VEX into Python. In addition, PyVEX implements its own pretty-printing so that it can show register names instead of register offsets in PUT and GET instructions.</p>
+<p>PyVEX is accessable through angr through the <code>Project.factory.block</code> interface. There are many different representations you could use to access syntactic properties of a block of code, but they all have in common the trait of analyzing a particular sequence of bytes. Through the <code>factory.block</code> constructor, you get a <code>Block</code> object that can be easily turned into several different representations. Try <code>.vex</code> for a PyVEX IRSB, or <code>.capstone</code> for a Capstone block.</p>
+<p>Let&apos;s play with PyVEX:</p>
+<pre><code class="lang-python"><span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-keyword">import</span> angr
+
+<span class="hljs-comment"># load the program binary</span>
+<span class="hljs-meta">&gt;&gt;&gt; </span>b = angr.Project(<span class="hljs-string">&quot;/bin/true&quot;</span>)
+
+<span class="hljs-comment"># translate the starting basic block</span>
+<span class="hljs-meta">&gt;&gt;&gt; </span>irsb = b.factory.block(b.entry).vex
+<span class="hljs-meta">&gt;&gt;&gt; </span>irsb.pp()
+
+<span class="hljs-comment"># translate a basic block starting at an address</span>
+<span class="hljs-meta">&gt;&gt;&gt; </span>irsb = b.factory.block(<span class="hljs-number">0x401340</span>).vex
+<span class="hljs-meta">&gt;&gt;&gt; </span>irsb.pp()
+
+<span class="hljs-comment"># this is the IR Expression of the jump target of the unconditional exit at the end of the basic block</span>
+<span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-keyword">print</span> irsb.next
+
+<span class="hljs-comment"># this is the type of the unconditional exit (e.g., a call, ret, syscall, etc)</span>
+<span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-keyword">print</span> irsb.jumpkind
+
+<span class="hljs-comment"># you can also pretty-print it</span>
+<span class="hljs-meta">&gt;&gt;&gt; </span>irsb.next.pp()
+
+<span class="hljs-comment"># iterate through each statement and print all the statements</span>
+<span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-keyword">for</span> stmt <span class="hljs-keyword">in</span> irsb.statements:
+<span class="hljs-meta">... </span>    stmt.pp()
+
+<span class="hljs-comment"># pretty-print the IR expression representing the data, and the *type* of that IR expression written by every store statement</span>
+<span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-keyword">import</span> pyvex
+<span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-keyword">for</span> stmt <span class="hljs-keyword">in</span> irsb.statements:
+<span class="hljs-meta">... </span>    <span class="hljs-keyword">if</span> isinstance(stmt, pyvex.IRStmt.Store):
+<span class="hljs-meta">... </span>        <span class="hljs-keyword">print</span> <span class="hljs-string">&quot;Data:&quot;</span>,
+<span class="hljs-meta">... </span>        stmt.data.pp()
+<span class="hljs-meta">... </span>        <span class="hljs-keyword">print</span> <span class="hljs-string">&quot;&quot;</span>
+<span class="hljs-meta">... </span>        <span class="hljs-keyword">print</span> <span class="hljs-string">&quot;Type:&quot;</span>,
+<span class="hljs-meta">... </span>        <span class="hljs-keyword">print</span> stmt.data.result_type
+<span class="hljs-meta">... </span>        <span class="hljs-keyword">print</span> <span class="hljs-string">&quot;&quot;</span>
+
+<span class="hljs-comment"># pretty-print the condition and jump target of every conditional exit from the basic block</span>
+<span class="hljs-meta">... </span><span class="hljs-keyword">for</span> stmt <span class="hljs-keyword">in</span> irsb.statements:
+<span class="hljs-meta">... </span>    <span class="hljs-keyword">if</span> isinstance(stmt, pyvex.IRStmt.Exit):
+<span class="hljs-meta">... </span>        <span class="hljs-keyword">print</span> <span class="hljs-string">&quot;Condition:&quot;</span>,
+<span class="hljs-meta">... </span>        stmt.guard.pp()
+<span class="hljs-meta">... </span>        <span class="hljs-keyword">print</span> <span class="hljs-string">&quot;&quot;</span>
+<span class="hljs-meta">... </span>        <span class="hljs-keyword">print</span> <span class="hljs-string">&quot;Target:&quot;</span>,
+<span class="hljs-meta">... </span>        stmt.dst.pp()
+<span class="hljs-meta">... </span>        <span class="hljs-keyword">print</span> <span class="hljs-string">&quot;&quot;</span>
+
+<span class="hljs-comment"># these are the types of every temp in the IRSB</span>
+<span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-keyword">print</span> irsb.tyenv.types
+
+<span class="hljs-comment"># here is one way to get the type of temp 0</span>
+<span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-keyword">print</span> irsb.tyenv.types[<span class="hljs-number">0</span>]
+</code></pre>
+<p>Keep in mind that this is a <em>syntactic</em> respresentation of a basic block. That is, it&apos;ll tell you what the block means, but you don&apos;t have any context to say, for example, what <em>actual</em> data is written by a store instruction. We&apos;ll get to that next.</p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="loading.html" class="navigation navigation-prev " aria-label="Previous page: バイナリのロード">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="claripy.html" class="navigation navigation-next " aria-label="Next page: ソルバエンジン">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"中間表現","level":"1.4","depth":1,"next":{"title":"ソルバエンジン","level":"1.5","depth":1,"path":"docs/claripy.md","ref":"docs/claripy.md","articles":[]},"previous":{"title":"バイナリのロード","level":"1.3","depth":1,"path":"docs/loading.md","ref":"docs/loading.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"docs/ir.md","mtime":"2016-09-25T13:21:13.651Z","type":"markdown"},"gitbook":{"version":"3.0.0","time":"2016-09-27T21:09:58.263Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/buttons.js"></script>
+        
+    
+
+    </body>
+</html>
+

@@ -1,0 +1,777 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <title>プログラムの状態管理 · GitBook</title>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.0.0">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="symbolic.html" />
+    
+    
+    <link rel="prev" href="claripy.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    イントロダクション
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.1.1" data-path="overview.html">
+            
+                <a href="overview.html">
+            
+                    
+                    概要
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.2" data-path="../INSTALL.html">
+            
+                <a href="../INSTALL.html">
+            
+                    
+                    インストール
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.3" data-path="../HACKING.html">
+            
+                <a href="../HACKING.html">
+            
+                    
+                    コントリビュートするには
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.4" data-path="../HELPWANTED.html">
+            
+                <a href="../HELPWANTED.html">
+            
+                    
+                    コントリビュートの対象
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="toplevel.html">
+            
+                <a href="toplevel.html">
+            
+                    
+                    トップレベルインターフェイス
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="loading.html">
+            
+                <a href="loading.html">
+            
+                    
+                    バイナリのロード
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="ir.html">
+            
+                <a href="ir.html">
+            
+                    
+                    中間表現
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="claripy.html">
+            
+                <a href="claripy.html">
+            
+                    
+                    ソルバエンジン
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.6" data-path="states.html">
+            
+                <a href="states.html">
+            
+                    
+                    プログラムの状態管理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="symbolic.html">
+            
+                <a href="symbolic.html">
+            
+                    
+                    シンボリック実行
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.7.1" data-path="simuvex.html">
+            
+                <a href="simuvex.html">
+            
+                    
+                    実行エンジン
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.2" data-path="paths.html">
+            
+                <a href="paths.html">
+            
+                    
+                    実行の制御
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.3" data-path="pathgroups.html">
+            
+                <a href="pathgroups.html">
+            
+                    
+                    バルク実行 - パスグループ
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.4" data-path="surveyors.html">
+            
+                <a href="surveyors.html">
+            
+                    
+                    バルク実行 - サーベイヤー
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="structured_data.html">
+            
+                <a href="structured_data.html">
+            
+                    
+                    データ型と呼び出し規約を扱う
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="analyses.html">
+            
+                <a href="analyses.html">
+            
+                    
+                    解析
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.9.1" data-path="analyses/cfg_accurate.html">
+            
+                <a href="analyses/cfg_accurate.html">
+            
+                    
+                    CFGAccurate
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.2" data-path="analyses/backward_slice.html">
+            
+                <a href="analyses/backward_slice.html">
+            
+                    
+                    バックワードスライス
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10" data-path="speed.html">
+            
+                <a href="speed.html">
+            
+                    
+                    高速化のてびき
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11" data-path="examples.html">
+            
+                <a href="examples.html">
+            
+                    
+                    実例
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12" data-path="faq.html">
+            
+                <a href="faq.html">
+            
+                    
+                    FAQ
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13" data-path="gotchas.html">
+            
+                <a href="gotchas.html">
+            
+                    
+                    問題点
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.14" data-path="../CHANGELOG.html">
+            
+                <a href="../CHANGELOG.html">
+            
+                    
+                    更新履歴
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >プログラムの状態管理</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="machine-state---memory-registers-and-so-on">Machine State - memory, registers, and so on</h1>
+<p>angr (actually, a submodule of angr, called SimuVEX) tracks machine states in a <code>SimState</code> object.
+This object tracks concrete and/or symbolic values for the machine&apos;s memory, registers, along with various other information, such as open files.
+You can get a <code>SimState</code> by using one of a number of convenient constructors in <code>Project.factory</code>.
+The different basic states you can construct are described <a href="toplevel.html">here</a>.</p>
+<pre><code class="lang-python"><span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-keyword">import</span> angr, simuvex
+<span class="hljs-meta">&gt;&gt;&gt; </span>b = angr.Project(<span class="hljs-string">&apos;/bin/true&apos;</span>)
+
+<span class="hljs-comment"># let&apos;s get a state at the program entry point:</span>
+<span class="hljs-meta">&gt;&gt;&gt; </span>s = b.factory.entry_state()
+
+<span class="hljs-comment"># we can access the memory of the state here</span>
+<span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-keyword">print</span> <span class="hljs-string">&quot;The first 5 bytes of the binary are:&quot;</span>, s.memory.load(b.loader.min_addr(), <span class="hljs-number">5</span>)
+
+<span class="hljs-comment"># and the registers, of course</span>
+<span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-keyword">print</span> <span class="hljs-string">&quot;The stack pointer starts out as:&quot;</span>, s.regs.sp
+<span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-keyword">print</span> <span class="hljs-string">&quot;The instruction pointer starts out as:&quot;</span>, s.regs.ip
+
+<span class="hljs-comment"># and the temps, although these are currently empty</span>
+<span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-comment"># print &quot;This will throw an exception because there is no VEX temp t0, yet:&quot;, s.scratch.tmp_expr(0)</span>
+</code></pre>
+<h2 id="accessing-data">Accessing Data</h2>
+<p>The data that&apos;s stored in the state (i.e., data in registers, memory, temps, etc) is stored as an internal <em>expression</em>. This exposes a single interface to concrete (i.e., <code>0x41414141</code>) and symbolic (i.e., &quot;whatever the user might input on stdin&quot;) expressions. In fact, this is the core of what enables angr to analyze binaries <em>symbolically</em>. However, this complicates matters by not exposing the actual <em>value</em>, if it&apos;s concrete, directly. For example, if you try the above examples, you will see that the type that is printed is a <a href="claripy.html">claripy AST</a>, which is the internal expression representation. For now, you might want to know how to get the actual values out of these expressions.</p>
+<pre><code class="lang-python"><span class="hljs-comment"># get the integer value of the content of rax:</span>
+<span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-keyword">print</span> s.se.any_int(s.regs.rax)
+
+<span class="hljs-comment"># or, the string value of the 10 bytes stored at 0x1000</span>
+<span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-keyword">print</span> s.se.any_str(s.memory.load(<span class="hljs-number">0x1000</span>, <span class="hljs-number">10</span>))
+
+<span class="hljs-comment"># get the value of the 4 bytes stored at 0x2000, i.e. a little-endian int</span>
+<span class="hljs-comment"># note that unless otherwise specified, all loads from memory are big-endian by default</span>
+<span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-keyword">print</span> s.se.any_int(s.memory.load(<span class="hljs-number">0x2000</span>, <span class="hljs-number">4</span>, endness=<span class="hljs-string">&apos;Iend_LE&apos;</span>))
+</code></pre>
+<p>Here, <code>s.se</code> is a <a href="claripy.html">solver engine</a> that holds the symbolic constraints on the state.</p>
+<p>This syntax might seem a bit strange -- we get the expression from the state, and then we pass it back <em>into</em> the state to get its actual value. This is, in fact, quite intentional. As we mentioned earlier, these expressions could be either concrete or symbolic. In the case of the latter, a symbolic expression might resolve to two different meanings in two different states. We&apos;ll go over symbolic expressions in more detail later on. For now, accept the mystery.</p>
+<h2 id="storing-data">Storing Data</h2>
+<p>If you want to store content in the state&apos;s memory or registers, you&apos;ll need to create an expression out of it. You can do it like so:</p>
+<pre><code class="lang-python"><span class="hljs-comment"># this creates a BVV (which stands for BitVector Value). A BVV is a bitvector that&apos;s used to represent</span>
+<span class="hljs-comment"># data in memory, registers, and temps. This BVV represents a 32 bit bitvector of four ascii `A` characters</span>
+<span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-keyword">import</span> claripy
+<span class="hljs-meta">&gt;&gt;&gt; </span>aaaa = claripy.BVV(<span class="hljs-number">0x41414141</span>, <span class="hljs-number">32</span>)
+
+<span class="hljs-comment"># While we&apos;re at it, we can do various operations on these bitvectors:</span>
+<span class="hljs-meta">&gt;&gt;&gt; </span>aa = aaaa[<span class="hljs-number">31</span>:<span class="hljs-number">16</span>] <span class="hljs-comment"># this extracts the most significant 16 bits</span>
+<span class="hljs-meta">&gt;&gt;&gt; </span>aa00 = aaaa &amp; claripy.BVV(<span class="hljs-number">0xffff0000</span>, <span class="hljs-number">32</span>)
+<span class="hljs-meta">&gt;&gt;&gt; </span>aaab = aaaa + <span class="hljs-number">1</span>
+<span class="hljs-meta">&gt;&gt;&gt; </span>aaaaaaaa = claripy.Concat(aaaa, aaaa)
+
+<span class="hljs-comment"># this can then be stored in memory or registers. Since the bitvector</span>
+<span class="hljs-comment"># has a length, only the address to store it at is required</span>
+<span class="hljs-meta">&gt;&gt;&gt; </span>s.regs.rax = aaaa
+<span class="hljs-meta">&gt;&gt;&gt; </span>s.memory.store(<span class="hljs-number">0x1000</span>, aaaa)
+
+<span class="hljs-comment"># of course, you can address memory using expressions as well</span>
+<span class="hljs-meta">&gt;&gt;&gt; </span>s.memory.store(s.regs.rax, aaaa)
+</code></pre>
+<p>For convenience, there are special accessor functions stack operations:</p>
+<pre><code class="lang-python"><span class="hljs-comment"># push our &quot;AAAA&quot; onto the stack</span>
+<span class="hljs-meta">&gt;&gt;&gt; </span>s.stack_push(aaaa)
+
+<span class="hljs-comment"># and pop it off</span>
+<span class="hljs-meta">&gt;&gt;&gt; </span>aaaa = s.stack_pop()
+</code></pre>
+<h2 id="copying-and-merging">Copying and Merging</h2>
+<p>A state supports very fast copies, so that you can explore different possibilities:</p>
+<pre><code class="lang-python"><span class="hljs-meta">&gt;&gt;&gt; </span>s1 = s.copy()
+<span class="hljs-meta">&gt;&gt;&gt; </span>s2 = s.copy()
+
+<span class="hljs-meta">&gt;&gt;&gt; </span>s1.memory.store(<span class="hljs-number">0x1000</span>, s1.se.BVV(<span class="hljs-number">0x41414141</span>, <span class="hljs-number">32</span>))
+<span class="hljs-meta">&gt;&gt;&gt; </span>s2.memory.store(<span class="hljs-number">0x1000</span>, s2.se.BVV(<span class="hljs-number">0x42424242</span>, <span class="hljs-number">32</span>))
+</code></pre>
+<p>States can also be merged together.</p>
+<pre><code class="lang-python"><span class="hljs-comment"># merge will return a tuple. the first element is the merged state</span>
+<span class="hljs-comment"># the second element is a symbolic variable describing a state flag</span>
+<span class="hljs-comment"># the third element is a boolean describing whether any merging was done</span>
+<span class="hljs-meta">&gt;&gt;&gt; </span>(s_merged, m, anything_merged) = s1.merge(s2)
+
+<span class="hljs-comment"># this is now an expression that can resolve to &quot;AAAA&quot; *or* &quot;BBBB&quot;</span>
+<span class="hljs-meta">&gt;&gt;&gt; </span>aaaa_or_bbbb = s_merged.memory.load(<span class="hljs-number">0x1000</span>, <span class="hljs-number">4</span>)
+</code></pre>
+<p>This is where we truly start to enter the realm of symbolic expressions. In the above example, the value of <code>aaaa_or_bbbb</code> can be, as it implies, either &quot;AAAA&quot; or &quot;BBBB&quot;.</p>
+<h2 id="symbolic-expressions">Symbolic Expressions</h2>
+<p>Symbolic values are expressions that, under different situations, can take on different values. Our symbolic expression, <code>aaaa_or_bbbb</code> is a great example of this.  The solver engine provides ways to get at both values:</p>
+<pre><code class="lang-python"><span class="hljs-comment"># this will return a sequence of up to n possible values of the expression in this state.</span>
+<span class="hljs-comment"># in our case, there are only two values, and it&apos;ll return [ &quot;AAAA&quot;, &quot;BBBB&quot; ]</span>
+<span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-keyword">print</span> <span class="hljs-string">&quot;This has 2 values:&quot;</span>, s_merged.se.any_n_str(aaaa_or_bbbb, <span class="hljs-number">2</span>)
+<span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-keyword">print</span> <span class="hljs-string">&quot;This *would* have up to 5, but there are only two available:&quot;</span>, s_merged.se.any_n_str(aaaa_or_bbbb, <span class="hljs-number">5</span>)
+
+<span class="hljs-comment"># there&apos;s also the same for the integer value</span>
+<span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-keyword">print</span> s_merged.se.any_n_int(aaaa_or_bbbb, <span class="hljs-number">2</span>)
+</code></pre>
+<p>Of course, there are other ways to encounter symbolic expression than merging. For example, you can create them outright:</p>
+<pre><code class="lang-python"><span class="hljs-comment"># This creates a simple symbolic expression: just a single symbolic bitvector by itself. The bitvector is 32-bits long.</span>
+<span class="hljs-comment"># An auto-incrementing numerical ID, and the size, are appended to the name, since names of symbolic bitvectors must be unique.</span>
+<span class="hljs-meta">&gt;&gt;&gt; </span>v = s.se.BVS(<span class="hljs-string">&quot;some_name&quot;</span>, <span class="hljs-number">32</span>)
+
+<span class="hljs-comment"># If you want to prevent appending the ID and size to the name, you can, instead, do:</span>
+<span class="hljs-meta">&gt;&gt;&gt; </span>v = s.se.BVS(<span class="hljs-string">&quot;some_name&quot;</span>, <span class="hljs-number">32</span>, explicit_name=<span class="hljs-keyword">True</span>)
+</code></pre>
+<p>Symbolic expressions can be interacted with in the same way as normal (concrete) bitvectors. In fact, you can even mix them:</p>
+<pre><code class="lang-python"><span class="hljs-comment"># Create a concrete and a symbolic expression</span>
+<span class="hljs-meta">&gt;&gt;&gt; </span>v = s.se.BVS(<span class="hljs-string">&quot;some_name&quot;</span>, <span class="hljs-number">32</span>)
+<span class="hljs-meta">&gt;&gt;&gt; </span>aaaa = s.se.BVV(<span class="hljs-number">0x41414141</span>, <span class="hljs-number">32</span>)
+
+<span class="hljs-comment"># Do operations involving them, and retrieve possible numerical solutions</span>
+<span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-keyword">print</span> s.se.any_int(aaaa)
+<span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-keyword">print</span> s.se.any_int(aaaa + v)
+<span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-keyword">print</span> s.se.any_int((aaaa + v) | s.se.BVV(<span class="hljs-number">0xffff0000</span>, <span class="hljs-number">32</span>))
+
+<span class="hljs-comment"># You can tell between symbolic and concrete expressions fairly easily:</span>
+<span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-keyword">assert</span> s.se.symbolic(v)
+<span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-keyword">assert</span> <span class="hljs-keyword">not</span> s.se.symbolic(aaaa)
+
+<span class="hljs-comment"># You can even tell *which* variables make up a given expression.</span>
+<span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-keyword">assert</span> s.se.variables(aaaa) == set()
+<span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-comment">#assert s.se.variables(aaaa + v) == { &quot;some_name_4_32&quot; } # that&apos;s the ID and size appended to the name</span>
+<span class="hljs-comment"># This assertion will fail because it depends on precisely the number of symbolic values previously created</span>
+</code></pre>
+<p>As you can see, symbolic and concrete expressions are pretty interchangeable, which is an extremely useful abstraction provided by SimuVEX. You might also notice that, when you read from memory locations that were never written to, you receive symbolic expressions:</p>
+<pre><code class="lang-python"><span class="hljs-comment"># Try it!</span>
+<span class="hljs-meta">&gt;&gt;&gt; </span>m = s.memory.load(<span class="hljs-number">0xbbbb0000</span>, <span class="hljs-number">8</span>)
+
+<span class="hljs-comment"># The result is symbolic</span>
+<span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-keyword">assert</span> s.se.symbolic(m)
+
+<span class="hljs-comment"># Along with the ID and length, the address at which this expression originated is also added to the name</span>
+<span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-comment">#assert s.se.variables(m) == { &quot;mem_bbbb0000_5_64&quot; }</span>
+
+<span class="hljs-comment"># And, of course, we can get the numerical or string solutions for the expression</span>
+<span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-keyword">print</span> s.se.any_n_int(m, <span class="hljs-number">10</span>)
+<span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-keyword">print</span> s.se.any_str(m)
+</code></pre>
+<p>So far, we&apos;ve seen addition being used. But we can do much more. All of the following examples return new expressions, with the operation applied.</p>
+<pre><code class="lang-python"><span class="hljs-comment"># mods aaaa by 0x100, creating an expression, of the same size as aaaa, with all but the last byte zeroed out</span>
+<span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-keyword">print</span> aaaa % <span class="hljs-number">0x100</span>
+
+<span class="hljs-comment"># same effect, but with a bitwise and</span>
+<span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-keyword">print</span> aaaa &amp; <span class="hljs-number">0xff</span>
+
+<span class="hljs-comment"># extracts the most significant (leftmost) byte of aaaa. The range is inclusive on both sides, and indexed with the rightmost bit being 0</span>
+<span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-keyword">print</span> aaaa[<span class="hljs-number">31</span>:<span class="hljs-number">24</span>]
+
+<span class="hljs-comment"># concatenates aaaa with itself</span>
+<span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-keyword">print</span> aaaa.Concat(aaaa)
+
+<span class="hljs-comment"># zero-extends aaaa by 32 bits</span>
+<span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-keyword">print</span> aaaa.zero_extend(<span class="hljs-number">32</span>)
+
+<span class="hljs-comment"># sign-extends aaaa by 32 bits</span>
+<span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-keyword">print</span> aaaa.sign_extend(<span class="hljs-number">32</span>)
+
+<span class="hljs-comment"># shifts aaaa right arithmetically by 8 bits (i.e., sign-extended)</span>
+<span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-keyword">print</span> aaaa &gt;&gt; <span class="hljs-number">8</span>
+
+<span class="hljs-comment"># shifts aaaa right logically by 8 bits (i.e., not sign-extended)</span>
+<span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-keyword">print</span> aaaa.LShR(<span class="hljs-number">8</span>)
+
+<span class="hljs-comment"># reverses aaaa, i.e. reverses the order of the bytes as if stored big-endian and loaded little-endian</span>
+<span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-keyword">print</span> aaaa.reversed
+
+<span class="hljs-comment"># returns a list of expressions, representing the individual *bits* of aaaa (expressions of length 1)</span>
+<span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-keyword">print</span> aaaa.chop()
+
+<span class="hljs-comment"># same, but for the bytes</span>
+<span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-keyword">print</span> aaaa.chop(bits=<span class="hljs-number">8</span>)
+
+<span class="hljs-comment"># and the dwords</span>
+<span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-keyword">print</span> aaaa.chop(bits=<span class="hljs-number">16</span>)
+</code></pre>
+<p>More details on the operations supported by the solver engine are available at the <a href="claripy.html">solver engine&apos;s documentation</a>.</p>
+<h2 id="symbolic-constraints">Symbolic Constraints</h2>
+<p>Symbolic expressions would be pretty boring on their own. After all, the last few that we created could take <em>any</em> numerical value, as they were completely unconstrained. This makes them uninteresting. To spice things up, SimuVEX has the concept of symbolic constraints. Symbolic constraints represent, aptly, constraints (or restrictions) on symbolic expressions. It might be easier to show you:</p>
+<pre><code class="lang-python"><span class="hljs-comment"># make a copy of the state so that we don&apos;t screw up the original with our experimentation</span>
+<span class="hljs-meta">&gt;&gt;&gt; </span>s3 = s.copy()
+
+<span class="hljs-comment"># Let&apos;s read some previously untouched section of memory to get a symbolic expression</span>
+<span class="hljs-meta">&gt;&gt;&gt; </span>m = s.memory.load(<span class="hljs-number">0xbbbb0000</span>, <span class="hljs-number">1</span>)
+
+<span class="hljs-comment"># We can verify that *any* solution would do</span>
+<span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-keyword">assert</span> s3.se.solution(m, <span class="hljs-number">0</span>)
+<span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-keyword">assert</span> s3.se.solution(m, <span class="hljs-number">10</span>)
+<span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-keyword">assert</span> s3.se.solution(m, <span class="hljs-number">20</span>)
+<span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-keyword">assert</span> s3.se.solution(m, <span class="hljs-number">30</span>)
+<span class="hljs-comment"># ... and so on</span>
+
+<span class="hljs-comment"># Now, let&apos;s add a constraint, forcing m to be less than 10</span>
+<span class="hljs-meta">&gt;&gt;&gt; </span>s3.add_constraints(m &lt; <span class="hljs-number">10</span>)
+
+<span class="hljs-comment"># We can see the effect of this right away!</span>
+<span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-keyword">assert</span> s3.se.solution(m, <span class="hljs-number">0</span>)
+<span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-keyword">assert</span> s3.se.solution(m, <span class="hljs-number">5</span>)
+<span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-keyword">assert</span> <span class="hljs-keyword">not</span> s3.se.solution(m, <span class="hljs-number">20</span>)
+<span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-keyword">assert</span> <span class="hljs-keyword">not</span> s3.se.solution(m, <span class="hljs-number">30</span>)
+
+<span class="hljs-comment"># But the constraint does not affect the original state</span>
+<span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-keyword">assert</span> s.se.solution(m, <span class="hljs-number">0</span>)
+<span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-keyword">assert</span> s.se.solution(m, <span class="hljs-number">10</span>)
+<span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-keyword">assert</span> s.se.solution(m, <span class="hljs-number">20</span>)
+<span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-keyword">assert</span> s.se.solution(m, <span class="hljs-number">30</span>)
+</code></pre>
+<p>One cautionary piece of advice is that the comparison operators (<code>&gt;</code>, <code>&lt;</code>, <code>&gt;=</code>, <code>&lt;=</code>) are <em>unsigned</em> by default. That means that, in the above example, this is the case:</p>
+<pre><code class="lang-python"><span class="hljs-comment"># This is actually -1</span>
+<span class="hljs-keyword">assert</span> <span class="hljs-keyword">not</span> s3.se.solution(m, <span class="hljs-number">0xff</span>)
+</code></pre>
+<p>If we want <em>signed</em> comparisons, we need to use the unsigned versions of the operators (<code>SGT</code>, <code>SLT</code>, <code>SGE</code>, <code>SLE</code>).
+If you&apos;d like to be explicit about your unsigned comparisons, the operators (<code>UGT</code>, <code>ULT</code>, <code>UGE</code>, <code>ULE</code>) are available.</p>
+<pre><code class="lang-python"><span class="hljs-comment"># Add an unsigned comparison</span>
+<span class="hljs-meta">&gt;&gt;&gt; </span>s4 = s.copy()
+<span class="hljs-meta">&gt;&gt;&gt; </span>s4.add_constraints(claripy.SLT(m, <span class="hljs-number">10</span>))
+
+<span class="hljs-comment"># We can see the effect of this right away!</span>
+<span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-keyword">assert</span> s4.se.solution(m, <span class="hljs-number">0</span>)
+<span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-keyword">assert</span> s4.se.solution(m, <span class="hljs-number">5</span>)
+<span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-keyword">assert</span> <span class="hljs-keyword">not</span> s4.se.solution(m, <span class="hljs-number">20</span>)
+<span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-keyword">assert</span> s4.se.solution(m, <span class="hljs-number">0xff</span>)
+</code></pre>
+<p>Amazing. Of course, constraints can be arbitrarily complex:</p>
+<pre><code class="lang-python"><span class="hljs-meta">&gt;&gt;&gt; </span>s4.add_constraints(claripy.And(claripy.UGT(m, <span class="hljs-number">10</span>), claripy.Or(claripy.ULE(m, <span class="hljs-number">100</span>), m % <span class="hljs-number">200</span> != <span class="hljs-number">123</span>, claripy.LShR(m, <span class="hljs-number">8</span>) &amp; <span class="hljs-number">0xff</span> != <span class="hljs-number">0xa</span>)))
+</code></pre>
+<p>There&apos;s a lot there, but, basically, m has to be greater than 10 <em>and</em> either has to be less than 100, or has to be 123 when modded with 200, or, when logically shifted right by 8, the least significant byte must be 0x0a.</p>
+<h2 id="state-options">State Options</h2>
+<p>There are a lot of little tweaks that can be made to the internals of simuvex that will optimize behavior in some situations and be a detriment in others. These tweaks are controlled through state options.</p>
+<p>On each SimState object, there is a set (state.options) of all its enabled options. The full domain of options, along with the defaults for different state types, can be found in (s_options.py)[<a href="https://github.com/angr/simuvex/blob/master/simuvex/s_options.py" _target="blank">https://github.com/angr/simuvex/blob/master/simuvex/s_options.py</a>], available as <code>simuvex.o</code>.</p>
+<p>When creating a SimState through any method, you may pass the keyword arguments <code>add_options</code> and <code>remove_options</code>, which should be sets of options that modify the initial options set from the default.</p>
+<pre><code class="lang-python"><span class="hljs-comment"># Example: enable lazy solves, a behavior that causes state satisfiability to be checked as infrequently as possible.</span>
+<span class="hljs-comment"># This change to the settings will be propogated to all successor states created from this state after this line.</span>
+<span class="hljs-meta">&gt;&gt;&gt; </span>s.options.add(simuvex.o.LAZY_SOLVES)
+
+<span class="hljs-comment"># Create a new state with lazy solves enabled</span>
+<span class="hljs-meta">&gt;&gt;&gt; </span>s9 = b.factory.entry_state(add_options={simuvex.o.LAZY_SOLVES})
+</code></pre>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="claripy.html" class="navigation navigation-prev " aria-label="Previous page: ソルバエンジン">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="symbolic.html" class="navigation navigation-next " aria-label="Next page: シンボリック実行">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"プログラムの状態管理","level":"1.6","depth":1,"next":{"title":"シンボリック実行","level":"1.7","depth":1,"path":"docs/symbolic.md","ref":"docs/symbolic.md","articles":[{"title":"実行エンジン","level":"1.7.1","depth":2,"path":"docs/simuvex.md","ref":"docs/simuvex.md","articles":[]},{"title":"実行の制御","level":"1.7.2","depth":2,"path":"docs/paths.md","ref":"docs/paths.md","articles":[]},{"title":"バルク実行 - パスグループ","level":"1.7.3","depth":2,"path":"docs/pathgroups.md","ref":"docs/pathgroups.md","articles":[]},{"title":"バルク実行 - サーベイヤー","level":"1.7.4","depth":2,"path":"docs/surveyors.md","ref":"docs/surveyors.md","articles":[]}]},"previous":{"title":"ソルバエンジン","level":"1.5","depth":1,"path":"docs/claripy.md","ref":"docs/claripy.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"docs/states.md","mtime":"2016-09-25T13:21:13.659Z","type":"markdown"},"gitbook":{"version":"3.0.0","time":"2016-09-27T21:09:58.263Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/buttons.js"></script>
+        
+    
+
+    </body>
+</html>
+

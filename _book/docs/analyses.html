@@ -1,0 +1,684 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <title>解析 · GitBook</title>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.0.0">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="analyses/cfg_accurate.html" />
+    
+    
+    <link rel="prev" href="structured_data.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    イントロダクション
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.1.1" data-path="overview.html">
+            
+                <a href="overview.html">
+            
+                    
+                    概要
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.2" data-path="../INSTALL.html">
+            
+                <a href="../INSTALL.html">
+            
+                    
+                    インストール
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.3" data-path="../HACKING.html">
+            
+                <a href="../HACKING.html">
+            
+                    
+                    コントリビュートするには
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.4" data-path="../HELPWANTED.html">
+            
+                <a href="../HELPWANTED.html">
+            
+                    
+                    コントリビュートの対象
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="toplevel.html">
+            
+                <a href="toplevel.html">
+            
+                    
+                    トップレベルインターフェイス
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="loading.html">
+            
+                <a href="loading.html">
+            
+                    
+                    バイナリのロード
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="ir.html">
+            
+                <a href="ir.html">
+            
+                    
+                    中間表現
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="claripy.html">
+            
+                <a href="claripy.html">
+            
+                    
+                    ソルバエンジン
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="states.html">
+            
+                <a href="states.html">
+            
+                    
+                    プログラムの状態管理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="symbolic.html">
+            
+                <a href="symbolic.html">
+            
+                    
+                    シンボリック実行
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.7.1" data-path="simuvex.html">
+            
+                <a href="simuvex.html">
+            
+                    
+                    実行エンジン
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.2" data-path="paths.html">
+            
+                <a href="paths.html">
+            
+                    
+                    実行の制御
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.3" data-path="pathgroups.html">
+            
+                <a href="pathgroups.html">
+            
+                    
+                    バルク実行 - パスグループ
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.4" data-path="surveyors.html">
+            
+                <a href="surveyors.html">
+            
+                    
+                    バルク実行 - サーベイヤー
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="structured_data.html">
+            
+                <a href="structured_data.html">
+            
+                    
+                    データ型と呼び出し規約を扱う
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.9" data-path="analyses.html">
+            
+                <a href="analyses.html">
+            
+                    
+                    解析
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.9.1" data-path="analyses/cfg_accurate.html">
+            
+                <a href="analyses/cfg_accurate.html">
+            
+                    
+                    CFGAccurate
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.2" data-path="analyses/backward_slice.html">
+            
+                <a href="analyses/backward_slice.html">
+            
+                    
+                    バックワードスライス
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10" data-path="speed.html">
+            
+                <a href="speed.html">
+            
+                    
+                    高速化のてびき
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11" data-path="examples.html">
+            
+                <a href="examples.html">
+            
+                    
+                    実例
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12" data-path="faq.html">
+            
+                <a href="faq.html">
+            
+                    
+                    FAQ
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13" data-path="gotchas.html">
+            
+                <a href="gotchas.html">
+            
+                    
+                    問題点
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.14" data-path="../CHANGELOG.html">
+            
+                <a href="../CHANGELOG.html">
+            
+                    
+                    更新履歴
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >解析</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="analyses">Analyses</h1>
+<p>angr&apos;s goal is to make it easy to carry out useful analyses on binary programs.
+This section will discuss how to run and create these analyses.</p>
+<h2 id="built-in-analyses">Built-in Analyses</h2>
+<p>angr comes with several built-in analyses:</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>CFGFast</td>
+<td>Constructs a fast <em>Control Flow Graph</em> of the program. <code>b.analyses.CFG()</code> is what you want.</td>
+</tr>
+<tr>
+<td><a href="analyses/cfg_accurate.html">CFGAccurate</a></td>
+<td>Constructs an accurate <em>Control Flow Graph</em> of the program. The simple way to do is via <code>b.analyses.CFGAccurate()</code>.</td>
+</tr>
+<tr>
+<td>VFG</td>
+<td>Performs VSA on every function of the program, creating a <em>Value Flow Graph</em> and detecting stack variables.</td>
+</tr>
+<tr>
+<td>DDG</td>
+<td>Calculates a data dependency graph, allowing one to determine what statements a given value depends on.</td>
+</tr>
+<tr>
+<td><a href="analyses/dfg.md">DFG</a></td>
+<td>Constructs a <em>Data Flow Graph</em> for each basic block present in the CFG</td>
+</tr>
+<tr>
+<td><a href="analyses/backward_slice.html">BackwardSlice</a></td>
+<td>Computes a backward slice of a program w.r.t. a certain target.</td>
+</tr>
+<tr>
+<td>More!</td>
+<td>angr has quite a few analyses, most of which work! If you&apos;d like to know how to use one, please submit an issue requesting documentation.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="vfg">VFG</h3>
+<p>TODO</p>
+<h3 id="ddg">DDG</h3>
+<p>TODO</p>
+<h2 id="running-analyses">Running Analyses</h2>
+<p>Now that you understand how to load binaries in angr, and have some idea of angr&apos;s internals, we can discuss how to carry out analyses!
+angr provides a standardized interface to perform analyses.</p>
+<h3 id="resilience">Resilience</h3>
+<p>Analyses can be written to be resilient, and catch and log basically any error.
+These errors, depending on how they&apos;re caught, are logged to the <code>errors</code> or <code>named_errors</code> attribute of the analysis.
+However, you might want to run an analysis in &quot;fail fast&quot; mode, so that errors are not handled.
+To do this, the <code>fail_fast</code> keyword argument can be passed into <code>analyze</code>.</p>
+<pre><code class="lang-python">&gt;&gt; b.analyses.CFG(fail_fast=<span class="hljs-keyword">True</span>)
+</code></pre>
+<h2 id="creating-analyses">Creating Analyses</h2>
+<p>An analysis can be created by subclassing the <code>Analysis</code> class.
+In this section, we&apos;ll create a mock analysis to show off the various features.
+Let&apos;s start with something simple:</p>
+<pre><code class="lang-python"><span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-keyword">import</span> angr
+
+<span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">MockAnalysis</span><span class="hljs-params">(angr.Analysis)</span>:</span>
+<span class="hljs-meta">... </span>    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">__init__</span><span class="hljs-params">(self, option)</span>:</span>
+<span class="hljs-meta">... </span>        self.option = option
+
+<span class="hljs-meta">&gt;&gt;&gt; </span>angr.register_analysis(MockAnalysis, <span class="hljs-string">&apos;MockAnalysis&apos;</span>)
+</code></pre>
+<p>This is a quite simple analysis -- it takes an option, and stores it.
+Of course, it&apos;s not useful, but what can you do?
+Let&apos;s see how to call:</p>
+<pre><code class="lang-python"><span class="hljs-meta">&gt;&gt;&gt; </span>b = angr.Project(<span class="hljs-string">&quot;/bin/true&quot;</span>)
+<span class="hljs-meta">&gt;&gt;&gt; </span>mock = b.analyses.MockAnalysis(<span class="hljs-string">&apos;this is my option&apos;</span>)
+<span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-keyword">assert</span> mock.option == <span class="hljs-string">&apos;this is my option&apos;</span>
+</code></pre>
+<h3 id="working-with-projects">Working with projects</h3>
+<p>Via some python magic, your analysis will automatically have the project upon which you are running it under the <code>self.project</code> property.
+Use this to interact with your project and analyze it!</p>
+<pre><code class="lang-python"><span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">ProjectSummary</span><span class="hljs-params">(angr.Analysis)</span>:</span>
+<span class="hljs-meta">... </span>    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">__init__</span><span class="hljs-params">(self)</span>:</span>
+<span class="hljs-meta">... </span>        self.result = <span class="hljs-string">&apos;This project is a %s binary with an entry point at %#x.&apos;</span> % (self.project.arch.name, self.project.entry)
+
+<span class="hljs-meta">&gt;&gt;&gt; </span>angr.register_analysis(ProjectSummary, <span class="hljs-string">&apos;ProjectSummary&apos;</span>)
+<span class="hljs-meta">&gt;&gt;&gt; </span>b = angr.Project(<span class="hljs-string">&quot;/bin/true&quot;</span>)
+
+<span class="hljs-meta">&gt;&gt;&gt; </span>summary = b.analyses.ProjectSummary()
+<span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-keyword">print</span> summary.result
+<span class="hljs-comment"># &apos;This project is a AMD64 binary with an entry point at 0x401410.&apos;</span>
+</code></pre>
+<h3 id="naming-analyses">Naming Analyses</h3>
+<p>The <code>register_analysis</code> call is what actually adds the analysis to angr.
+Its arguments are the actual analysis class and the name of the analysis.
+The name is how it appears under the <code>project.analyses</code> object.
+Usually, you should use the same name as the analysis class, but if you want to use a shorter name, you can.</p>
+<pre><code class="lang-python"><span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">FunctionBlockAverage</span><span class="hljs-params">(angr.Analysis)</span>:</span>
+<span class="hljs-meta">... </span>    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">__init__</span><span class="hljs-params">(self)</span>:</span>
+<span class="hljs-meta">... </span>        self._cfg = self.project.analyses.CFG()
+<span class="hljs-meta">... </span>        self.avg = len(self._cfg.nodes()) / len(self._cfg.function_manager.functions)
+
+<span class="hljs-meta">&gt;&gt;&gt; </span>angr.register_analysis(FunctionBlockAverage, <span class="hljs-string">&apos;FuncSize&apos;</span>)
+</code></pre>
+<p>After this, you can call this analysis using it&apos;s specified name. For example, <code>b.analyses.FuncSize()</code>.</p>
+<p>If you&apos;ve registered a new analysis since loading the project, refresh the list of registered analyses on your project with <code>b.analyses.reload_analyses()</code>.</p>
+<h3 id="analysis-resilience">Analysis Resilience</h3>
+<p>Sometimes, your (or our) code might suck and analyses might throw exceptions.
+We understand, and we also understand that oftentimes a partial result is better than nothing.
+This is specifically true when, for example, running an analysis on all of the functions in a program.
+Even if some of the functions fails, we still want to know the results of the functions that do not.</p>
+<p>To facilitate this, the <code>Analysis</code> base class provides a resilience context manager under <code>self._resilience</code>.
+Here&apos;s an example:</p>
+<pre><code class="lang-python"><span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">ComplexFunctionAnalysis</span><span class="hljs-params">(angr.Analysis)</span>:</span>
+<span class="hljs-meta">... </span>    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">__init__</span><span class="hljs-params">(self)</span>:</span>
+<span class="hljs-meta">... </span>        self._cfg = self.project.analyses.CFG()
+<span class="hljs-meta">... </span>        self.results = { }
+<span class="hljs-meta">... </span>        <span class="hljs-keyword">for</span> addr, func <span class="hljs-keyword">in</span> self._cfg.function_manager.functions.iteritems():
+<span class="hljs-meta">... </span>            <span class="hljs-keyword">with</span> self._resilience():
+<span class="hljs-meta">... </span>                <span class="hljs-keyword">if</span> addr % <span class="hljs-number">2</span> == <span class="hljs-number">0</span>:
+<span class="hljs-meta">... </span>                    <span class="hljs-keyword">raise</span> ValueError(<span class="hljs-string">&quot;can&apos;t handle functions at even addresses&quot;</span>)
+<span class="hljs-meta">... </span>                <span class="hljs-keyword">else</span>:
+<span class="hljs-meta">... </span>                    self.results[addr] = <span class="hljs-string">&quot;GOOD&quot;</span>
+</code></pre>
+<p>The context manager catches any exceptions thrown and logs them (as a tuple of the exception type, message, and traceback) to <code>self.errors</code>.
+These are also saved and loaded when the analysis is saved and loaded (although the traceback is discarded, as it is not picklable).</p>
+<p>You can tune the effects of the resilience with two optional keyword parameters to <code>self._resilience()</code>.</p>
+<p>The first is <code>name</code>, which affects where the error is logged.
+By default, errors are placed in <code>self.errors</code>, but if <code>name</code> is provided, then instead the error is logged to <code>self.named_errors</code>, which is a dict mapping <code>name</code> to a list of all the errors that were caught under that name.
+This allows you to easily tell where thrown without examining its traceback.</p>
+<p>The second argument is <code>exception</code>, which should be the type of the exception that <code>_resilience</code> should catch.
+This defaults to <code>Exception</code>, which handles (and logs) almost anything that could go wrong.
+You can also pass a tuple of exception types to this option, in which case all of them will be caught.</p>
+<p>Using <code>_resilience</code> has a few advantages:</p>
+<ol>
+<li>Your exceptions are gracefully logged and easily accessible afterwards. This is really nice for writing testcases.</li>
+<li>When creating your analysis, the user can pass <code>fail_fast=True</code>, which transparently disable the resilience, which is really nice for manual testing.</li>
+<li>It&apos;s prettier than having <code>try</code>/<code>except</code> everywhere.</li>
+</ol>
+<p>Have fun with analyses! Once you master the rest of angr, you can use analyses to understand anything computable!</p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="structured_data.html" class="navigation navigation-prev " aria-label="Previous page: データ型と呼び出し規約を扱う">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="analyses/cfg_accurate.html" class="navigation navigation-next " aria-label="Next page: CFGAccurate">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"解析","level":"1.9","depth":1,"next":{"title":"CFGAccurate","level":"1.9.1","depth":2,"path":"docs/analyses/cfg_accurate.md","ref":"docs/analyses/cfg_accurate.md","articles":[]},"previous":{"title":"データ型と呼び出し規約を扱う","level":"1.8","depth":1,"path":"docs/structured_data.md","ref":"docs/structured_data.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"docs/analyses.md","mtime":"2016-09-25T13:21:13.636Z","type":"markdown"},"gitbook":{"version":"3.0.0","time":"2016-09-27T21:09:58.263Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/buttons.js"></script>
+        
+    
+
+    </body>
+</html>
+
