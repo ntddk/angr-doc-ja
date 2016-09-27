@@ -1,11 +1,11 @@
-# "Help Wanted"
+# 「求人募集中」
 
-angr is a huge project, and it's hard to keep up.
-Here, we list some big TODO items that we would love community contributions for in the hope that it can direct community involvement.
-They (will) have a wide range of complexity, and there should be something for all skill levels!
+angrは巨大なプロジェクトで，保守するのは大変です．
+コミュニティに貢献し，願わくばフィードバックを得たいという思いから，私たちはここに，遠大なTODOリストを掲載します．
+幅広い難易度の，すべてのスキルレベルに応じた課題が（きっと）あるはずです．
 
 
-## Documentation: API
+## ドキュメンテーション：API
 
 We are always behind on documentation.
 We've created several tracking issues on github to understand what's still missing:
@@ -17,7 +17,7 @@ We've created several tracking issues on github to understand what's still missi
 5. [pyvex](https://github.com/angr/pyvex/issues/34)
 
 
-## Documentation: gitbook
+## ドキュメンテーション：gitbook
 
 This book is missing some core areas.
 Specifically, the following could be improved:
@@ -26,7 +26,7 @@ Specifically, the following could be improved:
 2. Organize the Examples page in some way that makes sense. Right now, most of the examples are very redunant. It might be cool to have a simple table of most of them so that the page is not so overwhelming.
 
 
-## Documentation/Development: The angr Course
+## ドキュメンテーション・開発：The angr Course
 
 Developing a "course" of sorts to get people started with angr would be really beneficial.
 Steps have already been made in this direction [here](https://github.com/angr/angr-doc/pull/74), but more expansion would be beneficial.
