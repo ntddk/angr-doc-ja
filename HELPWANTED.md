@@ -7,8 +7,8 @@ angrは巨大なプロジェクトで，保守するのは大変です．
 
 ## ドキュメンテーション：API
 
-We are always behind on documentation.
-We've created several tracking issues on github to understand what's still missing:
+私たちはつねにドキュメンテーションに遅れを取っています．
+私たちは現状のドキュメントに何が欠けている把握するため，githubでissueをトラッキングしています：
 
 1. [angr](https://github.com/angr/angr/issues/145)
 2. [simuvex](https://github.com/angr/simuvex/issues/28)
@@ -19,55 +19,54 @@ We've created several tracking issues on github to understand what's still missi
 
 ## ドキュメンテーション：gitbook
 
-This book is missing some core areas.
-Specifically, the following could be improved:
+本書にはいくらか核心部分の抜けがあります．
+具体的には，下記の要素に改善の余地があります：
 
-1. Finish some of the TODOs floating around the book.
-2. Organize the Examples page in some way that makes sense. Right now, most of the examples are very redunant. It might be cool to have a simple table of most of them so that the page is not so overwhelming.
-
-
-## ドキュメンテーション・開発：The angr Course
-
-Developing a "course" of sorts to get people started with angr would be really beneficial.
-Steps have already been made in this direction [here](https://github.com/angr/angr-doc/pull/74), but more expansion would be beneficial.
-
-Ideally, the course would have a hands-on component, of increasing difficulty, that would require people to use more and more of angr's capabilities.
+1. あちこちに残されたTODOを完遂する．
+2. 実例のページを理にかなったやり方で整理する．いまのところ実例のほとんどは極めて冗長で，大部分をシンプルな表にまとめられれば，ページ数をいくらか削減できるかもしれない．
 
 
-## Development: angr-management
+## ドキュメンテーション・開発：angr学習コース
 
-The angr GUI, [angr-management](https://github.com/angr/angr-management) needs a *lot* of work.
-Exposing angr's capabilities in a usable way, graphically, would be really useful!
+angr初学者に向けた「コース」なるものの開発は，必ずや有益な取り組みとなることでしょう．
+これは，[こちら](https://github.com/angr/angr-doc/pull/74)の方向性に沿って実現されつつありますが，さらなる拡張が見込まれます．
 
-
-## Development: additional architectures
-
-More architecture support would make angr all the more useful.
-Supporting a new architecture with angr would involve:
-
-1. Adding the architecture information to [archinfo](https://github.com/angr/archinfo)
-2. Adding the IR translation to `angr.Block`.
-3. Adding parsing for the IR to `simuvex` (probably as another subclass of `simuvex.SimRun`)
-4. Adding a calling convention (`simuvex.SimCC`) to support SimProcedures (including system calls)
-5. Adding or modifying an `angr.SimOS` to support initialization activities.
-6. Creating a CLE backend to load binaries, or extending the CLE ELF backend to know about the new architecture if the binary format is ELF.
-
-An alternative to steps 2 and 3 would be to write a lifter that lifts the architecture's native code to VEX.
-This can be written in Python, if it just outputs PyVEX structures.
+回を重ねるごとに難易度が上昇し，段階的にangrの機能を学べるようなハンズオンが理想です．
 
 
-### Ideas for new architectures/IRs:
+## 開発：angr-management
 
-- PIC, AVR, other embedded architectures
-- SPARC (there is some preliminary libVEX support for SPARC [here](https://bitbucket.org/iraisr/valgrind-solaris))
-- LLVM IR (with this, we can extend angr from just a Binary Analysis Framework to a Program Analysis Framework and expand its capabilities in other ways!)
+angrのGUIである[angr-management](https://github.com/angr/angr-management)には*多大な*伸びしろがあります．
+angrの機能を適切に可視化する手法はきっと有用です！
 
-## Development: environment support
 
-We use the concept of "function summaries" in angr to model the environment of operating systems (i.e., the effects of their system calls) and library functions.
-Extending this would be greatly helpful in increasing angr's utility.
-These function summaries can be found [here](https://github.com/angr/simuvex/tree/master/simuvex/procedures).
+## 開発：アーキテクチャサポートの追加
 
-A specific subset of this is system calls.
-Even more than library function SimProcedures (without which angr can always execute the actual function), we have very few workarounds for missing system calls.
-Every implemented system call extends the set of binaries that angr can handle!
+新しいアーキテクチャに対応すれば，angrはより有用なものとなるでしょう．それには，下記の作業を伴います：
+
+1. アーキテクチャの情報を[archinfo](https://github.com/angr/archinfo)に追加する．
+2. IR変換処理を`angr.Block`に追加する．
+3. IRパーサを`simuvex`に追加する（おそらくは`simuvex.SimRun`のさらなるサブクラスとして）．
+4. SimProcedures対応のために（システムコールを含む）呼び出し規約を`simuvex.SimCC`に追加する．
+5. 初期化処理対応のために`angr.SimOS`を追加・改変する．
+6. バイナリをロードするCLEバックエンドを作成する．バイナリがELFフォーマットであれば，CLE ELFバックエンドを拡張すればよい．
+
+手順2および3は，アーキテクチャのネイティブコードからVEXへの変換器を書いて済ませることもできます．PyVEX構造体を出力するだけなら，Pythonで事足ります．
+
+
+### 新しいアーキテクチャ・IRのアイデア
+
+- PIC, AVR, その他組み込みアーキテクチャ
+- SPARC（libVEXのSPARCサポートを[準備中](https://bitbucket.org/iraisr/valgrind-solaris)です）
+- LLVM IR（に対応できれば，angrをバイナリ解析プラットフォームからプログラム解析プラットフォームへと拡張し，さまざまな機能を追加できるようになります！）
+
+
+## 開発：環境サポート
+
+私たちは，オペレーティングシステム（すなわち，そのシステムコールによる影響）とライブラリ関数の環境をモデル化するため，「機能の概要」というコンセプトを採用しています．
+この拡張は，angrのユーティリティを発展させる大きな助けとなるでしょう．
+機能の概要については[こちら](https://github.com/angr/simuvex/tree/master/simuvex/procedures)を参照のこと．
+
+機能の概要の具体的なサブセットはシステムコールを単位としています．
+SimProduresのライブラリ関数（これがなくともangrは実際の関数を実行可能です）もさることながら，私たちは未実装のシステムコールを回避する策を少ししか持ち合わせていません．
+システムコールの実装次第で，angrの扱えるバイナリの幅が広がります！
