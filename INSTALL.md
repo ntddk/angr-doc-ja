@@ -79,7 +79,7 @@ curl -sSL https://get.docker.com/ | sudo sh
 sudo docker pull angr/angr
 
 # 実行
-sudo docker run -it angr
+sudo docker run -it angr/angr
 ```
 
 Docker内外とのファイル同期はユーザーへの課題として残されています（ヒント：`docker -v`を確認してください）．
