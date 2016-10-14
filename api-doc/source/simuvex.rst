@@ -41,6 +41,7 @@ Storage
 ..  automodule:: simuvex.storage.memory
 ..  automodule:: simuvex.storage.memory_object
 ..  automodule:: simuvex.storage.paged_memory
+.. automodule:: simuvex.concretization_strategies
  
 Vex
 ---
