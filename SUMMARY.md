@@ -13,8 +13,8 @@
 * [シンボリック実行](docs/symbolic.md)
    * [実行エンジン](docs/simuvex.md)
    * [実行の制御](docs/paths.md)
-   * [バルク実行 - パスグループ](docs/pathgroups.md)
-   * [バルク実行 - サーベイヤー](docs/surveyors.md)
+   * [バルク実行 - Path Groups](docs/pathgroups.md)
+   * [バルク実行 - Surveyors](docs/surveyors.md)
 * [データ型と呼び出し規約を扱う](docs/structured_data.md)
 * [解析](docs/analyses.md)
    * [CFGAccurate](docs/analyses/cfg_accurate.md)
@@ -24,4 +24,3 @@
 * [FAQ](docs/faq.md)
 * [問題点](docs/gotchas.md)
 * [更新履歴](CHANGELOG.md)
-
