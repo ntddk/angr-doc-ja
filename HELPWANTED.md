@@ -4,10 +4,9 @@ angrは巨大なプロジェクトで，保守するのは大変です．
 コミュニティに貢献し，願わくばフィードバックを得たいという思いから，私たちはここに，遠大なTODOリストを掲載します．
 幅広い難易度の，すべてのスキルレベルに応じた課題が（きっと）あるはずです．
 
-
 ## ドキュメンテーション
 
-There are many parts of angr that suffer from little or no documentation. We desperately need community help in this area.
+angrはさまざまな要素でドキュメント不足に悩まされています．私たちは必死にコミュニティの助けを求めています．
 
 ### API
 
@@ -20,7 +19,6 @@ There are many parts of angr that suffer from little or no documentation. We des
 4. [cle](https://github.com/angr/cle/issues/29)
 5. [pyvex](https://github.com/angr/pyvex/issues/34)
 
-
 ### GitBook
 
 本書にはいくらか核心部分の抜けがあります．
@@ -29,7 +27,6 @@ There are many parts of angr that suffer from little or no documentation. We des
 1. あちこちに残されたTODOを完遂する．
 2. 実例のページを理にかなったやり方で整理する．いまのところ実例のほとんどは極めて冗長で，大部分をシンプルな表にまとめられれば，ページ数をいくらか削減できるかもしれない．
 
-
 ### angr学習コース
 
 angr初学者に向けた「コース」なるものの開発は，必ずや有益な取り組みとなることでしょう．
@@ -37,46 +34,47 @@ angr初学者に向けた「コース」なるものの開発は，必ずや有�
 
 回を重ねるごとに難易度が上昇し，段階的にangrの機能を学べるようなハンズオンが理想です．
 
-## Research re-implementation
+## 既存研究の再実装
 
-Unfortunately, not everyone bases their research on angr ;-).
-Until that's remedied, we'll need to periodically implement related work, on top of angr, to make it reusable within the scope of the framework.
-This section lists some of this related work that's ripe for reimplementation in angr.
+残念ながら，誰もがangrをベースに研究を進めているわけではありません．
+それらが改善されるまで，定期的に関連研究をangrの上に再実装し，フレームワークの一部として再利用できるようにしておかなければなりません．
+このセクションでは，angrで再実装する機が熟した関連研究の一部を示します．
 
-### Redundant State Detection for Dynamic Symbolic Execution
+### 動的シンボリック実行のための冗長な状態の検知 (Redundant State Detection for Dynamic Symbolic Execution)
 
-Bugrara, et al. describe a method to identify and trim redundant states, increasing the speed of symbolic execution by up to 50 times and coverage by 4%.
-This would be great to have in angr, as an ExplorationTechnique.
-The paper is here: http://nsl.cs.columbia.edu/projects/minestrone/papers/atc13-bugrara.pdf
+Bugrara, et al.は，プログラムの冗長な状態を特定し，トリムすることで，シンボリックの速度を50倍，カバレッジを4%向上させる手法を提案しています．
+angrの[Exploration Techniques](http://angr.io/api-doc/angr.html#angr.exploration_techniques.ExplorationTechnique)にこの手法があると素敵です．
+論文はこちら：http://nsl.cs.columbia.edu/projects/minestrone/papers/atc13-bugrara.pdf
 
-### In-Vivo Multi-Path Analysis of Software Systems
+### ソフトウェアシステムのIn-Vivoマルチパス解析 (In-Vivo Multi-Path Analysis of Software Systems)
 
-Rather than developing symbolic summaries for every system call, we can use a technique proposed by [S2E](http://dslab.epfl.ch/pubs/s2e.pdf) for concretizing necessary data and dispatching them to the OS itself.
-This would make angr applicable to a *much* larger set of binaries than it can currently analyze.
+すべてのシステムコールについて記号値の一覧 (symbolic summaries) を作成するのではなく，私たちは[S2E](http://dslab.epfl.ch/pubs/s2e.pdf)で提案された，必要なデータを具体値として扱い，OS自体にディスパッチする手法を利用できます．
+これにより，現在分析できるものより*はるか*大規模なバイナリの集合に対してangrを適用できるようになるでしょう．
 
-While this would be most useful for system calls, once it is implemented, it could be trivially applied to any location of code (i.e., library functions).
-By carefully choosing which library functions are handled like this, we can greatly increase angr's scalability.
+この手法はシステムコールに対して最も有用でしょうが，一度実装してしまえば，コードのどの箇所（すなわち，ライブラリ関数）にも自明に適用できます．
+どのライブラリ関数をこのように扱うか注意深く選べば，angrのスケーラビリティは大幅に向上するでしょう．
 
 ## 開発
-We have several projects in mind that primarily require development effort.
+
+開発に労力を要することを念頭に置いたいくつかのプロジェクトがあります．
 
 ### angr-management
 
 angrのGUIである[angr-management](https://github.com/angr/angr-management)には*多大な*伸びしろがあります．
 
-Here is a non-exhaustive list of what is currently missing in angr-management:
+これはangr-managementに欠けている要素の，網羅的ではないリストです：
 
-- A navigator toolbar showing content in a program’s memory space, just like IDA Pro’s navigator toolbar.
-- A text-based disassembly view of the program.
-- Better view showing details in program states during path exploration, including modifiable register view, memory view, file descriptor view, etc.
-- A GUI for cross referencing.
+- IDA Proのナビゲーションツールバーのように，プログラムのメモリ空間の内容を示すツールバー．
+- テキストベースの逆アセンブル結果のビュー．
+- 変更可能なレジスタビュー，メモリビュー，ファイルファイルディスクリプタビューなどを含む，パス探索時におけるプログラム状態のよりよい詳細ビュー．
+- クロスリファレンスのためのGUI.
 
 angrの機能を適切に可視化する手法はきっと有用です！
 
-### IDA Plugins
+### IDAプラグイン
 
-Much of angr's functionality could be exposed via IDA.
-For example, angr's data dependence graph could be exposed in IDA through annotations, or obfuscated values can be resolved using symbolic execution.
+angrの機能の多くはIDAにエクスポーズできます．
+たとえば，angrのデータ依存グラフはアノテーションを通じてIDAにエクスポーズできますし，難読化された値をシンボリック実行によって解決することもできます．
 
 ### アーキテクチャサポートの追加
 
@@ -91,7 +89,6 @@ For example, angr's data dependence graph could be exposed in IDA through annota
 
 手順2および3は，アーキテクチャのネイティブコードからVEXへの変換器を書いて済ませることもできます．PyVEX構造体を出力するだけなら，Pythonで事足ります．
 
-
 ___新しいアーキテクチャのアイデア___
 
 - PIC, AVR, その他組み込みアーキテクチャ
@@ -101,7 +98,6 @@ ___新しいIRのアイデア___
 
 - LLVM IR（に対応できれば，angrをバイナリ解析プラットフォームからプログラム解析プラットフォームへと拡張し，さまざまな機能を追加できるようになります！）
 - SOOT（そうするためにはメモリモデルの拡張が必要となりますが，angrがJavaコードを分析できない理由はありません）
-
 
 ### 環境サポート
 
@@ -113,62 +109,63 @@ ___新しいIRのアイデア___
 SimProduresのライブラリ関数（これがなくともangrは実際の関数を実行可能です）もさることながら，私たちは未実装のシステムコールを回避する策を少ししか持ち合わせていません．
 システムコールの実装次第で，angrの扱えるバイナリの幅が広がります！
 
-## Design Problems
+## 設計上の課題
 
-There are some outstanding design challenges regarding the integration of additional functionalities into angr.
+angrへの追加機能の統合に関する，いくつかの目立った設計上の課題があります．
 
-### type annotation and type information usage
+### 型アノテーションと型情報の使用法
 
-angr has fledgling support for types, in the sense that it can parse them out of header files.
-However, those types are not well exposed to do anything useful with.
-Improving this support would make it possible to, for example, annotate certain memory regions with certain type information and interact with them intelligently.
+ヘッダファイルからパースできるような型情報のサポートは始まったばかりで，有用な情報を使いこなせていません．
+このサポートを改善することで，たとえば，特定の型情報を用いて特定のメモリに注釈をほどこし，それらとよりかしこくやりとりできるようになるでしょう．
 
-Consider, for example, interacting with a linked list like this: `print state.memory[state.regs.rax:].next.next.value`.
+考えてみてください．たとえば，こんなリンクリストとのやりとり：`print state.memory[state.regs.rax:].next.next.value`．
 
-## Research Challenges
+## 研究上の挑戦
 
-Historically, angr has progressed in the course of research into novel areas of program analysis.
-Here, we list several self-contained research projects that can be tackled.
+歴史的に，angrはプログラム解析の新分野を研究する過程で進展してきました．
+ここで，取り組むことのできるいくつかの自己完結型の研究を示します．
 
-### semantic function identification/diffing
+### 意味論的な関数の特定・差分取得
 
-Current function diffing techniques (TODO: some examples) have drawbacks.
-For the CGC, we created a semantic-based binary identification engine (https://github.com/angr/identifier) that can identify functions based on testcases.
-There are two areas of improvement, each of which is its own research project:
+現在の関数差分取得技術（TODO: いくつか例を示す）は欠点を有しています．
+CGCのために，私たちは意味論ベースの[バイナリ特定エンジン](https://github.com/angr/identifier)を開発しました．これは，テストケースにもとづいてバイナリ中の関数を特定するものです．
+これに関して，2つの分野に改善の余地があります．どちらも独自の研究プロジェクトです：
 
-1. Currently, the testcases used by this component are human-generated. However, symbolic execution can be used to automatically generate testcases that can be used to recognize instances of a given function in other binaries.
-2. By creating testcases that achieve a "high-enough" code coverage of a given function, we can detect changes in functionality by applying the set of testcases to another implementation of the same function and analyzing changes in code coverage. This can then be used as a sematic function diff.
+1. 現在，このコンポーネントで使用するテストケースは人間が生成しています．しかし，シンボリック実行を用いれば，他のバイナリ内の与えられた関数を例として，自動的にテストケースを生成することができます．
+2. 与えられた関数について十分高いカバレッジを達成するテストケースを作成するべく，同じ機能の別の実装に対してテストケースを適用し，コードカバレッジにおける変化を計測することで，機能の変更を検出できます．これを用いれば，意味論的な関数の差分取得が可能になります．
 
-### applying AFL's path selection criteria to symbolic execution
+### シンボリック実行へのAFLのパス選択基準の適用
 
-AFL does an excellent job in identifying "unique" paths during fuzzing by tracking the control flow transitions taken by every path.
-This same metric can be applied to symbolic exploration, and would probably do a depressingly good job, considering how simpl
+AFLはすべてのパスについて制御フローの遷移を追跡することで，ファジング中に「ユニークな」パスを特定するというすばらしい仕事をしています．
+同様の基準をシンボリック探索に対して適用できます．それがどれだけ単純か考えれば，きっと気が滅入るほどのよい仕事をしてくれるでしょう．
 
-## Overarching Research Directions
+## 包括的な研究の方向性
 
-There are areas of program analysis that are not well explored.
-We list general directions of research here, but readers should keep in mind that these directions likely describe potential undertakings of entire PhD dissertations.
+よく探求されていないプログラム解析の分野はまだ残されています．
+ここに研究の一般的な方向性を示しますが，これらはおそらく博士論文まるごとの取り組みになる可能性を留意しておいてください．
 
-### process interactions
+### プロセス間の相互作用
 
-Almost all work in the field of binary analysis deals with single binaries, but this is often unrealistic in the real world.
-For example, the type of input that can be passed to a CGI program depend on pre-processing by a web server.
-Currently, there is no way to support the analysis of multiple concurrent processes in angr, and many open questions in the field (i.e., how to model concurrent actions).
+バイナリ解析の研究のほとんどは単一のバイナリを扱っていますが，しばしば現実的ではないことがあります．
+たとえば，CGIプログラムに渡すことのできる入力の型は，ウェブサーバによる前処理に依存します．
+現在，angrで複数の並行プロセスを分析することはできません．そして，その分野の多くの課題に対応していません（すなわち，並行処理のモデル化）．
 
-### intra-process concurrency
+### プロセス内の並行性
 
-Similar to the modeling of interactions between processes, little work has been done in understanding the interaction of concurrent threads in the same process.
-Currently, angr has no way to reason about this, and it is unclear from the theoretical perspective how to approach this.
+プロセス間の相互作用のモデル化と同様に，同じプロセスの並行スレッドの動作を理解する取り組みは少ししか進んでいません．
+現在，angrは並行スレッドを分析する機能を備えていません．そして，分析を可能にする理論的枠組みは明らかになっていません．
 
-A subset of this problem is the analysis of signal handlers (or hardware interrupts).
-Each signal handler can be modeled as a thread that can be executed at any time that a signal can be triggered.
-Understanding when it is meaningful to analyze these handlers is an open problem.
-One system that does reason about the effect of interrupts is [FIE](http://pages.cs.wisc.edu/~davidson/fie/).
+シグナルハンドラ（またはハードウェア割り込み）の分析もまた，並行スレッドの課題の一部といえます．
+各シグナルハンドラはシグナルをいつでも受け取ることができ，いつでも実行できるスレッドとしてモデル化できます．
+これらのハンドラをいつ分析すれば有用といえるのかは未解決の問題です．
+割り込みの影響を推理しているシステムとしては，[FIE](http://pages.cs.wisc.edu/~davidson/fie/)があります．
 
-### path explosion
+### パス爆発
 
-Many approaches (such as [Veritesting](https://users.ece.cmu.edu/~dbrumley/pdf/Avgerinos%20et%20al._2014_Enhancing%20Symbolic%20Execution%20with%20Veritesting.pdf)) attempt to mitigate the path explosion problem in symbolic execution.
-However, despite these efforts, path explosion is still *the* main problem preventing symbolic execution from being mainstream.
+（[Veritesting](https://users.ece.cmu.edu/~dbrumley/pdf/Avgerinos%20et%20al._2014_Enhancing%20Symbolic%20Execution%20with%20Veritesting.pdf)のような）多くのアプローチでは，シンボリックにおけるパス爆発の回避を試みてきました．
+
+しかしながら，それらの努力にも関わらず，パス爆発はいまだにシンボリック実行における*主な*課題であり続けています．
 
 angr provides an excellent base to implement new techniques to control path explosion.
-Most approaches can be easily implemented as [Exploration Techniques](http://angr.io/api-doc/angr.html#angr.exploration_techniques.ExplorationTechnique) and quickly evaluated (for example, on the [CGC dataset](https://github.com/CyberGrandChallenge/samples).
+Most approaches can be easily implemented as
+ほとんどのアプローチは[Exploration Techniques](http://angr.io/api-doc/angr.html#angr.exploration_techniques.ExplorationTechnique)として簡単に実装できます．そして，速やかに評価できます（たとえば，[CGC dataset](https://github.com/CyberGrandChallenge/samples)によって）．
