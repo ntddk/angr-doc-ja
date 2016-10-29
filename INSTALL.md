@@ -13,7 +13,8 @@ Pythonの依存関係はすべてpipまたはsetup.pyスクリプトで解決す
 
 依存関係のインストールプロセスの最中，Pythonライブラリcffiがインストールされますが，オペレーティングシステム公式のlibffiパッケージをインストールしない限り，（少なくともLinuxでは）それが実行されることはありません．
 
-Ubuntuでは，次のコマンドがお望みに沿うでしょう：`sudo apt-get install python-dev libffi-dev build-essential virtualenvwrapper`
+Ubuntuでは，次のコマンドがお望みに沿うでしょう：`sudo apt-get install python-dev libffi-dev build-essential virtualenvwrapper`．
+angr-managementを試したければ`sudo apt-get install libqt4-default graphviz-dev`も必要です．
 
 ## ほとんどのオペレーティングシステム，すべての\*nixシステム
 
