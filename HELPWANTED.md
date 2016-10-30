@@ -166,6 +166,5 @@ AFLはすべてのパスについて制御フローの遷移を追跡するこ�
 
 しかしながら，それらの努力にも関わらず，パス爆発はいまだにシンボリック実行における*主な*課題であり続けています．
 
-angr provides an excellent base to implement new techniques to control path explosion.
-Most approaches can be easily implemented as
+angrはパス爆発に対応する新手法を実装するための優れた基盤を提供しています．
 ほとんどのアプローチは[Exploration Techniques](http://angr.io/api-doc/angr.html#angr.exploration_techniques.ExplorationTechnique)として簡単に実装できます．そして，速やかに評価できます（たとえば，[CGC dataset](https://github.com/CyberGrandChallenge/samples)によって）．
