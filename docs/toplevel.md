@@ -93,7 +93,7 @@ Surveyorsについては[こちら](./surveyors.md)を呼んでください．
 ```
 
 - *factory.block*はangrのリフターです．渡されたアドレスを起点としてバイナリを基本ブロックに区切り，ブロックのさまざまな表現を含むBlockオブジェクトを返します．詳細はのちほど示します．
-- *factory.blank_state*は，渡された引数に応じて初期化したSimStateオブジェクトを返します．Statesの全貌は[こちら](states.md)で論じられています．
+- *factory.blank_state*は，渡されたパラメータに応じて初期化したSimStateオブジェクトを返します．Statesの全貌は[こちら](states.md)で論じられています．
 - *factory.entry_state*は，バイナリのエントリポイントに相当するプログラムの状態に初期化したSimStateを返します．
 - *factory.call_state*は，渡されたアドレスの関数を引数とともに呼び出したかのように初期化したSimStateを返します．
 - *factory.full_init_state*は`entry_state`に似ていますが，エントリポイントではなく，SimProcedureを示すプログラムカウンタのSimStateを返します．SimProcedureは動的ローダーの提供を目的としていて，エントリポイントにジャンプする前に各共有ライブラリを初期化します．
@@ -105,7 +105,7 @@ Surveyorsについては[こちら](./surveyors.md)を呼んでください．
 ### リフター
 
 *factory.block*を介してリフターにアクセスできます．
-このメソッドは，[こちら](http://angr.io/api-doc/angr.html#module-angr.lifter)にあるように，いくつかのオプション引数をとります！
+このメソッドは，[こちら](http://angr.io/api-doc/angr.html#module-angr.lifter)にあるように，いくつかの省略可能なパラメータをとります！
 つまるところ，`block()`はコードの基本ブロックへの汎用的なインターフェイスを提供するということです．
 `.size`（バイト単位）のようにブロックからプロパティを取得できますが，おもしろいことをしたければ，基本ブロックのより具体的な表現形が必要になります．
 `.vex`にアクセスして[PyVEX IRSB](http://angr.io/api-doc/pyvex.html#pyvex.block.IRSB)を取得するか，`.capstone`にアクセスして[Capstone block](http://www.capstone-engine.org/lang_python.html)を取得してください．
