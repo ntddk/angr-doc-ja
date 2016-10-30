@@ -1,11 +1,11 @@
-Top-level interfaces
+トップレベルインターフェイス
 ====================
 
-So you've loaded a project. Now what?
+そういうわけで，angrのプロジェクトをロードできたぞ．さあどうしよう？
 
-This document explains all the attributes that are available directly from instances of `angr.Project`.
+このドキュメントでは，`angr.Project`のインスタンスから参照できる全属性を解説します．
 
-## Basic properties
+## 基本的なプロパティ
 ```python
 >>> import angr, monkeyhex, claripy
 >>> b = angr.Project('/bin/true')
@@ -19,14 +19,13 @@ This document explains all the attributes that are available directly from insta
 >>> b.loader
 <Loaded true, maps [0x400000:0x4004000]>
 ```
-- *arch* is an instance of an `archinfo.Arch` object for whichever architecture the program is compiled.
-  There's [lots of fun information](https://github.com/angr/archinfo/blob/master/archinfo/arch_amd64.py) on there!
-  The common ones you care about are `arch.bits`, `arch.bytes` (that one is a `@property` declaration on the [main `Arch` class](https://github.com/angr/archinfo/blob/master/archinfo/arch.py)), `arch.name`, and `arch.memory_endness`.
-- *entry* is the entry point of the binary!
-- *filename* is the absolute filename of the binary. Riveting stuff!
-- *loader* is the [cle.Loader](https://github.com/angr/cle/blob/master/cle/loader.py) instance for this project. Details on how to use it are found [here](./loading.md).
 
-## Analyses and Surveyors
+- *arch*はどのアーキテクチャ向けにプログラムがコンパイルされたかを示す，`archinfo.Arch`オブジェクトのインスタンスです．[たくさんの楽しい情報](https://github.com/angr/archinfo/blob/master/archinfo/arch_amd64.py)が詰まっています！　注意を払うべき共通の要素は`arch.bit`, `arch.bytes`（これは[メイン`Arch`クラス](https://github.com/angr/archinfo/blob/master/archinfo/arch.py)の`@property`宣言です），`arch.name`, そして`arch.memory_endness`です．
+- *entry*はバイナリのエントリポイントです！
+- *filename*はファイルの絶対パス名です．うわーすげーかっこいい．
+- *loader*は各プロジェクトにおける[cle.Loader](https://github.com/angr/cle/blob/master/cle/loader.py)のインスタンスです．使用法の詳細は[こちら](./loading.md)．
+
+## AnalysesとSurveyors
 ```python
 >>> b.analyses
 <angr.analysis.Analyses object at 0x7f5220d6a890>
@@ -51,24 +50,24 @@ This document explains all the attributes that are available directly from insta
 ['Caller', 'Escaper', 'Executor', 'Explorer', 'Slicecutor', 'started']
 ```
 
-`analyses` and `surveyors` are both just container objects for all the Analyses and Surveyors, respectively.
+`analyses`と`surveyors`はどちらもそれぞれAnalysesとSurveyorsのコンテナオブジェクトです．
 
-Analyses are customizable analysis routines that can extract some sort of information from the program.
-The most common two are `CFG`, which constructs a control-flow graph, and `VFG`, which performs value-set analysis.
-Their use, as well as how to write your own analyses, is documented [here](./analyses.md).
+Analysesはカスタマイズ可能な分析ルーチンで，プログラムからなんらかの情報を抽出できます．
+最も一般的なのは，制御フローグラフを構成する`CFG`と，値セットの解析を実行する`VFG`です．
+それらの使用法と，独自のAnalysesを作成する方法は[こちら](./analyses.md)に文書化されています．
 
-Surveyors are basic tools for performing symbolic execution with common goals.
-The most common one is `Explorer`, which searches for a target address while avoiding some others.
-Read about using surveyors [here](./surveyors.md).
-Note that while surveyors are cool, an alternative to them is Path Groups (below), which are the future.
+Surveyorsはある共通の目的に向けてシンボリック実行を実施するための基本ツールです．
+最も一般的なのは，あるアドレスを回避しつつあるアドレスに辿り着くための`Explorer`です．
+Surveyorsについては[こちら](./surveyors.md)を呼んでください．
+これはクールですが，しかし将来はPath Groups（下記）に置き換えられる予定です．
 
-## The factory
+## Factory
 
-`b.factory`, like `b.analyses` and `b.surveyors`, is a container object that has a lot of cool stuff in it.
-It is not a factory in the java sense, it is merely a home for all the functions that produce new instances of important angr classes and should be sitting on Project.
+`b.factory`は，`b.analyses`と`b.surveyors`と同様にクールな情報を持っているコンテナオブジェクトです．
+これはJavaにおけるfactoryのようなものではありません．単にangrの重要なクラスの新しいインスタンスを生みだす全関数の元で，Projectごとに設定されます．
 
 ```python
->>> import claripy # used later
+>>> import claripy # あとで使うため
 
 >>> block = b.factory.block(addr=b.entry)
 >>> block = b.factory.block(addr=b.entry, insn_bytes='\xc3')
@@ -93,34 +92,36 @@ It is not a factory in the java sense, it is merely a home for all the functions
 >>> cc = b.factory.cc()
 ```
 
-- *factory.block* is the angr's lifter. passing it an address will lift a basic block of code from the binary at that address, and return an angr Block object that can be used to retrieve multiple representations of that block. More below.
-- *factory.blank_state* returns a SimState object with little initialization besides the parameters passed to it. States as a whole are discussed in depth [here](states.md).
-- *factory.entry_state* returns a SimState initialized to the program state at the binary's entry point.
-- *factory.call_state* returns a SimState initialized as if you'd just called the function at the given address, with the given args.
-- *factory.full_init_state* returns a SimState that initialized similarly to `entry_state`, but instead of at the entry point, the program counter points to a SimProcedure that serves the purpose of the dynamic loader and will call the initializers of each shared library before jumping to the entry point.
-- *factory.path* returns a Path object. Since Paths are at their start just light wrappers around SimStates, you can call `path` with a state as an argument and get a path wrapped around that state.
-  Alternately, for simple cases, any keyword arguments you pass `path` will be passed on to `entry_state` to create a state to wrap. It is discussed in depth [here](paths.md).
-- *factory.path_group* creates a path group! Path groups are the future. They're basically very smart lists of paths, so you can pass it a path, a state (which will be wrapped into a path), or a list of paths and states. They are discussed in depth [here](pathgroups.md).
-- *factory.callable* is _very_ cool. Callables are a FFI (foreign functions interface) into arbitrary binary code. They are discussed in depth [here](structured_data.md).
-- *factory.cc* intiializes a calling convention object. This can be initialized with different args or even a function prototype, and then passed to factory.callable or factory.call_state to customize how arguments and return values and return addresses are laid out into memory. It is discussed in depth [here](structured_data.md).
+- *factory.block*はangrのリフターです．渡されたアドレスを起点としてバイナリを基本ブロックに区切り，ブロックのさまざまな表現を含むBlockオブジェクトを返します．詳細はのちほど示します．
+- *factory.blank_state*は，渡された引数に応じて初期化したSimStateオブジェクトを返します．Statesの全貌は[こちら](states.md)で論じられています．
+- *factory.entry_state*は，バイナリのエントリポイントに相当するプログラムの状態に初期化したSimStateを返します．
+- *factory.call_state*は，渡されたアドレスの関数を引数とともに呼び出したかのように初期化したSimStateを返します．
+- *factory.full_init_state*は`entry_state`に似ていますが，エントリポイントではなく，SimProcedureを示すプログラムカウンタのSimStateを返します．SimProcedureは動的ローダーの提供を目的としていて，エントリポイントにジャンプする前に各共有ライブラリを初期化します．
+- *factory.path*はPathオブジェクトを返します．PathsはSimStatesまわりのちょっとしたラッパーで，stateを引数として`path`を呼び出すと，そのstateをラップしたpathを取得できます．単純な例を挙げると，`path`に渡されたキーワード引数は`entry_state`を経由し，結果としてラップ対象のstateが作成されます．その詳細は[こちら](paths.md)で論じられています．
+- *factory.path_group*はpath groupを作成します！　Path groupsは未来をもたらします．これはpathsのかしこいリストで，pathやstate（pathにラップされます），あるいはpathsやstatesのリストを渡すことができます．その詳細は[こちら](pathgroups.md)で論じられています．
+- *factory.callable*は_マジで_クールですよ．Callablesは任意のバイナリコードへのFFI（外部関数インターフェイス）で，その詳細は[こちら](structured_data.md)で論じられています．
+- *factory.cc*は呼び出し規約 (calling convention) オブジェクトを初期化します．この初期化に際して，関数呼び出しの引数や，関数プロトタイプを設定できます．そして，どのように引数や戻り値，リターンアドレスがメモリにレイアウトされるかfactory.callableあるいはfactory.call_stateを通じて設定できます．その詳細は[こちら](structured_data.md)で論じられています．
 
-### Lifter
+### リフター
 
-Access the lifter through *factory.block*.
-This method has a number of optional parameters, which you can read about [here](http://angr.io/api-doc/angr.html#module-angr.lifter)!
-The bottom line, though, is that `block()` gives you back a generic interface to a basic block of code.
-You can get properties like `.size` (in bytes) from the block, but if you want to do interesting things with it, you need a more specific representation.
-Access `.vex` to get a [PyVEX IRSB](http://angr.io/api-doc/pyvex.html#pyvex.block.IRSB), or `.capstone` to get a [Capstone block](http://www.capstone-engine.org/lang_python.html).
+*factory.block*を介してリフターにアクセスできます．
+このメソッドは，[こちら](http://angr.io/api-doc/angr.html#module-angr.lifter)にあるように，いくつかのオプション引数をとります！
+つまるところ，`block()`はコードの基本ブロックへの汎用的なインターフェイスを提供するということです．
+`.size`（バイト単位）のようにブロックからプロパティを取得できますが，おもしろいことをしたければ，基本ブロックのより具体的な表現形が必要になります．
+`.vex`にアクセスして[PyVEX IRSB](http://angr.io/api-doc/pyvex.html#pyvex.block.IRSB)を取得するか，`.capstone`にアクセスして[Capstone block](http://www.capstone-engine.org/lang_python.html)を取得してください．
 
-### Filesystem Options
+### ファイルシステムオプション
 
-There are a number of options which can be passed to the state initialization routines which affect filesystem usage. These include the `fs`, `concrete_fs`, and `chroot` options.
+stateの初期化ルーチンには，ファイルシステムの利用方法に影響を与えるオプションを渡すことができます．これには，`fs`, `concrete_fs`, および`chroot`のオプションが含まれます．
 
-The `fs` option allows you to pass in a dictionary of file names to preconfigured SimFile objects. This allows you to do things like set a concrete size limit on a file's content.
+`fs`オプションを使用すると，事前に設定されたSimFileオブジェクトに対して辞書またはファイル名を渡せるようになります．
+このオプションによって，ファイルの内容についてサイズの制限を設けるといったことができるようになります．
 
-Setting the `concrete_fs` option to `True` will cause angr to respect the files on disk. For example, if during simulation a program attempts to open 'banner.txt' when `concrete_fs` is set to `False` (the default), a SimFile with a symbolic memory backing will be created and simulation will continue as though the file exists. When `concrete_fs` mode is set to `True`, if 'banner.txt' exists a new SimFile object will be created with a concrete backing, reducing the resulting state explosion which would be caused by operating on a completely symbolic file. Additionally in `concrete_fs` mode if 'banner.txt' mode does not exist, a SimFile object will not be created upon calls to open during simulation and an error code will be returned. Additionally, it's important to note that attempts to open files whose path begins with '/dev/' will never be opened concretely even with `concrete_fs` set to `True`.
+`concrete_fs`オプションに`True`を設定すれば，angrはディスク上の実ファイルを重視するようになります．たとえば，シミュレーション中にプログラムが`banner.txt`を開こうとしたとしましょう．ここで`concrete_fs`が`False`（デフォルト）に設定されている場合，メモリを記号値として扱うようにSimFileが作成され，ファイルが存在するかのようにシミュレートが行われます．`concrete_fs`が`True`に設定されている場合，メモリを具体値として扱うようにSimFileが作成され，記号値だけでファイルを扱うことで生じるであろう状態爆発を抑制できます．
+さらに`concrete_fs`モードでは，シミュレーション中に`banner.txt`が存在しないと場合はSimFileオブジェクトを作成せず，エラーコードを返します．
+加えて，パスが'/dev/'から始まるファイルは`concrete_fs`が`True`に設定されていた場合開かれないことに注意してください．
 
-The `chroot` option allows you to specify an optional root to use while using the `concrete_fs` option. This can be convenient if the program you're analyzing references files using an absolute path. For example, if the program you are analyzing attempts to open '/etc/passwd', you can set the chroot to your current working directory so that attempts to access '/etc/passwd' will read from '$CWD/etc/passwd'.
+`chroot`オプションでは，`concrete_fs`オプションを用いるときのルートを設定できます．解析対象のプログラムが絶対パスを用いてファイルを参照しようとする場合に便利なオプションです．たとえば，解析対象のプログラムが'etc/passwd'を開こうとするとき，chrootをカレントワーキングディレクトリに設定しておけば，'/etc/passwd'へのアクセス試行は'$CWD/etc/passwd'にリダイレクトされます．
 
 ```python
 >>> import simuvex
@@ -128,12 +129,12 @@ The `chroot` option allows you to specify an optional root to use while using th
 >>> s = b.factory.entry_state(fs=files, concrete_fs=True, chroot="angr-chroot/")
 ```
 
-This example will create a state which constricts at most 30 symbolic bytes from being read from stdin and will cause references to files to be resolved concretely within the new root directory `angr-chroot`.
+この例では，標準入力から30バイトまでの記号値を受け取ったとしてstateを作成します．そして，新しいルートディレクトリ`angr-chroot`内でファイルの参照を具体的に解決することになります．
 
-Important note that needs to go in this initial version before I write the rest of the stuff:
-the `args` and `env` keyword args work on `entry_state` and `full_init_state`, and are a list and a dict, respectively, of strings or [claripy](./claripy.md) BV objects, which can represent a variety of concrete and symbolic strings. Read the source if you wanna know more about these!
+残りの要素について書く前に，この初版で注意しておかなければならないこと：
+`args`と`env`キーワード引数は`entry_state`および`full_init_state`で動作します．これらはそれぞれ，文字列または[claripy](./claripy.md) BVオブジェクトのリストまたは辞書で，いろいろな文字列の具体値と記号値を表現することができます．もっと知りたければソースコードを読んでください！
 
-## Hooking
+## フッキング
 
 ```python
 >>> def set_rax(state):
@@ -146,15 +147,12 @@ True
 >>> b.hook_symbol('strlen', simuvex.SimProcedures['stubs']['ReturnUnconstrained'])
 ```
 
-A hook is a modification of how program execution should work.
-When you hook a program at a certain address, whenever the program's execution reaches that point, it will run the python code you supplied in the hook.
-Execution will then skip `length` bytes ahead of the hooked address and resume.
-You can omit the `length` argument for execution to skip zero bytes and resume at the address you hooked.
+フックはプログラムのあるべき動作を変化させる手法です．
+特定のアドレスにフックを仕掛ければ，プログラムの実行がそこに到達するたびに，フック内のpythonコードを実行できます．
+実行はフックされたアドレスから`length`バイトぶんスキップしたアドレスからレジュームされます．`length`引数を省略した場合，実行は0バイトぶんスキップされ，フックされたアドレスからレジュームされます．
 
-In addition to a basic function, you can hook an address with a `SimProcedure`, which is a more complex system for having fine-grained control over program execution.
-To do this, use the exact same `hook` function, but supply a class (not an instance!) that subclasses `simuvex.SimProcedure`.
+基本的な関数に加えて，`SimProcedure`を用いてアドレスをフックすることもできます．これは，プログラムの実行をきめ細かく制御するためのより複雑なシステムです．`SimProcedure`はまったく同じ`hook`関数から利用できますが，simuvex.SimProcedureの（インスタンスではなく！）サブクラスを提供しています．
 
-The `is_hooked` and `unhook` methods should be self-explanitory.
+`is_hooked`と`unhook`メソッドはまあ自明でしょう．
 
-`hook_symbol` is a different function that serves a different purpose. Instead of an address, you pass it the name of a function that that binary imports.
-The internal (GOT) pointer to the code that function resolved to will be replaced with a pointer to the SimProcedure or hook function you specify in the third argument. You can also pass a plain integer to make replace pointers to the symbol with that value.
+`hook_symbol`はこれらと異なる目的を果たす別の関数です．アドレスではなくバイナリのインポート関数名を渡します．関数呼び出しにおいて解決されるコードへの内部 (GOT) ポインタは，第3引数で指定したSimProcedureまたはフック関数へのポインタに置き換えられます．同様に，通常の整数を渡し，その値のシンボルに置き換えることもできます．
