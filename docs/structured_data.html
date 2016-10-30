@@ -1,0 +1,683 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <title>データ型と呼び出し規約を扱う · GitBook</title>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.0.0">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="analyses.html" />
+    
+    
+    <link rel="prev" href="surveyors.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    イントロダクション
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.1.1" data-path="overview.html">
+            
+                <a href="overview.html">
+            
+                    
+                    概要
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.2" data-path="../INSTALL.html">
+            
+                <a href="../INSTALL.html">
+            
+                    
+                    インストール
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.3" data-path="../HACKING.html">
+            
+                <a href="../HACKING.html">
+            
+                    
+                    コントリビュートするには
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.4" data-path="../HELPWANTED.html">
+            
+                <a href="../HELPWANTED.html">
+            
+                    
+                    コントリビュートの対象
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="toplevel.html">
+            
+                <a href="toplevel.html">
+            
+                    
+                    トップレベルインターフェイス
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="loading.html">
+            
+                <a href="loading.html">
+            
+                    
+                    バイナリのロード
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="ir.html">
+            
+                <a href="ir.html">
+            
+                    
+                    中間表現
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="claripy.html">
+            
+                <a href="claripy.html">
+            
+                    
+                    ソルバエンジン
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="states.html">
+            
+                <a href="states.html">
+            
+                    
+                    プログラムの状態管理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="symbolic.html">
+            
+                <a href="symbolic.html">
+            
+                    
+                    シンボリック実行
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.7.1" data-path="simuvex.html">
+            
+                <a href="simuvex.html">
+            
+                    
+                    実行エンジン
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.2" data-path="paths.html">
+            
+                <a href="paths.html">
+            
+                    
+                    実行の制御
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.3" data-path="pathgroups.html">
+            
+                <a href="pathgroups.html">
+            
+                    
+                    バルク実行 - Path Groups
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.4" data-path="surveyors.html">
+            
+                <a href="surveyors.html">
+            
+                    
+                    バルク実行 - Surveyors
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.8" data-path="structured_data.html">
+            
+                <a href="structured_data.html">
+            
+                    
+                    データ型と呼び出し規約を扱う
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="analyses.html">
+            
+                <a href="analyses.html">
+            
+                    
+                    解析
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.9.1" data-path="analyses/cfg_accurate.html">
+            
+                <a href="analyses/cfg_accurate.html">
+            
+                    
+                    CFGAccurate
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.2" data-path="analyses/backward_slice.html">
+            
+                <a href="analyses/backward_slice.html">
+            
+                    
+                    バックワードスライス
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10" data-path="speed.html">
+            
+                <a href="speed.html">
+            
+                    
+                    高速化のてびき
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11" data-path="examples.html">
+            
+                <a href="examples.html">
+            
+                    
+                    実例
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12" data-path="faq.html">
+            
+                <a href="faq.html">
+            
+                    
+                    FAQ
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13" data-path="gotchas.html">
+            
+                <a href="gotchas.html">
+            
+                    
+                    問題点
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.14" data-path="../CHANGELOG.html">
+            
+                <a href="../CHANGELOG.html">
+            
+                    
+                    更新履歴
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >データ型と呼び出し規約を扱う</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="working-with-data-and-conventions">Working with Data and Conventions</h1>
+<p>Frequently, you&apos;ll want to access structured data from the program you&apos;re analyzing.
+angr has several features to make this less of a headache.</p>
+<h2 id="working-with-types">Working with types</h2>
+<p>SimuVEX has a system for representing types.
+These SimTypes are found in <code>simuvex/s_type.py</code> - an instance of any of these classes represents a type.
+Many of the types are incomplete unless they are supplimented with a SimState - their size depends on the architecture you&apos;re running under.
+You may do this with <code>ty.with_state(state)</code>, which returns a copy of itself, with the state specified.</p>
+<p>SimuVEX also has a light wrapper around <code>pycparser</code>, which is a C parser.
+This helps with getting instances of type objects:</p>
+<pre><code class="lang-python"><span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-keyword">import</span> simuvex
+
+<span class="hljs-comment"># note that SimType objects have their __repr__ defined to return their c type name,</span>
+<span class="hljs-comment"># so this function actually returned a SimType instance.</span>
+<span class="hljs-meta">&gt;&gt;&gt; </span>simuvex.s_type.parse_type(<span class="hljs-string">&apos;int&apos;</span>)
+int
+
+<span class="hljs-meta">&gt;&gt;&gt; </span>simuvex.s_type.parse_type(<span class="hljs-string">&apos;char **&apos;</span>)
+char**
+
+<span class="hljs-meta">&gt;&gt;&gt; </span>simuvex.s_type.parse_type(<span class="hljs-string">&apos;struct aa {int x; long y;}&apos;</span>)
+struct aa
+
+<span class="hljs-meta">&gt;&gt;&gt; </span>simuvex.s_type.parse_type(<span class="hljs-string">&apos;struct aa {int x; long y;}&apos;</span>).fields
+OrderedDict([(<span class="hljs-string">&apos;x&apos;</span>, int), (<span class="hljs-string">&apos;y&apos;</span>, long)])
+</code></pre>
+<p>Additionally, you may parse C defininitions and have them returned to you in a dict:</p>
+<pre><code class="lang-python">&gt;&gt;&gt; defs = simuvex.s_type.parse_defns(&quot;int x; typedef struct llist { char* str; struct llist *next; } list_node; list_node *y;&quot;)
+&gt;&gt;&gt; defs
+{&apos;list_node&apos;: struct llist, &apos;x&apos;: int, &apos;y&apos;: struct llist*}
+
+&gt;&gt;&gt; defs[&apos;list_node&apos;].fields
+OrderedDict([(&apos;str&apos;, char*), (&apos;next&apos;, struct llist*)])
+
+&gt;&gt;&gt; defs[&apos;list_node&apos;].fields[&apos;next&apos;].pts_to.fields
+OrderedDict([(&apos;str&apos;, char*), (&apos;next&apos;, struct llist*)])
+
+# If you want to get a function type and you don&apos;t want to construct it manually,
+# you have to use parse_defns, not parse_type
+&gt;&gt;&gt; simuvex.s_type.parse_defns(&quot;int x(int y, double z);&quot;)
+{&apos;x&apos;: (int, double) -&gt; int}
+</code></pre>
+<p>And finally, you can register struct definitions for future use:</p>
+<pre><code class="lang-python"><span class="hljs-meta">&gt;&gt;&gt; </span>simuvex.s_type.define_struct(<span class="hljs-string">&apos;struct abcd { int x; int y; }&apos;</span>)
+<span class="hljs-meta">&gt;&gt;&gt; </span>simuvex.s_type.parse_type(<span class="hljs-string">&apos;struct abcd&apos;</span>)
+struct abcd
+</code></pre>
+<p>These type objects aren&apos;t all that useful on their own, but they can be passed to other parts of angr to specify data types.</p>
+<h2 id="accessing-typed-data-from-memory">Accessing typed data from memory</h2>
+<p>If you&apos;re reading this book in order, you&apos;ll <a href="states.html">recall</a> that you can retrieve data from memory with <code>state.memory.load(addr, len, endness=endness)</code>.
+This can get to be a little cumbersome when working with structures, strings, etc.
+Instead, there is an alternate interface in <code>state.mem</code>, the SimMemView.
+This allows you to specify the type of the data you&apos;re looking at.</p>
+<pre><code class="lang-python"><span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-keyword">import</span> angr
+<span class="hljs-meta">&gt;&gt;&gt; </span>b = angr.Project(<span class="hljs-string">&apos;examples/fauxware/fauxware&apos;</span>)
+<span class="hljs-meta">&gt;&gt;&gt; </span>s = b.factory.entry_state()
+<span class="hljs-meta">&gt;&gt;&gt; </span>s.mem[<span class="hljs-number">0x601048</span>]
+&lt;&lt;untyped&gt; &lt;unresolvable&gt; at <span class="hljs-number">0x601048</span>&gt;
+
+<span class="hljs-meta">&gt;&gt;&gt; </span>s.mem[<span class="hljs-number">0x601048</span>].int
+&lt;int (<span class="hljs-number">32</span> bits) &lt;BV32 <span class="hljs-number">0x4008d0</span>&gt; at <span class="hljs-number">0x601048</span>&gt;
+
+<span class="hljs-meta">&gt;&gt;&gt; </span>s.mem[<span class="hljs-number">0x601048</span>].long
+&lt;long (<span class="hljs-number">64</span> bits) &lt;BV64 <span class="hljs-number">0x4008d0</span>&gt; at <span class="hljs-number">0x601048</span>&gt;
+
+<span class="hljs-meta">&gt;&gt;&gt; </span>s.mem[<span class="hljs-number">0x601048</span>].long.resolved
+&lt;BV64 <span class="hljs-number">0x4008d0</span>&gt;
+
+<span class="hljs-meta">&gt;&gt;&gt; </span>s.mem[<span class="hljs-number">0x601048</span>].long.concrete
+<span class="hljs-number">4196560L</span>
+
+<span class="hljs-meta">&gt;&gt;&gt; </span>s.mem[<span class="hljs-number">0x601048</span>].deref
+&lt;&lt;untyped&gt; &lt;unresolvable&gt; at <span class="hljs-number">0x4008d0</span>&gt;
+
+<span class="hljs-meta">&gt;&gt;&gt; </span>s.mem[<span class="hljs-number">0x601048</span>].deref.string
+&lt;string_t &lt;BV64 <span class="hljs-number">0x534f534e45414b59</span>&gt; at <span class="hljs-number">0x4008d0</span>&gt;
+
+<span class="hljs-meta">&gt;&gt;&gt; </span>s.mem[<span class="hljs-number">0x601048</span>].deref.string.resolved
+&lt;BV64 <span class="hljs-number">0x534f534e45414b59</span>&gt;
+
+<span class="hljs-meta">&gt;&gt;&gt; </span>s.mem[<span class="hljs-number">0x601048</span>].deref.string.concrete
+<span class="hljs-string">&apos;SOSNEAKY&apos;</span>
+</code></pre>
+<p>The interface works like this:</p>
+<ul>
+<li>You first use [array index notation] to specify the address you&apos;d like to load from</li>
+<li>If at that address is a pointer, you may access the <code>deref</code> property to return a SimMemView at the address present in memory.</li>
+<li>You then specify a type for the data by simply accesing a property of that name.
+For a list of supported types, look at <code>state.mem.types</code>.</li>
+<li>You can then <em>refine</em> the type. Any type may support any refinement it likes.
+Right now the only refinements supported are that you may access any member of a struct by its member name, and you may index into a string or array to access that element.</li>
+<li>If the address you specified initially points to an array of that type, you can say <code>.array(n)</code> to view the data as an array of n elements.</li>
+<li>Finally, extract the structured data with <code>.resolved</code> or <code>.concrete</code>.
+<code>.resolved</code> will return bitvector values, while <code>.concrete</code> will return integer, string, array, etc values, whatever best represents the data.</li>
+<li>Alternately, you may store a value to memory, by assigning to the chain of properties that you&apos;ve constructed.
+Note that because of the way python works, <code>x = s.mem[...].prop; x = val</code> will NOT work, you must say <code>s.mem[...].prop = val</code>.</li>
+</ul>
+<p>If you define a struct using <code>s_type.define_struct</code>, you can access it here as a type:</p>
+<pre><code class="lang-python"><span class="hljs-meta">&gt;&gt;&gt; </span>s.mem[b.entry].abcd
+&lt;struct abcd {
+  .x = &lt;int (<span class="hljs-number">32</span> bits) &lt;BV32 <span class="hljs-number">0x8949ed31</span>&gt; at <span class="hljs-number">0x400580</span>&gt;,
+  .y = &lt;int (<span class="hljs-number">32</span> bits) &lt;BV32 <span class="hljs-number">0x89485ed1</span>&gt; at <span class="hljs-number">0x400584</span>&gt;
+} at <span class="hljs-number">0x400580</span>&gt;
+</code></pre>
+<h2 id="working-with-calling-conventions">Working with Calling Conventions</h2>
+<p>A calling convention is the specific means by which code passes arguments and return values through function calls.
+While angr comes with a large number of pre-built calling conventions, and a lot of logic for refining calling conventions for specifc circumstances (e.g. floating point arguments need to be stored in different locations, it gets worse from there), it will inevitably be insufficient to describe all possible calling conventions a compiler could generate.
+Because of this, you can <em>customize</em> a calling convention by describing where the arguments and return values should live.</p>
+<p>angr&apos;s abstraction of calling conventions lives in Simuvex as SimCC.
+You can construct new SimCC instances through the angr object factory, with <code>b.factory.cc(...)</code>.</p>
+<ul>
+<li>Pass as the <code>args</code> keyword argument a list of argument storage locations</li>
+<li>Pass as the <code>ret_val</code> keyword argument the location where the return value should be stored</li>
+<li>Pass as the <code>func_ty</code> keyword argument a SymType for the function prototype.</li>
+<li>Pass it none of these things to use a sane default for the current architecture!</li>
+</ul>
+<p>To specify a value location for the <code>args</code> or <code>ret_val</code> parameters, use instances of the <code>SimRegArg</code> or <code>SimStackArg</code> classes.
+You can find them in the factory - <code>b.factory.cc.Sim*Arg</code>.
+Register arguments should be instanciated with the name of the register you&apos;re storing the value in, and the size of the register in bytes.
+Stack arguments should be instanciated with the offset from the stack pointer <em>at the time of entry into the function</em> and the size of the storage location, in bytes.</p>
+<p>Once you have a SimCC object, you can use it along with a SimState object to extract or store function arguments more cleanly.
+Take a look at the <a href="http://angr.io/api-doc/simuvex.html#simuvex.s_cc.SimCC" _target="blank">API documentation</a> for details.
+Alternately, you can pass it to an interface that can use it to modify its own behavior, like <code>b.factory.call_state</code>, or...</p>
+<h2 id="callables">Callables</h2>
+<p>Callables are a Foreign Functions Interface (FFI) for symbolic execution.
+Basic callable usage is to create one with <code>myfunc = b.factory.callable(addr)</code>, and then call it! <code>result = myfunc(args, ...)</code>
+When you call the callable, angr will set up a <code>call_state</code> at the given address, dump the given arguments into memory, and run a <code>path_group</code> based on this state until all the paths have exited from the function.
+Then, it merges all the result states together, pulls the return value out of that state, and returns it.</p>
+<p>All the interaction with the state happens with the aid of a <code>SimCC</code>, to tell where to put the arguments and where to get the return value.
+By default, it uses a sane default for the archetecture, but if you&apos;d like to customize it, you can pass a <code>SimCC</code> object in the <code>cc</code> keyword argument when constructing the callable.</p>
+<p>You can pass symbolic data as function arguments, and everything will work fine.
+You can even pass more complicated data, like strings, lists, and structures as native python data (use tuples for structures), and it&apos;ll be serialized as cleanly as possible into the state.
+If you&apos;d like to specify a pointer to a certain value, you can wrap it in a <code>PointerWrapper</code> object, available as <code>b.factory.callable.PointerWrapper</code>.
+The exact semantics of how pointer-wrapping work are a little confusing, but they can be boiled down to &quot;unless you specify it with a PointerWrapper or a specific SimArrayType, nothing will be wrapped in a pointer automatically unless it gets to the end and it hasn&apos;t yet been wrapped in a pointer yet and the original type is a string, array, or tuple.&quot;
+The relevant code is actually in SimCC - it&apos;s the <code>setup_callsite</code> function.</p>
+<p>If you don&apos;t care for the actual return value of the call, you can say <code>func.perform_call(arg, ...)</code>, and then the properties <code>func.result_state</code> and <code>func.result_path_group</code> will be populated.
+They will actually be populated even if you call the callable normally, but you probably care about them more in this case!</p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="surveyors.html" class="navigation navigation-prev " aria-label="Previous page: バルク実行 - Surveyors">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="analyses.html" class="navigation navigation-next " aria-label="Next page: 解析">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"データ型と呼び出し規約を扱う","level":"1.8","depth":1,"next":{"title":"解析","level":"1.9","depth":1,"path":"docs/analyses.md","ref":"docs/analyses.md","articles":[{"title":"CFGAccurate","level":"1.9.1","depth":2,"path":"docs/analyses/cfg_accurate.md","ref":"docs/analyses/cfg_accurate.md","articles":[]},{"title":"バックワードスライス","level":"1.9.2","depth":2,"path":"docs/analyses/backward_slice.md","ref":"docs/analyses/backward_slice.md","articles":[]}]},"previous":{"title":"バルク実行 - Surveyors","level":"1.7.4","depth":2,"path":"docs/surveyors.md","ref":"docs/surveyors.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"docs/structured_data.md","mtime":"2016-09-25T13:21:13.660Z","type":"markdown"},"gitbook":{"version":"3.0.0","time":"2016-10-30T07:30:33.913Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/buttons.js"></script>
+        
+    
+
+    </body>
+</html>
+

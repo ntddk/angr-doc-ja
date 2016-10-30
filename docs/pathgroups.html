@@ -1,0 +1,717 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <title>バルク実行 - Path Groups · GitBook</title>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.0.0">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="surveyors.html" />
+    
+    
+    <link rel="prev" href="paths.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    イントロダクション
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.1.1" data-path="overview.html">
+            
+                <a href="overview.html">
+            
+                    
+                    概要
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.2" data-path="../INSTALL.html">
+            
+                <a href="../INSTALL.html">
+            
+                    
+                    インストール
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.3" data-path="../HACKING.html">
+            
+                <a href="../HACKING.html">
+            
+                    
+                    コントリビュートするには
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.4" data-path="../HELPWANTED.html">
+            
+                <a href="../HELPWANTED.html">
+            
+                    
+                    コントリビュートの対象
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="toplevel.html">
+            
+                <a href="toplevel.html">
+            
+                    
+                    トップレベルインターフェイス
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="loading.html">
+            
+                <a href="loading.html">
+            
+                    
+                    バイナリのロード
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="ir.html">
+            
+                <a href="ir.html">
+            
+                    
+                    中間表現
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="claripy.html">
+            
+                <a href="claripy.html">
+            
+                    
+                    ソルバエンジン
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="states.html">
+            
+                <a href="states.html">
+            
+                    
+                    プログラムの状態管理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="symbolic.html">
+            
+                <a href="symbolic.html">
+            
+                    
+                    シンボリック実行
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.7.1" data-path="simuvex.html">
+            
+                <a href="simuvex.html">
+            
+                    
+                    実行エンジン
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.2" data-path="paths.html">
+            
+                <a href="paths.html">
+            
+                    
+                    実行の制御
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.7.3" data-path="pathgroups.html">
+            
+                <a href="pathgroups.html">
+            
+                    
+                    バルク実行 - Path Groups
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.4" data-path="surveyors.html">
+            
+                <a href="surveyors.html">
+            
+                    
+                    バルク実行 - Surveyors
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="structured_data.html">
+            
+                <a href="structured_data.html">
+            
+                    
+                    データ型と呼び出し規約を扱う
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="analyses.html">
+            
+                <a href="analyses.html">
+            
+                    
+                    解析
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.9.1" data-path="analyses/cfg_accurate.html">
+            
+                <a href="analyses/cfg_accurate.html">
+            
+                    
+                    CFGAccurate
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.2" data-path="analyses/backward_slice.html">
+            
+                <a href="analyses/backward_slice.html">
+            
+                    
+                    バックワードスライス
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10" data-path="speed.html">
+            
+                <a href="speed.html">
+            
+                    
+                    高速化のてびき
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11" data-path="examples.html">
+            
+                <a href="examples.html">
+            
+                    
+                    実例
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12" data-path="faq.html">
+            
+                <a href="faq.html">
+            
+                    
+                    FAQ
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13" data-path="gotchas.html">
+            
+                <a href="gotchas.html">
+            
+                    
+                    問題点
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.14" data-path="../CHANGELOG.html">
+            
+                <a href="../CHANGELOG.html">
+            
+                    
+                    更新履歴
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >バルク実行 - Path Groups</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="bulk-execution-and-exploration---path-groups">Bulk Execution and Exploration - Path Groups</h1>
+<p>Path groups are just a bunch of paths being executed at once. They are also the future.</p>
+<p>Path groups let you wrangle multiple paths in a slick way.
+Paths are organized into &#x201C;stashes&#x201D;, which you can step forward, filter, merge,
+and move around as you wish. There are different kind of stashes, which are
+specified in <a href="paths.md#path-types">Paths</a>. This allows you to, for example,
+step two different stashes of paths at different rates, then merge them together.</p>
+<p>Here are some basic examples of pathgroups capabilities:</p>
+<pre><code class="lang-python"><span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-keyword">import</span> angr
+
+
+<span class="hljs-meta">&gt;&gt;&gt; </span>p = angr.Project(<span class="hljs-string">&apos;examples/fauxware/fauxware&apos;</span>, load_options={<span class="hljs-string">&apos;auto_load_libs&apos;</span>: <span class="hljs-keyword">False</span>})
+<span class="hljs-meta">&gt;&gt;&gt; </span>pg = p.factory.path_group()
+</code></pre>
+<p>Exploring a path:</p>
+<pre><code class="lang-python"><span class="hljs-comment"># While there are active path, we step</span>
+<span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-keyword">while</span> len(pg.active) &gt; <span class="hljs-number">0</span>:
+<span class="hljs-meta">... </span>   pg.step()
+
+<span class="hljs-meta">&gt;&gt;&gt; </span>print(pg)
+&lt;PathGroup <span class="hljs-keyword">with</span> <span class="hljs-number">1</span> deadended&gt;
+</code></pre>
+<p>We now have a deadended path, let&apos;s see what we can do with it</p>
+<pre><code class="lang-python"><span class="hljs-meta">&gt;&gt;&gt; </span>path = pg.deadended[<span class="hljs-number">0</span>]
+<span class="hljs-meta">&gt;&gt;&gt; </span>print(<span class="hljs-string">&apos;Path length: {0} steps&apos;</span>.format(path.length))
+Path length: <span class="hljs-number">50</span> steps
+</code></pre>
+<p>Get path trace:</p>
+<pre><code class="lang-python"><span class="hljs-meta">&gt;&gt;&gt; </span>print(<span class="hljs-string">&apos;Trace:&apos;</span>)
+<span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-keyword">for</span> step <span class="hljs-keyword">in</span> path.trace:
+<span class="hljs-meta">... </span>   print(step)
+Trace:
+&lt;SimIRSB <span class="hljs-number">0x400580</span>&gt;
+&lt;SimIRSB <span class="hljs-number">0x400540</span>&gt;
+&lt;SimProcedure __libc_start_main&gt;
+&lt;SimIRSB <span class="hljs-number">0x4007e0</span>&gt;
+&lt;SimIRSB <span class="hljs-number">0x4004e0</span>&gt;
+&lt;SimIRSB <span class="hljs-number">0x4005ac</span>&gt;
+&lt;SimIRSB <span class="hljs-number">0x4005be</span>&gt;
+&lt;SimIRSB <span class="hljs-number">0x4004e9</span>&gt;
+&lt;SimIRSB <span class="hljs-number">0x400640</span>&gt;
+&lt;SimIRSB <span class="hljs-number">0x400660</span>&gt;
+&lt;SimIRSB <span class="hljs-number">0x4004ee</span>&gt;
+&lt;SimIRSB <span class="hljs-number">0x400880</span>&gt;
+&lt;SimIRSB <span class="hljs-number">0x4008af</span>&gt;
+&lt;SimIRSB <span class="hljs-number">0x4004f3</span>&gt;
+&lt;SimIRSB <span class="hljs-number">0x400825</span>&gt;
+&lt;SimIRSB <span class="hljs-number">0x400846</span>&gt;
+&lt;SimProcedure __libc_start_main&gt;
+&lt;SimIRSB <span class="hljs-number">0x40071d</span>&gt;
+&lt;SimIRSB <span class="hljs-number">0x400510</span>&gt;
+&lt;SimProcedure puts&gt;
+&lt;SimIRSB <span class="hljs-number">0x40073e</span>&gt;
+&lt;SimIRSB <span class="hljs-number">0x400530</span>&gt;
+&lt;SimProcedure read&gt;
+&lt;SimIRSB <span class="hljs-number">0x400754</span>&gt;
+&lt;SimIRSB <span class="hljs-number">0x400530</span>&gt;
+&lt;SimProcedure read&gt;
+&lt;SimIRSB <span class="hljs-number">0x40076a</span>&gt;
+&lt;SimIRSB <span class="hljs-number">0x400510</span>&gt;
+&lt;SimProcedure puts&gt;
+&lt;SimIRSB <span class="hljs-number">0x400774</span>&gt;
+&lt;SimIRSB <span class="hljs-number">0x400530</span>&gt;
+&lt;SimProcedure read&gt;
+imIRSB <span class="hljs-number">0x40078a</span>&gt;
+&lt;SimIRSB <span class="hljs-number">0x400530</span>&gt;
+&lt;SimProcedure read&gt;
+&lt;SimIRSB <span class="hljs-number">0x4007a0</span>&gt;
+&lt;SimIRSB <span class="hljs-number">0x400664</span>&gt;
+&lt;SimIRSB <span class="hljs-number">0x400550</span>&gt;
+&lt;SimProcedure strcmp&gt;
+&lt;SimIRSB <span class="hljs-number">0x40068e</span>&gt;
+&lt;SimIRSB <span class="hljs-number">0x400692</span>&gt;
+&lt;SimIRSB <span class="hljs-number">0x4006eb</span>&gt;
+&lt;SimIRSB <span class="hljs-number">0x4007b3</span>&gt;
+&lt;SimIRSB <span class="hljs-number">0x4007bd</span>&gt;
+&lt;SimIRSB <span class="hljs-number">0x4006ed</span>&gt;
+&lt;SimIRSB <span class="hljs-number">0x400510</span>&gt;
+&lt;SimProcedure puts&gt;
+&lt;SimIRSB <span class="hljs-number">0x4006fb</span>&gt;
+&lt;SimIRSB <span class="hljs-number">0x4007c7</span>&gt;
+&lt;SimIRSB <span class="hljs-number">0x4007d3</span>&gt;
+</code></pre>
+<p>Get constraints applied to the path:</p>
+<pre><code class="lang-python"><span class="hljs-meta">&gt;&gt;&gt; </span>print(<span class="hljs-string">&apos;There are %d constraints.&apos;</span> % len(path.state.se.constraints))
+There are <span class="hljs-number">2</span> constraints.
+</code></pre>
+<p>Get memory state at the end of the traversal:</p>
+<pre><code class="lang-python"><span class="hljs-meta">&gt;&gt;&gt; </span>print(<span class="hljs-string">&apos;rax: {0}&apos;</span>.format(path.state.regs.rax))
+rax: &lt;BV64 <span class="hljs-number">0x37</span>&gt;
+<span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-keyword">assert</span> path.state.se.any_int(path.state.regs.rip) == path.addr  <span class="hljs-comment"># regs are BitVectors</span>
+</code></pre>
+<h3 id="pathgroupexplorer">PathGroup.Explorer()</h3>
+<p>Pathgroups are supposed to replace <code>surveyors.Explorer</code>, being more clever and
+efficient. When launching path_group.Explore with a <code>find</code> argument, multiple
+paths will be launched and step until one of them finds one of the address we
+are looking for. Paths reaching the <code>avoided</code> addresses, if any, will be put
+into the <code>avoided</code> stash. If an active path reaches an interesting address, it
+will be stashed into the <code>found</code> stash, and the other ones will remain active.
+You can then explore the found path, or decide to discard it and continue with
+the other ones.</p>
+<p>Let&apos;s look at a simple crackme <a href="examples.md#reverseme-modern-binary-exploitation---csci-4968">example</a>:</p>
+<p>First, we load the binary.</p>
+<pre><code class="lang-python"><span class="hljs-meta">&gt;&gt;&gt; </span>p = angr.Project(<span class="hljs-string">&apos;examples/CSCI-4968-MBE/challenges/crackme0x00a/crackme0x00a&apos;</span>)
+</code></pre>
+<p>Next, we create a path group.</p>
+<pre><code class="lang-python"><span class="hljs-meta">&gt;&gt;&gt; </span>pg = p.factory.path_group()
+</code></pre>
+<p>Now, we symbolically execute until we find a path that matches our condition (i.e., the &quot;win&quot; condition).</p>
+<pre><code class="lang-python">&gt;&gt; pg.explore(find=<span class="hljs-keyword">lambda</span> p: <span class="hljs-string">&quot;Congrats&quot;</span> <span class="hljs-keyword">in</span> p.state.posix.dumps(<span class="hljs-number">1</span>))
+&lt;PathGroup <span class="hljs-keyword">with</span> <span class="hljs-number">1</span> active, <span class="hljs-number">1</span> found&gt;
+</code></pre>
+<p>Now, we can get the flag out of that state!</p>
+<pre><code>&gt;&gt;&gt; s = pg.found[0].state
+&gt;&gt;&gt; print s.posix.dumps(1)
+Enter password: Congrats!
+
+
+&gt;&gt;&gt; flag = s.posix.dumps(0)
+&gt;&gt;&gt; print(flag)
+g00dJ0B!
+</code></pre><p>Pretty simple, isn&apos;t it?</p>
+<p>Other examples can be found by browsing the <a href="examples.html">examples</a>.</p>
+<h2 id="todo-stashes">TODO: STASHES</h2>
+<h2 id="stash-types">Stash types</h2>
+<p>Paths are put into different stashes during a PathGroup&apos;s execution.
+These are:</p>
+<table>
+<thead>
+<tr>
+<th>Stash</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>active</td>
+<td>This stash contains the paths that will be stepped by default (unless an alternate stash is specified for <code>path_group.step()</code>.</td>
+</tr>
+<tr>
+<td>deadended</td>
+<td>A path goes to the deadended stash when it cannot continue the execution for some reason, including no more valid instructions, unsat state of all of its successors, or an invalid instruction pointer.</td>
+</tr>
+<tr>
+<td>found</td>
+<td>A path goes to the found stash when the path group determines that it matches the condition passed to the <code>find</code> argument of <code>path_group.explore</code>.</td>
+</tr>
+<tr>
+<td>avoided</td>
+<td>A path goes to the avoided stash when the path group determines that it matches the condition passed to the <code>avoid</code> argument of <code>path_group.explore</code>.</td>
+</tr>
+<tr>
+<td>pruned</td>
+<td>When using <code>LAZY_SOLVES</code>, paths are not checked for satisfiability unless absolutely necessary. When a state is found to be unsat in the presence of <code>LAZY_SOLVES</code>, the path hierarchy is traversed to identify when, in its history, it initially became unsat. All paths that are descendent from that point (which will also be unsat, since a state cannot become un-unsat) are pruned and put in this stash.</td>
+</tr>
+<tr>
+<td>errored</td>
+<td>Paths are put in this stash when they cause a Python exception to be raised during execution. This implies a bug in angr or in your custom code (if any).</td>
+</tr>
+<tr>
+<td>unconstrained</td>
+<td>If the <code>save_unconstrained</code> option is provided to the PathGroup constructor, paths that are determined to be unconstrained (i.e., with the instruction pointer controlled by user data or some other source of symbolic data) are placed here.</td>
+</tr>
+<tr>
+<td>unsat</td>
+<td>If the <code>save_unsat</code> option is provided to the PathGroup constructor, paths that are determined to be unsatisfiable (i.e., they have constraints that are contradictory, like the input having to be both &quot;AAAA&quot; and &quot;BBBB&quot; at the same time) are placed here.</td>
+</tr>
+</tbody>
+</table>
+<p>You can move paths between stashes by using the <code>path_group.move</code> function.
+This function accepts many options to control which paths are moved between which stashes.</p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="paths.html" class="navigation navigation-prev " aria-label="Previous page: 実行の制御">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="surveyors.html" class="navigation navigation-next " aria-label="Next page: バルク実行 - Surveyors">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"バルク実行 - Path Groups","level":"1.7.3","depth":2,"next":{"title":"バルク実行 - Surveyors","level":"1.7.4","depth":2,"path":"docs/surveyors.md","ref":"docs/surveyors.md","articles":[]},"previous":{"title":"実行の制御","level":"1.7.2","depth":2,"path":"docs/paths.md","ref":"docs/paths.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"docs/pathgroups.md","mtime":"2016-09-25T13:21:13.654Z","type":"markdown"},"gitbook":{"version":"3.0.0","time":"2016-10-30T07:30:33.913Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/buttons.js"></script>
+        
+    
+
+    </body>
+</html>
+

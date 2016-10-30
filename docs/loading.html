@@ -1,0 +1,731 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <title>バイナリのロード · GitBook</title>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.0.0">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="ir.html" />
+    
+    
+    <link rel="prev" href="toplevel.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    イントロダクション
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.1.1" data-path="overview.html">
+            
+                <a href="overview.html">
+            
+                    
+                    概要
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.2" data-path="../INSTALL.html">
+            
+                <a href="../INSTALL.html">
+            
+                    
+                    インストール
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.3" data-path="../HACKING.html">
+            
+                <a href="../HACKING.html">
+            
+                    
+                    コントリビュートするには
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.4" data-path="../HELPWANTED.html">
+            
+                <a href="../HELPWANTED.html">
+            
+                    
+                    コントリビュートの対象
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="toplevel.html">
+            
+                <a href="toplevel.html">
+            
+                    
+                    トップレベルインターフェイス
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.3" data-path="loading.html">
+            
+                <a href="loading.html">
+            
+                    
+                    バイナリのロード
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="ir.html">
+            
+                <a href="ir.html">
+            
+                    
+                    中間表現
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="claripy.html">
+            
+                <a href="claripy.html">
+            
+                    
+                    ソルバエンジン
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="states.html">
+            
+                <a href="states.html">
+            
+                    
+                    プログラムの状態管理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="symbolic.html">
+            
+                <a href="symbolic.html">
+            
+                    
+                    シンボリック実行
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.7.1" data-path="simuvex.html">
+            
+                <a href="simuvex.html">
+            
+                    
+                    実行エンジン
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.2" data-path="paths.html">
+            
+                <a href="paths.html">
+            
+                    
+                    実行の制御
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.3" data-path="pathgroups.html">
+            
+                <a href="pathgroups.html">
+            
+                    
+                    バルク実行 - Path Groups
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.4" data-path="surveyors.html">
+            
+                <a href="surveyors.html">
+            
+                    
+                    バルク実行 - Surveyors
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="structured_data.html">
+            
+                <a href="structured_data.html">
+            
+                    
+                    データ型と呼び出し規約を扱う
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="analyses.html">
+            
+                <a href="analyses.html">
+            
+                    
+                    解析
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.9.1" data-path="analyses/cfg_accurate.html">
+            
+                <a href="analyses/cfg_accurate.html">
+            
+                    
+                    CFGAccurate
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.2" data-path="analyses/backward_slice.html">
+            
+                <a href="analyses/backward_slice.html">
+            
+                    
+                    バックワードスライス
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10" data-path="speed.html">
+            
+                <a href="speed.html">
+            
+                    
+                    高速化のてびき
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11" data-path="examples.html">
+            
+                <a href="examples.html">
+            
+                    
+                    実例
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12" data-path="faq.html">
+            
+                <a href="faq.html">
+            
+                    
+                    FAQ
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13" data-path="gotchas.html">
+            
+                <a href="gotchas.html">
+            
+                    
+                    問題点
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.14" data-path="../CHANGELOG.html">
+            
+                <a href="../CHANGELOG.html">
+            
+                    
+                    更新履歴
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >バイナリのロード</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="&#x30D0;&#x30A4;&#x30CA;&#x30EA;&#x306E;&#x30ED;&#x30FC;&#x30C9;---cle&#x3068;angr-projects">&#x30D0;&#x30A4;&#x30CA;&#x30EA;&#x306E;&#x30ED;&#x30FC;&#x30C9; - CLE&#x3068;angr Projects</h1>
+<p>angr&#x306E;&#x30D0;&#x30A4;&#x30CA;&#x30EA;&#x30ED;&#x30FC;&#x30C9;&#x30B3;&#x30F3;&#x30DD;&#x30FC;&#x30CD;&#x30F3;&#x30C8;&#x306F;CLE&#x3068;&#x3044;&#x3044;&#x307E;&#x3059;&#xFF0E;&#x3053;&#x308C;&#x306F;CLE Loads Everything&#x306E;&#x30D0;&#x30AF;&#x30ED;&#x30CB;&#x30E0;&#x3067;&#x3059;&#xFF0E;CLE&#x306F;&#x30D0;&#x30A4;&#x30CA;&#x30EA;&#xFF08;&#x3068;&#x305D;&#x308C;&#x304C;&#x4F9D;&#x5B58;&#x3059;&#x308B;&#x30E9;&#x30A4;&#x30D6;&#x30E9;&#x30EA;&#xFF09;&#x3092;&#x53D7;&#x3051;&#x53D6;&#x308A;&#xFF0C;angr&#x306E;&#x6B8B;&#x308A;&#x306E;&#x30B3;&#x30F3;&#x30DD;&#x30FC;&#x30CD;&#x30F3;&#x30C8;&#x304C;&#x6271;&#x3044;&#x3084;&#x3059;&#x3044;&#x3088;&#x3046;&#x306B;&#x305D;&#x308C;&#x3089;&#x3092;&#x63D0;&#x793A;&#x3059;&#x308B;&#x62C5;&#x5F53;&#x3067;&#x3059;&#xFF0E;</p>
+<p>CLE&#x306E;&#x4E3B;&#x306A;&#x76EE;&#x6A19;&#x306F;&#xFF0C;&#x30ED;&#x30D0;&#x30B9;&#x30C8;&#x306A;&#x65B9;&#x6CD5;&#xFF0C;&#x3059;&#x306A;&#x308F;&#x3061;&#xFF0C;&#x5B9F;&#x969B;&#x306E;&#xFF08;&#x305F;&#x3068;&#x3048;&#x3070;ELF&#x30D0;&#x30A4;&#x30CA;&#x30EA;&#x306E;&#x5834;&#x5408;GNU LD&#xFF09;&#x30ED;&#x30FC;&#x30C0;&#x3068;&#x540C;&#x3058;&#x65B9;&#x6CD5;&#x3067;&#x30D0;&#x30A4;&#x30CA;&#x30EA;&#x3092;&#x30ED;&#x30FC;&#x30C9;&#x3059;&#x308B;&#x3053;&#x3068;&#x3067;&#x3059;&#xFF0E;&#x305D;&#x308C;&#x306F;&#xFF0C;&#x30B9;&#x30C8;&#x30EA;&#x30C3;&#x30D7;&#x3055;&#x308C;&#x305F;&#x308A;&#x81EA;&#x4E3B;&#x7684;&#x307E;&#x305F;&#x306F;&#x7121;&#x610F;&#x8B58;&#x306B;&#x58CA;&#x3055;&#x308C;&#x305F;&#x30D0;&#x30A4;&#x30CA;&#x30EA;&#x4E2D;&#x306E;&#x60C5;&#x5831;&#x306E;&#x3044;&#x304F;&#x3064;&#x304B;&#x306F;CLE&#x306B;&#x3088;&#x3063;&#x3066;&#x7121;&#x8996;&#x3055;&#x308C;&#x308B;&#x3053;&#x3068;&#x3092;&#x610F;&#x5473;&#x3057;&#x307E;&#x3059;&#xFF0E;&#x7D44;&#x307F;&#x8FBC;&#x307F;&#x306E;&#x4E16;&#x754C;&#x3067;&#x306F;&#x3088;&#x304F;&#x3042;&#x308B;&#x3053;&#x3068;&#x3067;&#x3059;&#xFF0E;</p>
+<p>angr&#x306F;&#xFF0C;&#x6B21;&#x3005;&#x306B;&#x30D0;&#x30A4;&#x30CA;&#x30EA;&#x306E;&#x60C5;&#x5831;&#x3092;<em>Project</em>&#x30AF;&#x30E9;&#x30B9;&#x306B;&#x542B;&#x3081;&#x307E;&#x3059;&#xFF0E;Project&#x30AF;&#x30E9;&#x30B9;&#x306F;&#x89E3;&#x6790;&#x5BFE;&#x8C61;&#x306E;&#x30D0;&#x30A4;&#x30CA;&#x30EA;&#x3092;&#x793A;&#x3059;&#x30A8;&#x30F3;&#x30C6;&#x30A3;&#x30C6;&#x30A3;&#x3067;&#x3042;&#x308A;&#xFF0C;angr&#x306E;&#x64CD;&#x4F5C;&#x3092;&#x901A;&#x3058;&#x3066;&#x5E7E;&#x5EA6;&#x3068;&#x306A;&#x304F;&#x53C2;&#x7167;&#x3055;&#x308C;&#x307E;&#x3059;&#xFF0E;</p>
+<p>&#x30D0;&#x30A4;&#x30CA;&#x30EA;&#x3092;angr&#x306B;&#x30ED;&#x30FC;&#x30C9;&#x3059;&#x308B;&#x306B;&#x306F;&#xFF08;&quot;/bin/true&quot;&#x3063;&#x3066;&#x3053;&#x3068;&#x306B;&#x3057;&#x307E;&#x3057;&#x3087;&#x3046;&#xFF09;&#x6B21;&#x306E;&#x3088;&#x3046;&#x306B;&#x5165;&#x529B;&#x3057;&#x307E;&#x3059;&#xFF1A;</p>
+<pre><code class="lang-python"><span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-keyword">import</span> angr
+
+<span class="hljs-meta">&gt;&gt;&gt; </span>b = angr.Project(<span class="hljs-string">&quot;/bin/true&quot;</span>)
+</code></pre>
+<p>&#x3053;&#x308C;&#x3067;&#xFF0C;<em>b</em>&#x306F;angr&#x306A;&#x308A;&#x306E;&#x30D0;&#x30A4;&#x30CA;&#x30EA;&#xFF08;&#x300C;&#x30E1;&#x30A4;&#x30F3;&#x300D;&#x30D0;&#x30A4;&#x30CA;&#x30EA;&#xFF09;&#x306E;&#x8868;&#x73FE;&#x306B;&#x306A;&#x308A;&#x307E;&#x3057;&#x305F;&#xFF0E;&#x4F9D;&#x5B58;&#x30E9;&#x30A4;&#x30D6;&#x30E9;&#x30EA;&#x3082;&#x4E00;&#x7DD2;&#x3067;&#x3059;&#xFF0E;&#x6B8B;&#x308A;&#x306E;&#x30D7;&#x30E9;&#x30C3;&#x30C8;&#x30D5;&#x30A9;&#x30FC;&#x30E0;&#x306E;&#x77E5;&#x8B58;&#x304C;&#x306A;&#x304F;&#x3066;&#x3082;&#xFF0C;&#x3053;&#x3053;&#x3067;&#x3044;&#x304F;&#x3064;&#x304B;&#x57FA;&#x672C;&#x7684;&#x306A;&#x3053;&#x3068;&#x304C;&#x3067;&#x304D;&#x307E;&#x3059;&#xFF1A;</p>
+<pre><code class="lang-python"><span class="hljs-comment"># &#x30D0;&#x30A4;&#x30CA;&#x30EA;&#x306E;&#x30A8;&#x30F3;&#x30C8;&#x30EA;&#x30DD;&#x30A4;&#x30F3;&#x30C8;</span>
+<span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-keyword">print</span> b.entry
+
+<span class="hljs-comment"># &#x30D0;&#x30A4;&#x30CA;&#x30EA;&#x306E;&#x30E1;&#x30E2;&#x30EA;&#x306B;&#x304A;&#x3051;&#x308B;&#x6700;&#x5C0F;&#x30A2;&#x30C9;&#x30EC;&#x30B9;&#x3068;&#x6700;&#x5927;&#x30A2;&#x30C9;&#x30EC;&#x30B9;</span>
+<span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-keyword">print</span> b.loader.min_addr(), b.loader.max_addr()
+
+<span class="hljs-comment"># &#x30D0;&#x30A4;&#x30CA;&#x30EA;&#x306E;&#x7D76;&#x5BFE;&#x30D1;&#x30B9;&#x540D;</span>
+<span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-keyword">print</span> b.filename
+</code></pre>
+<p>CLE&#x306F;Loader&#x30AF;&#x30E9;&#x30B9;&#x3092;&#x4ECB;&#x3057;&#x3066;&#x30D0;&#x30A4;&#x30CA;&#x30EA;&#x306E;&#x60C5;&#x5831;&#x3092;&#x30A8;&#x30AF;&#x30B9;&#x30DD;&#x30FC;&#x30BA;&#x3057;&#x3066;&#x3044;&#x307E;&#x3059;&#xFF0E;CLE&#x30ED;&#x30FC;&#x30C0; (cle.loader) &#x306F;&#x5358;&#x4E00;&#x306E;&#x30E1;&#x30E2;&#x30EA;&#x7A7A;&#x9593;&#x306B;&#x30ED;&#x30FC;&#x30C9;&#x30FB;&#x30DE;&#x30C3;&#x30D4;&#x30F3;&#x30B0;&#x3055;&#x308C;&#xFF0C;&#x30ED;&#x30FC;&#x30C9;&#x3055;&#x308C;&#x305F;CLE&#x30D0;&#x30A4;&#x30CA;&#x30EA;&#x30AA;&#x30D6;&#x30B8;&#x30A7;&#x30AF;&#x30C8;&#x5168;&#x4F53;&#x306E;&#x96C6;&#x5408;&#x4F53;&#x3092;&#x8868;&#x73FE;&#x3057;&#x307E;&#x3059;&#xFF0E;&#x5404;&#x30D0;&#x30A4;&#x30CA;&#x30EA;&#x30AA;&#x30D6;&#x30B8;&#x30A7;&#x30AF;&#x30C8;&#x306F;&#xFF0C;&#x305D;&#x306E;&#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x5F62;&#x5F0F;&#x3092;&#x6271;&#x3048;&#x308B;&#x30ED;&#x30FC;&#x30C0;&#x30D0;&#x30C3;&#x30AF;&#x30A8;&#x30F3;&#x30C9;&#xFF08;cle.Backend&#x306E;&#x30B5;&#x30D6;&#x30AF;&#x30E9;&#x30B9;&#xFF09;&#x306B;&#x3088;&#x308A;&#x30ED;&#x30FC;&#x30C9;&#x3055;&#x308C;&#x307E;&#x3059;&#xFF0E;&#x305F;&#x3068;&#x3048;&#x3070;&#xFF0C;cle.ELF&#x306F;ELF&#x30D0;&#x30A4;&#x30CA;&#x30EA;&#x306E;&#x30ED;&#x30FC;&#x30C9;&#x306B;&#x7528;&#x3044;&#x3089;&#x308C;&#x307E;&#x3059;&#xFF0E;</p>
+<p>CLE&#x3078;&#x306E;&#x30A4;&#x30F3;&#x30BF;&#x30FC;&#x30D5;&#x30A7;&#x30A4;&#x30B9;&#x306F;&#x6B21;&#x306E;&#x901A;&#x308A;&#xFF1A;</p>
+<pre><code class="lang-python"><span class="hljs-comment"># CLE Loader&#x30AA;&#x30D6;&#x30B8;&#x30A7;&#x30AF;&#x30C8;</span>
+<span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-keyword">print</span> b.loader
+
+<span class="hljs-comment"># &#x89E3;&#x6790;&#x5BFE;&#x8C61;&#x306E;&#x30D0;&#x30A4;&#x30CA;&#x30EA;&#x306E;&#x4E00;&#x90E8;&#x3068;&#x3057;&#x3066;&#x30ED;&#x30FC;&#x30C9;&#x3055;&#x308C;&#x305F;&#x30AA;&#x30D6;&#x30B8;&#x30A7;&#x30AF;&#x30C8;&#xFF08;&#x578B;&#x306F;&#x30D0;&#x30C3;&#x30AF;&#x30A8;&#x30F3;&#x30C9;&#x4F9D;&#x5B58;&#xFF09;&#x306E;&#x8F9E;&#x66F8;</span>
+<span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-keyword">print</span> b.loader.shared_objects
+
+<span class="hljs-comment"># &#x30ED;&#x30FC;&#x30C9;&#x5F8C;&#x306E;&#x30D7;&#x30ED;&#x30BB;&#x30B9;&#x306E;&#x30E1;&#x30E2;&#x30EA;&#x7A7A;&#x9593;&#xFF0E;&#x6307;&#x5B9A;&#x30A2;&#x30C9;&#x30EC;&#x30B9;&#x306E;&#x30D0;&#x30A4;&#x30C8;&#x306B;&#x30A2;&#x30C9;&#x30EC;&#x30B9;&#x3092;&#x30DE;&#x30C3;&#x30D7;&#x3059;&#x308B;</span>
+<span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-keyword">print</span> b.loader.memory[b.loader.min_addr()]
+
+<span class="hljs-comment"># &#x30E1;&#x30A4;&#x30F3;&#x30D0;&#x30A4;&#x30CA;&#x30EA;&#x306E;&#x30AA;&#x30D6;&#x30B8;&#x30A7;&#x30AF;&#x30C8;&#xFF08;&#x578B;&#x306F;&#x30D0;&#x30C3;&#x30AF;&#x30A8;&#x30F3;&#x30C9;&#x4F9D;&#x5B58;&#xFF09;</span>
+<span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-keyword">print</span> b.loader.main_bin
+
+<span class="hljs-comment"># &#x6307;&#x5B9A;&#x30A2;&#x30C9;&#x30EC;&#x30B9;&#x306B;&#x30DE;&#x30C3;&#x30D7;&#x3055;&#x308C;&#x305F;&#x30AA;&#x30D6;&#x30B8;&#x30A7;&#x30AF;&#x30C8;</span>
+<span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-keyword">print</span> b.loader.addr_belongs_to_object(b.loader.max_addr())
+
+<span class="hljs-comment"># &#xFF08;&#x30E1;&#x30A4;&#x30F3;&#x30D0;&#x30A4;&#x30CA;&#x30EA;&#x4E2D;&#x306E;&#xFF09;&#x30B7;&#x30F3;&#x30DC;&#x30EB;&#x306E;GOT&#x30B9;&#x30ED;&#x30C3;&#x30C8;&#x306E;&#x30A2;&#x30C9;&#x30EC;&#x30B9;&#x53D6;&#x5F97;</span>
+<span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-keyword">print</span> b.loader.find_symbol_got_entry(<span class="hljs-string">&apos;__libc_start_main&apos;</span>)
+</code></pre>
+<p>&#x500B;&#x3005;&#x306E;&#x30D0;&#x30A4;&#x30CA;&#x30EA;&#x30AA;&#x30D6;&#x30B8;&#x30A7;&#x30AF;&#x30C8;&#x3092;&#x76F4;&#x306B;&#x53C2;&#x7167;&#x3059;&#x308B;&#x3053;&#x3068;&#x3082;&#x3067;&#x304D;&#x307E;&#x3059;&#xFF1A;</p>
+<pre><code class="lang-python"><span class="hljs-comment"># &#x30D7;&#x30ED;&#x30B0;&#x30E9;&#x30E0;&#x304C;&#x4F9D;&#x5B58;&#x3057;&#x3066;&#x3044;&#x308B;&#x30E9;&#x30A4;&#x30D6;&#x30E9;&#x30EA;&#x540D;&#x306E;&#x30EA;&#x30B9;&#x30C8;</span>
+<span class="hljs-comment"># ELF&#x30D0;&#x30A4;&#x30CA;&#x30EA;&#x4E2D;&#x306E;dynamic&#x30BB;&#x30AF;&#x30B7;&#x30E7;&#x30F3;&#x306E;DT_NEEDED&#x30D5;&#x30A3;&#x30FC;&#x30EB;&#x30C9;&#x3092;&#x9759;&#x7684;&#x306B;&#x8AAD;&#x307F;&#x8FBC;&#x3080;&#x3053;&#x3068;&#x3067;&#x53D6;&#x5F97;&#x3057;&#x3066;&#x3044;&#x308B;</span>
+<span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-keyword">print</span> b.loader.main_bin.deps
+
+<span class="hljs-comment"># &#x30E1;&#x30A4;&#x30F3;&#x30D0;&#x30A4;&#x30CA;&#x30EA;*&#x3060;&#x3051;*&#x306E;&#x30E1;&#x30E2;&#x30EA;&#x5185;&#x5BB9;&#x306E;&#x8F9E;&#x66F8;</span>
+<span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-keyword">print</span> b.loader.main_bin.memory
+
+<span class="hljs-comment"># &#x30ED;&#x30FC;&#x30C9;&#x3055;&#x308C;&#x305F;libc&#x306E;&#x30A4;&#x30F3;&#x30DD;&#x30FC;&#x30C8;&#x95A2;&#x6570;&#x306E;&#x8F9E;&#x66F8; (name-&gt;ELFRelocation)</span>
+<span class="hljs-meta">&gt;&gt;&gt; </span>b.loader.shared_objects[<span class="hljs-string">&apos;libc.so.6&apos;</span>].imports
+
+<span class="hljs-comment"># &#x30E1;&#x30A4;&#x30F3;&#x30D0;&#x30A4;&#x30CA;&#x30EA;&#x306E;&#x30A4;&#x30F3;&#x30DD;&#x30FC;&#x30C8;&#x95A2;&#x6570;&#x306E;&#x8F9E;&#x66F8; (name-&gt;ELFRelocation)</span>
+<span class="hljs-comment"># &#x30A2;&#x30C9;&#x30EC;&#x30B9;&#x306F;&#x901A;&#x5E38;0&#xFF08;&#x4E0B;&#x8A18;&#x306E;&#x305D;&#x306E;&#x4ED6;&#x30BB;&#x30AF;&#x30B7;&#x30E7;&#x30F3;&#x3092;&#x53C2;&#x7167;&#x306E;&#x3053;&#x3068;&#xFF09;</span>
+<span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-keyword">print</span> b.loader.main_bin.imports
+</code></pre>
+<h2 id="&#x4F9D;&#x5B58;&#x95A2;&#x4FC2;&#x306E;&#x30ED;&#x30FC;&#x30C9;">&#x4F9D;&#x5B58;&#x95A2;&#x4FC2;&#x306E;&#x30ED;&#x30FC;&#x30C9;</h2>
+<p>&#x30ED;&#x30FC;&#x30C7;&#x30A3;&#x30F3;&#x30B0;&#x30AA;&#x30D7;&#x30B7;&#x30E7;&#x30F3;&#x3067;<code>auto_load_libs</code>&#x3092;<code>False</code>&#x306B;&#x6307;&#x5B9A;&#x3057;&#x3066;&#x3044;&#x306A;&#x3051;&#x308C;&#x3070;&#xFF0C;CLE&#x306F;&#x30C7;&#x30D5;&#x30A9;&#x30EB;&#x30C8;&#x3067;&#x30E1;&#x30A4;&#x30F3;&#x30D0;&#x30A4;&#x30CA;&#x30EA;&#x306E;&#x3059;&#x3079;&#x3066;&#x306E;&#x4F9D;&#x5B58;&#x95A2;&#x4FC2;&#x3092;&#x30ED;&#x30FC;&#x30C9;&#x3057;&#x3088;&#x3046;&#x3068;&#x3057;&#x307E;&#x3059;&#xFF08;&#x305F;&#x3068;&#x3048;&#x3070;libc.so.6&#x3084;ld-linux.so2&#x306A;&#x3069;&#xFF09;&#xFF0E;
+&#x3044;&#x305A;&#x308C;&#x304B;&#x3092;&#x898B;&#x3064;&#x3051;&#x3089;&#x308C;&#x306A;&#x3044;&#x5834;&#x5408;&#x306F;&#x30E9;&#x30A4;&#x30D6;&#x30E9;&#x30EA;&#x306E;&#x30ED;&#x30FC;&#x30C9;&#x6642;&#x306B;&#x9ED9;&#x3063;&#x3066;&#x30A8;&#x30E9;&#x30FC;&#x3092;&#x7121;&#x8996;&#x3057;&#xFF0C;&#x305D;&#x306E;&#x30E9;&#x30A4;&#x30D6;&#x30E9;&#x30EA;&#x306E;&#x4F9D;&#x5B58;&#x95A2;&#x4FC2;&#x3092;&#x672A;&#x89E3;&#x6C7A;&#x306E;&#x3082;&#x306E;&#x3068;&#x3057;&#x3066;&#x6271;&#x3044;&#x307E;&#x3059;&#xFF0E;&#x304A;&#x597D;&#x307F;&#x3067;&#x3053;&#x306E;&#x632F;&#x308B;&#x821E;&#x3044;&#x306F;&#x5909;&#x66F4;&#x3067;&#x304D;&#x307E;&#x3059;&#xFF0E;</p>
+<h2 id="&#x30ED;&#x30FC;&#x30C7;&#x30A3;&#x30F3;&#x30B0;&#x30AA;&#x30D7;&#x30B7;&#x30E7;&#x30F3;">&#x30ED;&#x30FC;&#x30C7;&#x30A3;&#x30F3;&#x30B0;&#x30AA;&#x30D7;&#x30B7;&#x30E7;&#x30F3;</h2>
+<p>&#x30ED;&#x30FC;&#x30C7;&#x30A3;&#x30F3;&#x30B0;&#x30AA;&#x30D7;&#x30B7;&#x30E7;&#x30F3;&#x306F;Project&#x306B;&#x5BFE;&#x3057;&#x3066;&#x6E21;&#x3059;&#x3053;&#x3068;&#x304C;&#x3067;&#x304D;&#x307E;&#x3059;&#xFF08;&#x7D9A;&#x3044;&#x3066;CLE&#x306B;&#x6E21;&#x3055;&#x308C;&#x307E;&#x3059;&#xFF09;&#xFF0E;</p>
+<p>CLE&#x306F;&#x30D1;&#x30E9;&#x30E1;&#x30FC;&#x30BF;&#x306E;&#x96C6;&#x5408;&#x306E;&#x3088;&#x3046;&#x306A;&#x8F9E;&#x66F8;&#x3092;&#x4E88;&#x671F;&#x3057;&#x3066;&#x3044;&#x307E;&#x3059;&#xFF0E;&#x89E3;&#x6790;&#x5BFE;&#x8C61;&#x30D0;&#x30A4;&#x30CA;&#x30EA;&#x3067;&#x306F;&#x306A;&#x3044;&#x30E9;&#x30A4;&#x30D6;&#x30E9;&#x30EA;&#x306B;&#x9069;&#x7528;&#x3055;&#x308C;&#x306A;&#x3051;&#x308C;&#x3070;&#x306A;&#x3089;&#x306A;&#x3044;&#x30D1;&#x30E9;&#x30E1;&#x30FC;&#x30BF;&#x306F;&#xFF0C;lib_ops&#x30D1;&#x30E9;&#x30E1;&#x30FC;&#x30BF;&#x3068;&#x3057;&#x3066;&#x4E0B;&#x8A18;&#x306E;&#x3088;&#x3046;&#x306B;&#x6E21;&#x305B;&#x307E;&#x3059;&#xFF1A;</p>
+<pre><code class="lang-python">load_options = {<span class="hljs-string">&apos;main_opts&apos;</span>:{options0}, <span class="hljs-string">&apos;lib_opts&apos;</span>: {libname1:{options1}, path2:{options2}, ...}}
+
+<span class="hljs-comment"># &#x8AAD;&#x307F;&#x3084;&#x3059;&#x304F;&#x66F8;&#x304F;&#x3068;&#xFF1A;</span>
+load_options = {}
+load_options[<span class="hljs-string">&apos;main_opts&apos;</span>] = {k1:v1, k2:v2 ...}
+load_options[<span class="hljs-string">&apos;lib_opts&apos;</span>] = {}
+load_options[<span class="hljs-string">&apos;lib_opts&apos;</span>][path1] = {k1:v1, k2:v2, ...}
+load_options[<span class="hljs-string">&apos;lib_opts&apos;</span>][path2] = {k1:v1, k2:v2, ...}
+&#x306A;&#x3069;&#xFF0E;
+</code></pre>
+<h3 id="&#x6709;&#x52B9;&#x306A;&#x30AA;&#x30D7;&#x30B7;&#x30E7;&#x30F3;">&#x6709;&#x52B9;&#x306A;&#x30AA;&#x30D7;&#x30B7;&#x30E7;&#x30F3;</h3>
+<pre><code class="lang-python"><span class="hljs-meta">&gt;&gt;&gt; </span>load_options = {}
+
+<span class="hljs-comment"># &#x3082;&#x3046;&#x52D5;&#x7684;&#x30E9;&#x30A4;&#x30D6;&#x30E9;&#x30EA;&#x306F;&#x30ED;&#x30FC;&#x30C9;&#x3057;&#x305F;&#x3063;&#x3051;&#xFF1F;</span>
+<span class="hljs-meta">&gt;&gt;&gt; </span>load_options[<span class="hljs-string">&apos;auto_load_libs&apos;</span>] = <span class="hljs-keyword">False</span>
+
+<span class="hljs-comment"># &#x5F37;&#x5236;&#x7684;&#x306B;&#x30ED;&#x30FC;&#x30C9;&#x3059;&#x308B;&#x30E9;&#x30A4;&#x30D6;&#x30E9;&#x30EA;&#x306E;&#x30EA;&#x30B9;&#x30C8;</span>
+<span class="hljs-meta">&gt;&gt;&gt; </span>load_options[<span class="hljs-string">&apos;force_load_libs&apos;</span>] = [<span class="hljs-string">&apos;libleet.so&apos;</span>]
+
+<span class="hljs-comment"># &#x30B9;&#x30AD;&#x30C3;&#x30D7;&#x3059;&#x308B;&#x7279;&#x5B9A;&#x30E9;&#x30A4;&#x30D6;&#x30E9;&#x30EA;</span>
+<span class="hljs-meta">&gt;&gt;&gt; </span>load_options[<span class="hljs-string">&apos;skip_libs&apos;</span>] = [<span class="hljs-string">&apos;libc.so.6&apos;</span>]
+
+<span class="hljs-comment"># &#x30E1;&#x30A4;&#x30F3;&#x30D0;&#x30A4;&#x30CA;&#x30EA;&#x3092;&#x30ED;&#x30FC;&#x30C9;&#x3059;&#x308B;&#x3068;&#x304D;&#x306E;&#x30AA;&#x30D7;&#x30B7;&#x30E7;&#x30F3;</span>
+<span class="hljs-meta">&gt;&gt;&gt; </span>load_options[<span class="hljs-string">&apos;main_opts&apos;</span>] = {<span class="hljs-string">&apos;backend&apos;</span>: <span class="hljs-string">&apos;elf&apos;</span>}
+
+<span class="hljs-comment"># &#x30E9;&#x30A4;&#x30D6;&#x30E9;&#x30EA;&#x540D;&#x3092;&#x30ED;&#x30FC;&#x30C9;&#x6642;&#x306B;&#x30AA;&#x30D6;&#x30B8;&#x30A7;&#x30AF;&#x30C8;&#x306E;&#x8F9E;&#x66F8;&#x306B;&#x30DE;&#x30C3;&#x30D4;&#x30F3;&#x30B0;</span>
+<span class="hljs-meta">&gt;&gt;&gt; </span>load_options[<span class="hljs-string">&apos;lib_opts&apos;</span>] = {<span class="hljs-string">&apos;libc.so.6&apos;</span>: {<span class="hljs-string">&apos;custom_base_addr&apos;</span>: <span class="hljs-number">0x13370000</span>}}
+
+<span class="hljs-comment"># &#x5171;&#x6709;&#x30E9;&#x30A4;&#x30D6;&#x30E9;&#x30EA;&#x3092;&#x8FFD;&#x52A0;&#x3067;&#x691C;&#x7D22;&#x3059;&#x308B;&#x30D1;&#x30B9;&#x306E;&#x30EA;&#x30B9;&#x30C8;</span>
+<span class="hljs-meta">&gt;&gt;&gt; </span>load_options[<span class="hljs-string">&apos;custom_ld_path&apos;</span>] = [<span class="hljs-string">&apos;/my/fav/libs&apos;</span>]
+
+<span class="hljs-comment"># libc.so.6&#x3068;libc.so.0&#x306E;&#x3088;&#x3046;&#x306B;&#x7570;&#x306A;&#x308B;&#x30D0;&#x30FC;&#x30B8;&#x30E7;&#x30F3;&#x756A;&#x53F7;&#x3060;&#x304C;&#x540C;&#x4E00;&#x3068;&#x304A;&#x307C;&#x3057;&#x304D;&#x30E9;&#x30A4;&#x30D6;&#x30E9;&#x30EA;&#x306E;&#x6271;&#x3044;</span>
+<span class="hljs-meta">&gt;&gt;&gt; </span>load_options[<span class="hljs-string">&apos;ignore_import_version_numbers&apos;</span>] = <span class="hljs-keyword">False</span>
+
+<span class="hljs-comment"># &#x5171;&#x6709;&#x30E1;&#x30E2;&#x30EA;&#x306E;&#x30EA;&#x30D9;&#x30FC;&#x30B9;&#x306E;&#x305F;&#x3081;&#x306E;&#x30A2;&#x30E9;&#x30A4;&#x30E1;&#x30F3;&#x30C8;</span>
+<span class="hljs-meta">&gt;&gt;&gt; </span>load_options[<span class="hljs-string">&apos;rebase_granularity&apos;</span>] = <span class="hljs-number">0x1000</span>
+
+<span class="hljs-comment"># &#x30E9;&#x30A4;&#x30D6;&#x30E9;&#x30EA;&#x304C;&#x898B;&#x3064;&#x304B;&#x3089;&#x306A;&#x3044;&#x3068;&#x304D;&#x306B;&#x4F8B;&#x5916;&#x3092;&#x9001;&#x51FA;&#xFF08;&#x30C7;&#x30D5;&#x30A9;&#x30EB;&#x30C8;&#x3067;&#x306F;&#x7121;&#x8996;&#xFF09;</span>
+<span class="hljs-meta">&gt;&gt;&gt; </span>load_options[<span class="hljs-string">&apos;except_missing_libs&apos;</span>] = <span class="hljs-keyword">True</span>
+</code></pre>
+<p>&#x6B21;&#x306E;&#x30AA;&#x30D7;&#x30B7;&#x30E7;&#x30F3;&#x306F;&#x30AA;&#x30D6;&#x30B8;&#x30A7;&#x30AF;&#x30C8;&#x3054;&#x3068;&#x306B;&#x9069;&#x7528;&#x3055;&#x308C;&#xFF0C;CLE&#x306E;&#x81EA;&#x52D5;&#x691C;&#x51FA;&#x3092;&#x4E0A;&#x66F8;&#x304D;&#x3057;&#x307E;&#x3059;&#xFF0E;
+&#x3053;&#x308C;&#x3089;&#x306F;&#x3069;&#x3061;&#x3089;&#x3082;&apos;main_opts&apos;&#x307E;&#x305F;&#x306F;&apos;lib_opts&apos;&#x3092;&#x901A;&#x3058;&#x3066;&#x9069;&#x7528;&#x3067;&#x304D;&#x307E;&#x3059;&#xFF0E;</p>
+<pre><code class="lang-python"><span class="hljs-comment"># &#x30D0;&#x30A4;&#x30CA;&#x30EA;&#x3092;&#x30ED;&#x30FC;&#x30C9;&#x3059;&#x308B;&#x30D9;&#x30FC;&#x30B9;&#x30A2;&#x30C9;&#x30EC;&#x30B9;</span>
+<span class="hljs-meta">&gt;&gt;&gt; </span>load_options[<span class="hljs-string">&apos;main_opts&apos;</span>] = {<span class="hljs-string">&apos;custom_base_addr&apos;</span>:<span class="hljs-number">0x4000</span>}
+
+<span class="hljs-comment"># &#x30AA;&#x30D6;&#x30B8;&#x30A7;&#x30AF;&#x30C8;&#x306E;&#x30D0;&#x30C3;&#x30AF;&#x30A8;&#x30F3;&#x30C9;&#x6307;&#x5B9A;&#xFF08;&#x30D0;&#x30C3;&#x30AF;&#x30A8;&#x30F3;&#x30C9;&#x306B;&#x3064;&#x3044;&#x3066;&#x306F;&#x5F8C;&#x8FF0;&#xFF09;</span>
+<span class="hljs-meta">&gt;&gt;&gt; </span>load_options[<span class="hljs-string">&apos;main_opts&apos;</span>] = {<span class="hljs-string">&apos;backend&apos;</span>: <span class="hljs-string">&apos;elf&apos;</span>}
+</code></pre>
+<p>&#x4E00;&#x5EA6;&#x306B;&#x8907;&#x6570;&#x306E;&#x30AA;&#x30D7;&#x30B7;&#x30E7;&#x30F3;&#x3092;&#x8A2D;&#x5B9A;&#x3057;&#x305F;&#x4F8B;&#xFF1A;</p>
+<pre><code class="lang-python"><span class="hljs-meta">&gt;&gt;&gt; </span>load_options[<span class="hljs-string">&apos;main_opts&apos;</span>] = {<span class="hljs-string">&apos;backend&apos;</span>:<span class="hljs-string">&apos;elf&apos;</span>, <span class="hljs-string">&apos;custom_base_addr&apos;</span>: <span class="hljs-number">0x10000</span>}
+</code></pre>
+<h2 id="&#x30D0;&#x30C3;&#x30AF;&#x30A8;&#x30F3;&#x30C9;">&#x30D0;&#x30C3;&#x30AF;&#x30A8;&#x30F3;&#x30C9;</h2>
+<p>CLE&#x306F;&#x73FE;&#x5728;&#xFF0C;IDA&#x3092;&#x7528;&#x3044;&#x3066;&#x30D0;&#x30A4;&#x30CA;&#x30EA;&#x3092;&#x30ED;&#x30FC;&#x30C9;&#x3057;&#x305F;&#x308A;&#x30D5;&#x30E9;&#x30C3;&#x30C8;&#x306A;&#x30A2;&#x30C9;&#x30EC;&#x30B9;&#x7A7A;&#x9593;&#x306B;&#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x3092;&#x30ED;&#x30FC;&#x30C9;&#x3057;&#x305F;&#x308A;&#x3059;&#x308B;&#x3060;&#x3051;&#x3067;&#x306A;&#x304F;&#xFF0C;&#x9759;&#x7684;&#x306B;ELF, PE, CGC, &#x305D;&#x3057;&#x3066;ELF&#x30B3;&#x30A2;&#x30C0;&#x30F3;&#x30D7;&#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x3092;&#x30ED;&#x30FC;&#x30C9;&#x3059;&#x308B;&#x30D0;&#x30C3;&#x30AF;&#x30A8;&#x30F3;&#x30C9;&#x3092;&#x5099;&#x3048;&#x3066;&#x3044;&#x307E;&#x3059;&#xFF0E;CLE&#x306F;&#x307B;&#x3068;&#x3093;&#x3069;&#x306E;&#x5834;&#x5408;&#x81EA;&#x52D5;&#x7684;&#x306B;&#x30D0;&#x30A4;&#x30CA;&#x30EA;&#x306E;&#x6B63;&#x3057;&#x3044;&#x30D0;&#x30C3;&#x30AF;&#x30A8;&#x30F3;&#x30C9;&#x3092;&#x691C;&#x51FA;&#x3059;&#x308B;&#x305F;&#x3081;&#xFF0C;&#x3088;&#x307B;&#x3069;&#x5909;&#x306A;&#x3053;&#x3068;&#x3092;&#x3057;&#x3088;&#x3046;&#x3068;&#x3057;&#x3066;&#x3044;&#x306A;&#x3044;&#x9650;&#x308A;&#x30D0;&#x30C3;&#x30AF;&#x30A8;&#x30F3;&#x30C9;&#x3092;&#x6307;&#x5B9A;&#x3059;&#x308B;&#x5FC5;&#x8981;&#x306F;&#x3042;&#x308A;&#x307E;&#x305B;&#x3093;&#xFF0E;</p>
+<p>&#x30D0;&#x30C3;&#x30AF;&#x30A8;&#x30F3;&#x30C9;&#x3092;&#x6307;&#x5B9A;&#x3059;&#x308B;&#x5834;&#x5408;&#x306F;&#xFF0C;&#x30AA;&#x30D7;&#x30B7;&#x30E7;&#x30F3;&#x8F9E;&#x66F8;&#x306B;&#x305D;&#x306E;&#x30AD;&#x30FC;&#x3092;&#x542B;&#x3081;&#x308B;&#x3068;&#x3088;&#x3044;&#x3067;&#x3057;&#x3087;&#x3046;&#xFF0E;&#x81EA;&#x52D5;&#x7684;&#x306B;&#x691C;&#x51FA;&#x3055;&#x308C;&#x306A;&#x3044;&#x7279;&#x5B9A;&#x306E;&#x30A2;&#x30FC;&#x30AD;&#x30C6;&#x30AF;&#x30C1;&#x30E3;&#x3092;&#x5F37;&#x5236;&#x3059;&#x308B;&#x5FC5;&#x8981;&#x304C;&#x3042;&#x308C;&#x3070;&#xFF0C;<code>custom_arch</code>&#x30AD;&#x30FC;&#x304B;&#x3089;&#x6307;&#x5B9A;&#x3067;&#x304D;&#x307E;&#x3059;&#xFF0E;&#x30AD;&#x30FC;&#x304C;&#x30A2;&#x30FC;&#x30AD;&#x30C6;&#x30AF;&#x30C1;&#x30E3;&#x306E;&#x30EA;&#x30B9;&#x30C8;&#x3068;&#x4E00;&#x81F4;&#x3059;&#x308B;&#x5FC5;&#x8981;&#x306F;&#x3042;&#x308A;&#x307E;&#x305B;&#x3093;&#xFF1B;angr&#x306F;&#x30B5;&#x30DD;&#x30FC;&#x30C8;&#x3057;&#x3066;&#x3044;&#x308B;&#x30A2;&#x30FC;&#x30AD;&#x30C6;&#x30AF;&#x30C1;&#x30E3;&#x306E;&#x4E2D;&#x304B;&#x3089;&#x985E;&#x4F3C;&#x3059;&#x308B;&#x5171;&#x901A;&#x306E;&#x8B58;&#x5225;&#x5B50;&#x3092;&#x3082;&#x3068;&#x306B;&#x6307;&#x5B9A;&#x3057;&#x3088;&#x3046;&#x3068;&#x3057;&#x305F;&#x30A2;&#x30FC;&#x30AD;&#x30C6;&#x30AF;&#x30C1;&#x30E3;&#x3092;&#x7279;&#x5B9A;&#x3057;&#x3066;&#x304F;&#x308C;&#x308B;&#x3067;&#x3057;&#x3087;&#x3046;&#xFF0E;</p>
+<pre><code class="lang-python"><span class="hljs-meta">&gt;&gt;&gt; </span>load_options = {}
+<span class="hljs-meta">&gt;&gt;&gt; </span>load_options[<span class="hljs-string">&apos;main_opts&apos;</span>] = {<span class="hljs-string">&apos;backend&apos;</span>: <span class="hljs-string">&apos;elf&apos;</span>, <span class="hljs-string">&apos;custom_arch&apos;</span>: <span class="hljs-string">&apos;i386&apos;</span>}
+<span class="hljs-meta">&gt;&gt;&gt; </span>load_options[<span class="hljs-string">&apos;lib_opts&apos;</span>] = {<span class="hljs-string">&apos;libc.so.6&apos;</span>: {<span class="hljs-string">&apos;backend&apos;</span>: <span class="hljs-string">&apos;elf&apos;</span>}}
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>&#x30D0;&#x30C3;&#x30AF;&#x30A8;&#x30F3;&#x30C9;&#x30AD;&#x30FC;</th>
+<th>&#x8AAC;&#x660E;</th>
+<th><code>custom_arch</code>&#x3092;&#x8981;&#x6C42;&#x3059;&#x308B;&#xFF1F;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>elf</td>
+<td>PyELFTools&#x3092;&#x30D9;&#x30FC;&#x30B9;&#x3068;&#x3057;&#x305F;ELF&#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x306E;&#x9759;&#x7684;&#x30ED;&#x30FC;&#x30C0;</td>
+<td>no</td>
+</tr>
+<tr>
+<td>pe</td>
+<td>PEFile&#x3092;&#x30D9;&#x30FC;&#x30B9;&#x3068;&#x3057;&#x305F;PE&#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x306E;&#x9759;&#x7684;&#x30ED;&#x30FC;&#x30C0;</td>
+<td>no</td>
+</tr>
+<tr>
+<td>cgc</td>
+<td>Cyber Grand Challenge&#x306E;&#x30D0;&#x30A4;&#x30CA;&#x30EA;&#x306E;&#x9759;&#x7684;&#x30ED;&#x30FC;&#x30C0;</td>
+<td>no</td>
+</tr>
+<tr>
+<td>backedcgc</td>
+<td>&#x30E1;&#x30E2;&#x30EA;&#x3068;&#x30EC;&#x30B8;&#x30B9;&#x30BF;&#x306E;&#x30D0;&#x30C3;&#x30AB;&#x30FC; (backer) &#x3092;&#x767B;&#x9332;&#x3067;&#x304D;&#x308B;CGC&#x30D0;&#x30A4;&#x30CA;&#x30EA;&#x306E;&#x9759;&#x7684;&#x30ED;&#x30FC;&#x30C0;</td>
+<td>no</td>
+</tr>
+<tr>
+<td>elfcore</td>
+<td>ELF&#x30B3;&#x30A2;&#x30C0;&#x30F3;&#x30D7;&#x306E;&#x9759;&#x7684;&#x30ED;&#x30FC;&#x30C0;</td>
+<td>no</td>
+</tr>
+<tr>
+<td>ida</td>
+<td>IDA&#x306E;&#x30A4;&#x30F3;&#x30B9;&#x30BF;&#x30F3;&#x30B9;&#x3092;&#x8D77;&#x52D5;&#x3057;&#x3066;&#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x3092;&#x30D1;&#x30FC;&#x30B9;&#x3059;&#x308B;</td>
+<td>yes</td>
+</tr>
+<tr>
+<td>blob</td>
+<td>&#x30D5;&#x30E9;&#x30C3;&#x30C8;&#x306A;&#x30A4;&#x30E1;&#x30FC;&#x30B8;&#x3068;&#x3057;&#x3066;&#x30E1;&#x30E2;&#x30EA;&#x306B;&#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x3092;&#x30ED;&#x30FC;&#x30C9;&#x3059;&#x308B;</td>
+<td>yes</td>
+</tr>
+</tbody>
+</table>
+<p>&#x3044;&#x307E;&#x3084;&#x3042;&#x306A;&#x305F;&#x306F;&#x30D0;&#x30A4;&#x30CA;&#x30EA;&#x3092;&#x30ED;&#x30FC;&#x30C9;&#x3057;&#xFF0C;<code>b.loader.main_bin</code>&#x3092;&#x901A;&#x3058;&#x3066;&#x30D0;&#x30A4;&#x30CA;&#x30EA;&#x306E;&#x8208;&#x5473;&#x6DF1;&#x3044;&#x60C5;&#x5831;&#x306B;&#x30A2;&#x30AF;&#x30BB;&#x30B9;&#x3067;&#x304D;&#x308B;&#x3088;&#x3046;&#x306B;&#x306A;&#x308A;&#x307E;&#x3057;&#x305F;&#xFF0E;&#x305F;&#x3068;&#x3048;&#x3070;&#xFF0C;&#x5171;&#x6709;&#x30E9;&#x30A4;&#x30D6;&#x30E9;&#x30EA;&#x306E;&#x4F9D;&#x5B58;&#x95A2;&#x4FC2;&#xFF0C;&#x30A4;&#x30F3;&#x30DD;&#x30FC;&#x30C8;&#x3055;&#x308C;&#x305F;&#x30E9;&#x30A4;&#x30D6;&#x30E9;&#x30EA;&#xFF0C;&#x30E1;&#x30E2;&#x30EA;&#xFF0C;&#x30B7;&#x30F3;&#x30DC;&#x30EB;&#x306A;&#x3069;&#x3067;&#x3059;&#xFF0E;IPython&#x306E;&#x30BF;&#x30D6;&#x88DC;&#x5B8C;&#x6A5F;&#x80FD;&#x3092;&#x99C6;&#x4F7F;&#x3057;&#x3066;&#xFF0C;&#x5229;&#x7528;&#x53EF;&#x80FD;&#x306A;&#x95A2;&#x6570;&#x3084;&#x30AA;&#x30D7;&#x30B7;&#x30E7;&#x30F3;&#x3092;&#x53C2;&#x7167;&#x3059;&#x308B;&#x3068;&#x3088;&#x3044;&#x3067;&#x3057;&#x3087;&#x3046;&#xFF0E;</p>
+<p>&#x3055;&#x3042;<a href="ir.html">IR&#x30B5;&#x30DD;&#x30FC;&#x30C8;</a>&#x306B;&#x76EE;&#x3092;&#x901A;&#x3059;&#x3068;&#x304D;&#x304C;&#x304D;&#x307E;&#x3057;&#x305F;&#xFF0E;</p>
+<h2 id="&#x305D;&#x306E;&#x4ED6;">&#x305D;&#x306E;&#x4ED6;</h2>
+<h3 id="&#x30A4;&#x30F3;&#x30DD;&#x30FC;&#x30C8;&#x95A2;&#x6570;">&#x30A4;&#x30F3;&#x30DD;&#x30FC;&#x30C8;&#x95A2;&#x6570;</h3>
+<p>&#x4EE5;&#x4E0B;&#x306F;ELF&#x56FA;&#x6709;&#x306E;&#x60C5;&#x5831;&#x3067;&#x3059;&#xFF0E;
+&#x307B;&#x3068;&#x3093;&#x3069;&#x306E;&#x30A2;&#x30FC;&#x30AD;&#x30C6;&#x30AF;&#x30C1;&#x30E3;&#x3067;&#x306F;&#xFF0C;&#x30A4;&#x30F3;&#x30DD;&#x30FC;&#x30C8;&#x95A2;&#x6570;&#xFF0C;&#x3059;&#x306A;&#x308F;&#x3061;&#x30D0;&#x30A4;&#x30CA;&#x30EA;&#x5916;&#x90E8;&#x306E;&#xFF08;&#x5171;&#x6709;&#x30E9;&#x30A4;&#x30D6;&#x30E9;&#x30EA;&#x306E;&#xFF09;&#x30B7;&#x30F3;&#x30DC;&#x30EB;&#x306F;&#xFF0C;&#x307B;&#x3068;&#x3093;&#x3069;&#x3064;&#x306D;&#x306B;&#x672A;&#x5B9A;&#x7FA9;&#x30A2;&#x30C9;&#x30EC;&#x30B9; (0) &#x306B;&#x5272;&#x308A;&#x5F53;&#x3066;&#x3089;&#x308C;&#x307E;&#x3059;&#xFF0E;MIPS&#x306E;&#x3088;&#x3046;&#x306A;&#x3044;&#x304F;&#x3064;&#x304B;&#x306E;&#x30A2;&#x30FC;&#x30AD;&#x30C6;&#x30AF;&#x30C1;&#x30E3;&#x3067;&#x306F;&#xFF08;&#x30C6;&#x30AD;&#x30B9;&#x30C8;&#x30BB;&#x30B0;&#x30E1;&#x30F3;&#x30C8;&#x5185;&#x306B;&#x5B58;&#x5728;&#x3059;&#x308B;&#xFF09;&#x95A2;&#x6570;&#x306E;PLT&#x30B9;&#x30BF;&#x30D6;&#x306E;&#x30A2;&#x30C9;&#x30EC;&#x30B9;&#x304C;&#x542B;&#x307E;&#x308C;&#x307E;&#x3059;&#xFF0E;
+&#x3082;&#x3057;&#xFF08;&#x30C7;&#x30FC;&#x30BF;&#x30BB;&#x30B0;&#x30E1;&#x30F3;&#x30C8;&#x5185;&#x306B;&#x5B58;&#x5728;&#x3059;&#x308B;&#xFF09;&#x7279;&#x5B9A;&#x306E;&#x30B7;&#x30F3;&#x30DC;&#x30EB;&#x306B;&#x95A2;&#x3059;&#x308B;GOT&#x30A8;&#x30F3;&#x30C8;&#x30EA;&#x306E;&#x30A2;&#x30C9;&#x30EC;&#x30B9;&#x3092;&#x63A2;&#x3057;&#x3066;&#x3044;&#x308B;&#x306A;&#x3089;&#xFF0C;jmprel&#x3092;&#x898B;&#x3066;&#x307F;&#x307E;&#x3057;&#x3087;&#x3046;&#xFF0E;&#x3053;&#x308C;&#x306F;&#x8F9E;&#x66F8;&#x3067;&#x3059; (symbol -&gt; GOT addr):</p>
+<p>PLT&#x5F8C;&#x304B;GOT&#x30A8;&#x30F3;&#x30C8;&#x30EA;&#x5F8C;&#x304B;&#x306F;&#x30A2;&#x30FC;&#x30AD;&#x30C6;&#x30AF;&#x30C1;&#x30E3;&#x4F9D;&#x5B58;&#x3067;&#x3059;&#xFF0E;&#x30A2;&#x30FC;&#x30AD;&#x30C6;&#x30AF;&#x30C1;&#x30E3;&#x56FA;&#x6709;&#x306E;&#x60C5;&#x5831;&#x306F;Archinfo&#x30EA;&#x30DD;&#x30B8;&#x30C8;&#x30EA;&#x5185;&#x306E;&#x30AF;&#x30E9;&#x30B9;&#x3067;&#x5B9A;&#x7FA9;&#x3055;&#x308C;&#x307E;&#x3059;&#xFF0E;&#x30A2;&#x30FC;&#x30AD;&#x30C6;&#x30AF;&#x30C1;&#x30E3;&#x306B;&#x4F9D;&#x5B58;&#x3057;&#x305F;&#x95A2;&#x6570;&#x306E;&#x7D76;&#x5BFE;&#x30A2;&#x30C9;&#x30EC;&#x30B9;&#x306E;&#x6271;&#x3044;&#x65B9;&#x306F;&#x3053;&#x306E;&#x30AF;&#x30E9;&#x30B9;&#x5185;&#x306E;got_section_name property&#x3067;&#x5B9A;&#x7FA9;&#x3055;&#x308C;&#x3066;&#x3044;&#x307E;&#x3059;&#xFF0E;</p>
+<p>ELF&#x306E;&#x30ED;&#x30FC;&#x30C7;&#x30A3;&#x30F3;&#x30B0;&#x3068;&#x30A2;&#x30FC;&#x30AD;&#x30C6;&#x30AF;&#x30C1;&#x30E3;&#x56FA;&#x6709;&#x306E;&#x60C5;&#x5831;&#x306E;&#x3055;&#x3089;&#x306A;&#x308B;&#x8A73;&#x7D30;&#x306F;&#xFF0C;<a href="http://www.cs.northwestern.edu/~pdinda/icsclass/doc/elf.pdf" _target="blank">Executable and linkable format document</a>&#x3092;&#x53C2;&#x7167;&#x306E;&#x3053;&#x3068;&#xFF0E;&#x540C;&#x69D8;&#x306B;&#x30A2;&#x30FC;&#x30AD;&#x30C6;&#x30AF;&#x30C1;&#x30E3;&#x3054;&#x3068;&#x306E;ABI&#x306E;&#x88DC;&#x8DB3;&#x3082; (<a href="http://math-atlas.sourceforge.net/devel/assembly/mipsabi32.pdf" _target="blank">MIPS</a>, <a href="http://math-atlas.sourceforge.net/devel/assembly/PPC-elf64abi-1.7.pdf" _target="blank">PPC64</a>, <a href="http://www.x86-64.org/documentation/abi.pdf" _target="blank">AMD64</a>)..</p>
+<pre><code class="lang-python"><span class="hljs-meta">&gt;&gt;&gt; </span>rel = b.loader.main_bin.jmprel
+</code></pre>
+<h3 id="&#x30B7;&#x30F3;&#x30DC;&#x30EA;&#x30C3;&#x30AF;&#x89E3;&#x6790;&#xFF1A;&#x95A2;&#x6570;&#x306E;&#x30B5;&#x30DE;&#x30EA;">&#x30B7;&#x30F3;&#x30DC;&#x30EA;&#x30C3;&#x30AF;&#x89E3;&#x6790;&#xFF1A;&#x95A2;&#x6570;&#x306E;&#x30B5;&#x30DE;&#x30EA;</h3>
+<p>&#x30C7;&#x30D5;&#x30A9;&#x30EB;&#x30C8;&#x3067;&#x306F;&#xFF0C;Project&#x306F;&#x30E9;&#x30A4;&#x30D6;&#x30E9;&#x30EA;&#x95A2;&#x6570;&#x306E;&#x5916;&#x90E8;&#x53C2;&#x7167;&#x3092;<em>SimProcedures</em>&#x3068;&#x3044;&#x3046;<a href="todo.md">&#x30B7;&#x30F3;&#x30DC;&#x30EA;&#x30C3;&#x30AF;&#x30B5;&#x30DE;&#x30EA; (symbolic summaries)</a> &#x306B;&#x7F6E;&#x304D;&#x63DB;&#x3048;&#x3088;&#x3046;&#x3068;&#x3057;&#x307E;&#x3059;&#xFF08;&#x95A2;&#x6570;&#x304C;state&#x306B;&#x4E0E;&#x3048;&#x308B;&#x5F71;&#x97FF;&#x3092;&#x307E;&#x3068;&#x3081;&#x305F;&#x3082;&#x306E;&#x3067;&#x3059;&#xFF09;&#xFF0E;</p>
+<p>&#x4E0E;&#x3048;&#x3089;&#x308C;&#x305F;&#x95A2;&#x6570;&#x306E;&#x30B5;&#x30DE;&#x30EA;&#x304C;&#x5B58;&#x5728;&#x3057;&#x306A;&#x3044;&#x5834;&#x5408;&#xFF1A;</p>
+<ul>
+<li><code>auto_load_libs</code>&#x304C;<code>True</code>&#x3067;&#x3042;&#x308C;&#x3070;&#xFF08;&#x3053;&#x308C;&#x304C;&#x30C7;&#x30D5;&#x30A9;&#x30EB;&#x30C8;&#x3067;&#x3059;&#xFF09;<em>&#x5B9F;&#x969B;&#x306E;</em>&#x30E9;&#x30A4;&#x30D6;&#x30E9;&#x30EA;&#x95A2;&#x6570;&#x304C;&#x4EE3;&#x308F;&#x308A;&#x306B;&#x5B9F;&#x884C;&#x3055;&#x308C;&#x307E;&#x3059;&#xFF0E;&#x3053;&#x308C;&#x306F;&#x95A2;&#x6570;&#x306B;&#x3088;&#x3063;&#x3066;&#x306F;&#x6B32;&#x3057;&#x3044;&#x6A5F;&#x80FD;&#x304B;&#x3082;&#x3057;&#x308C;&#x307E;&#x305B;&#x3093;&#xFF0E;&#x305F;&#x3068;&#x3048;&#x3070;&#xFF0C;libc&#x95A2;&#x6570;&#x306E;&#x3044;&#x304F;&#x3064;&#x304B;&#x306F;&#x6975;&#x3081;&#x3066;&#x8907;&#x96D1;&#x3067;&#xFF0C;&#x89E3;&#x6790;&#x306F;&#x56F0;&#x96E3;&#x3067;&#x3059;&#xFF0E;&#x5B9F;&#x884C;&#x3057;&#x3088;&#x3046;&#x3068;&#x3059;&#x308C;&#x3070;<a href="paths.html">path</a>&#x306E;&#x72B6;&#x614B;&#x7206;&#x767A;&#x304C;&#x8D77;&#x3053;&#x308A;&#x3048;&#x307E;&#x3059;&#xFF0E;</li>
+<li><code>auto_load_libs</code>&#x304C;<code>False</code>&#x3067;&#x3042;&#x308C;&#x3070;&#xFF0C;&#x5916;&#x90E8;&#x53C2;&#x7167;&#x306F;&#x672A;&#x89E3;&#x6C7A;&#x3068;&#x3055;&#x308C;&#xFF0C;Project&#x306F;&#x6C4E;&#x7528;&#x7684;&#x306A;<code>ReturnUnconstrained</code>&#x3068;&#x547C;&#x3070;&#x308C;&#x308B;&#x300C;&#x30B9;&#x30BF;&#x30D6;&#x300D;SimProcedure&#x3092;&#x7528;&#x3044;&#x307E;&#x3059;&#xFF0E;&#x3053;&#x308C;&#x306F;&#x540D;&#x524D;&#x901A;&#x308A;&#x306E;&#x4ED5;&#x4E8B;&#x3092;&#x3057;&#x307E;&#x3059;&#xFF1A;&#x305D;&#x3046;&#x3067;&#x3059;&#xFF0C;&#x5236;&#x7D04;&#x3055;&#x308C;&#x3066;&#x3044;&#x306A;&#x3044; (unconstrained) &#x5024;&#x3092;&#x8FD4;&#x3059;&#x306E;&#x3067;&#x3059;&#xFF0E;</li>
+<li><code>use_sim_procedures</code>&#xFF08;&#x3053;&#x308C;&#x306F;<code>cle.Loader</code>&#x3067;&#x306F;&#x306A;&#x304F;<code>angr.Project</code>&#x306E;&#x30D1;&#x30E9;&#x30E1;&#x30FC;&#x30BF;&#x3067;&#x3059;&#xFF09;&#x304C;<code>False</code>&#x306E;&#x5834;&#x5408;&#x306F;&#xFF08;&#x30C7;&#x30D5;&#x30A9;&#x30EB;&#x30C8;&#x3067;&#x306F;<code>True</code>&#xFF09;&#xFF0C;<code>ReturnUnconstrained</code>&#x4EE5;&#x5916;&#x306E;SimProdures&#x306F;&#x5229;&#x7528;&#x3055;&#x308C;&#x307E;&#x305B;&#x3093;&#xFF0E;</li>
+<li>SimProcedures&#x3078;&#x306E;&#x7F6E;&#x304D;&#x63DB;&#x3048;&#x304B;&#x3089;&#x9664;&#x5916;&#x3059;&#x308B;&#x30B7;&#x30F3;&#x30DC;&#x30EB;&#x3092;&#x6307;&#x5B9A;&#x3057;&#x305F;&#x3051;&#x308C;&#x3070;&#xFF0C;<code>angr.Project</code>&#x304B;&#x3089;&#x6B21;&#x306E;&#x30D1;&#x30E9;&#x30E1;&#x30FC;&#x30BF;&#x3092;&#x8A2D;&#x5B9A;&#x3057;&#x307E;&#x3059;&#xFF1A;<code>exclude_sim_procedures_list</code>&#x3068;<code>exclude_sim_procedures_func</code>.</li>
+<li>&#x30A2;&#x30EB;&#x30B4;&#x30EA;&#x30BA;&#x30E0;&#x306E;&#x5B9F;&#x969B;&#x306E;&#x30BD;&#x30FC;&#x30B9;&#x30B3;&#x30FC;&#x30C9;&#x306F;<code>angr.Project._use_sim_procedures</code>&#x3067;&#x3059;&#xFF0E;</li>
+</ul>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="toplevel.html" class="navigation navigation-prev " aria-label="Previous page: トップレベルインターフェイス">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="ir.html" class="navigation navigation-next " aria-label="Next page: 中間表現">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"バイナリのロード","level":"1.3","depth":1,"next":{"title":"中間表現","level":"1.4","depth":1,"path":"docs/ir.md","ref":"docs/ir.md","articles":[]},"previous":{"title":"トップレベルインターフェイス","level":"1.2","depth":1,"path":"docs/toplevel.md","ref":"docs/toplevel.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"docs/loading.md","mtime":"2016-10-30T07:29:55.591Z","type":"markdown"},"gitbook":{"version":"3.0.0","time":"2016-10-30T07:30:33.913Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/buttons.js"></script>
+        
+    
+
+    </body>
+</html>
+
