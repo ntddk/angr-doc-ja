@@ -42,13 +42,13 @@ angr初学者に向けた「コース」なるものの開発は，必ずや有�
 
 ### 動的シンボリック実行のための冗長な状態の検知 (Redundant State Detection for Dynamic Symbolic Execution)
 
-Bugrara, et al.は，プログラムの冗長な状態を特定し，トリムすることで，シンボリックの速度を50倍，カバレッジを4%向上させる手法を提案しています．
+Bugrara, et al.は，プログラムの冗長な状態を特定し，トリムすることで，シンボリック実行の速度を50倍，カバレッジを4%向上させる手法を提案しています．
 angrの[Exploration Techniques](http://angr.io/api-doc/angr.html#angr.exploration_techniques.ExplorationTechnique)にこの手法があると素敵です．
 論文はこちら：http://nsl.cs.columbia.edu/projects/minestrone/papers/atc13-bugrara.pdf
 
 ### ソフトウェアシステムのIn-Vivoマルチパス解析 (In-Vivo Multi-Path Analysis of Software Systems)
 
-すべてのシステムコールについて記号値の一覧 (symbolic summaries) を作成するのではなく，私たちは[S2E](http://dslab.epfl.ch/pubs/s2e.pdf)で提案された，必要なデータを具体値として扱い，OS自体にディスパッチする手法を利用できます．
+すべてのシステムコールについて記号値サマリ (symbolic summaries) を作成するのではなく，私たちは[S2E](http://dslab.epfl.ch/pubs/s2e.pdf)で提案された，必要なデータを具体値として扱い，OS自体にディスパッチする手法を利用できます．
 これにより，現在分析できるものより*はるか*大規模なバイナリの集合に対してangrを適用できるようになるでしょう．
 
 この手法はシステムコールに対して最も有用でしょうが，一度実装してしまえば，コードのどの箇所（すなわち，ライブラリ関数）にも自明に適用できます．
